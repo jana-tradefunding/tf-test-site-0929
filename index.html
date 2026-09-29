@@ -86,8 +86,8 @@
 .tf-card-channel{font-size:0.66rem;margin-top:-6px}
 
 /* Hero */
-.hero-section{--hero-copy-w:min(600px,46vw);position:relative;isolation:isolate;overflow:hidden;background:#fff}
-.hero-grid{position:relative;display:flex;align-items:center;min-height:clamp(520px,40vw,600px);max-width:var(--max-width-wide);margin:0 auto;padding:clamp(56px,7vw,88px) 32px clamp(72px,8vw,104px);pointer-events:none}
+.hero-section{--hero-copy-w:min(600px,46vw);--hero-copy-end:calc(max(0px,(100% - var(--max-width-wide)) / 2) + 32px + var(--hero-copy-w));position:relative;isolation:isolate;overflow:hidden;background:#fff}
+.hero-grid{position:relative;display:flex;align-items:center;min-height:clamp(560px,50vw,760px);max-width:var(--max-width-wide);margin:0 auto;padding:clamp(56px,7vw,88px) 32px clamp(72px,8vw,104px);pointer-events:none}
 .hero-copy{width:var(--hero-copy-w);min-width:0;pointer-events:auto}
 .trust-bar{display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px;font-family:var(--font-heading);font-weight:600;font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-secondary);margin:0}
 .trust-bar .dot-sep{color:var(--ink-200)}
@@ -99,19 +99,22 @@
 .hero-secondary-link span{display:inline-block;transition:transform var(--transition-fast)}
 .hero-secondary-link:hover span{transform:translateX(3px)}
 
-/* Hero background video (assets/video/hero-animation.mp4). On desktop it runs
-   full height from 16px past the copy column (the 48px is .hero-grid's 32px
-   padding plus that gap) to the right edge, so the copy always sits on white.
-   The crop is anchored to the frame's LEFT edge and the fade only spans the
-   frame's empty left margin: the final frame's Trade Funding card sits there,
-   and a fade or crop through it leaves the logo reading "defunding". Where the
-   box is narrower than 4:3 the frame loses its right side instead. Below 900px
-   it becomes a band above the copy. The poster is the final frame, so the
-   static view (reduced motion, no JS, still loading) shows the Compare Report
-   end state. .hero-grid spans the full width over the video, so it passes
-   clicks through to the pause toggle and only .hero-copy takes them. */
-.hero-media{position:absolute;top:0;right:0;bottom:0;width:min(1000px,calc(100% - max(0px,(100% - var(--max-width-wide)) / 2) - 48px - var(--hero-copy-w)))}
-.hero-video{display:block;width:100%;height:100%;object-fit:cover;object-position:0 50%;background:#fff;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 72px);mask-image:linear-gradient(90deg,transparent 0,#000 72px)}
+/* Hero background video (assets/video/hero-animation.mp4). On desktop it fills
+   the whole hero behind the copy. The ::before wash keeps the copy legible: a
+   flat 80% white across the copy column (--hero-copy-end is where .hero-copy
+   stops), fading to clear over the next 20% of the width. It has to stay flat
+   over the column: the final frame's Trade Funding card sits under the copy,
+   and a gradient across it fades "tra" more than the rest, so the logo reads
+   "defunding". At 80% the hero's grey body text keeps 4.5:1 even over the
+   video's darkest pixels. Below 900px, where the copy spans the full width and
+   a portrait crop would keep only the middle third of the frame, it becomes a
+   band above the copy. The poster is the final frame, so the static view
+   (reduced motion, no JS, still loading) shows the Compare Report end state.
+   .hero-grid spans the full width over the video, so it passes clicks through
+   to the pause toggle and only .hero-copy takes them. */
+.hero-media{position:absolute;inset:0}
+.hero-media::before{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,rgba(255,255,255,0.8) 0,rgba(255,255,255,0.8) var(--hero-copy-end),rgba(255,255,255,0) calc(var(--hero-copy-end) + 20%))}
+.hero-video{display:block;width:100%;height:100%;object-fit:cover;background:#fff}
 .hero-video-toggle{position:absolute;right:24px;bottom:24px;min-height:44px;padding:0 18px;border:1px solid var(--border-neutral);border-radius:var(--radius-pill);background:rgba(255,255,255,0.92);color:var(--navy);font-family:var(--font-heading);font-weight:600;font-size:0.8rem;box-shadow:var(--shadow-sm)}
 .hero-video-toggle:hover{background:#fff}
 .hero-video-toggle[hidden]{display:none}
@@ -122,8 +125,9 @@
 @media (max-width:900px){
   .hero-grid{display:block;min-height:0;padding-top:8px}
   .hero-copy{width:auto}
-  .hero-media{position:relative;width:auto;height:clamp(240px,62vw,440px)}
-  .hero-video{object-position:50% 50%;-webkit-mask-image:linear-gradient(180deg,#000 70%,transparent);mask-image:linear-gradient(180deg,#000 70%,transparent)}
+  .hero-media{position:relative;inset:auto;height:clamp(240px,62vw,440px)}
+  .hero-media::before{content:none}
+  .hero-video{-webkit-mask-image:linear-gradient(180deg,#000 70%,transparent);mask-image:linear-gradient(180deg,#000 70%,transparent)}
   .hero-video-toggle{right:16px;bottom:auto;top:16px}
 }
 /* Phase 9 Part 1: below 560px the trust bar wraps and the separator after
