@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="assets/img/favicon-192.png">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+<title>Trade Funding - Clarity, Before Every Funding Decision</title>
+<meta name="description" content="New funding, a funding review, customer financing or personal lending. Compare 100+ products across our panel of 70+ lenders, with no credit score impact.">
+<link rel="canonical" href="https://tradefunding.com.au/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Trade Funding">
+<meta property="og:locale" content="en_AU">
+<meta property="og:title" content="Trade Funding - Clarity, Before Every Funding Decision">
+<meta property="og:description" content="New funding, a funding review, customer financing or personal lending. Compare 100+ products across our panel of 70+ lenders, with no credit score impact.">
+<meta property="og:url" content="https://tradefunding.com.au/">
+<meta property="og:image" content="https://tradefunding.com.au/assets/img/og-default.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Trade Funding. Clarity, before every funding decision.">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Trade Funding",
+  "url": "https://tradefunding.com.au/",
+  "logo": "https://tradefunding.com.au/assets/img/logo-navy.png",
+  "telephone": "+61-1300-161-641",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Level 8, 387 George Street",
+    "addressLocality": "Sydney",
+    "addressRegion": "NSW",
+    "postalCode": "2000",
+    "addressCountry": "AU"
+  },
+  "sameAs": []
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the cost of comparing options for my business?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Getting your Compare Report is free, with no credit check, and no obligation to proceed if we don't find you a great option."}
+    },
+    {
+      "@type": "Question",
+      "name": "Is this only for new funding requirements, or can Cashper review funding I already have?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Both. Tell Cashper you want a facility review, and it checks your existing rate, security and term against 100+ products we qualify and review."}
+    },
+    {
+      "@type": "Question",
+      "name": "How does Trade Funding Connect work for my customers?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Connect allows partners to place a QR code on sales proposals, quotes and invoices, and their own website or forms. Your customer scans the code, enters some information, and sees qualified ways to pay, helping more orders and invoices proceed, at no cost to your business."}
+    },
+    {
+      "@type": "Question",
+      "name": "Is Trade Funding regulated?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Yes - we're a licensed credit intermediary (ACL 387856) and an AFCA member."}
+    }
+  ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/tokens.css">
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/components.css">
+<style>
+/* Nav channel pills/preview cards now live in assets/css/components.css
+   (shared across every page instead of duplicated per file). */
+
+/* Homepage-only type scale — crisper/smaller than the shared default. */
+.section-title{font-size:clamp(1.5rem,2.4vw,1.9rem)!important}
+
+/* Phase 9 Part 1: the channel label moved from the row above each card
+   heading to the row below it, at a smaller size than the standard
+   .eyebrow. The negative margin pulls it against the heading it labels,
+   rather than letting the card's 12px flex gap float it mid-card. */
+.tf-card-channel{font-size:0.66rem;margin-top:-6px}
+
+/* Hero */
+.hero-section{--hero-copy-w:min(600px,46vw);position:relative;isolation:isolate;overflow:hidden;background:#fff}
+.hero-grid{position:relative;display:flex;align-items:center;min-height:clamp(520px,40vw,600px);max-width:var(--max-width-wide);margin:0 auto;padding:clamp(56px,7vw,88px) 32px clamp(72px,8vw,104px);pointer-events:none}
+.hero-copy{width:var(--hero-copy-w);min-width:0;pointer-events:auto}
+.trust-bar{display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px;font-family:var(--font-heading);font-weight:600;font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-secondary);margin:0}
+.trust-bar .dot-sep{color:var(--ink-200)}
+.trust-stars{display:inline-flex;align-items:center;gap:5px;color:var(--text-secondary)}
+.trust-stars span[aria-hidden]{color:var(--gold);letter-spacing:1px;font-size:0.9rem}
+.hero-trust-divider{height:1px;background:var(--border);max-width:360px;margin:14px 0 22px}
+.hero-cta-group{display:flex;align-items:center;gap:28px;flex-wrap:wrap;margin-top:28px}
+.hero-secondary-link{font-family:var(--font-heading);font-weight:600;font-size:0.92rem;color:var(--navy)}
+.hero-secondary-link span{display:inline-block;transition:transform var(--transition-fast)}
+.hero-secondary-link:hover span{transform:translateX(3px)}
+
+/* Hero background video (assets/video/hero-animation.mp4). On desktop it runs
+   full height from 16px past the copy column (the 48px is .hero-grid's 32px
+   padding plus that gap) to the right edge, so the copy always sits on white.
+   The crop is anchored to the frame's LEFT edge and the fade only spans the
+   frame's empty left margin: the final frame's Trade Funding card sits there,
+   and a fade or crop through it leaves the logo reading "defunding". Where the
+   box is narrower than 4:3 the frame loses its right side instead. Below 900px
+   it becomes a band above the copy. The poster is the final frame, so the
+   static view (reduced motion, no JS, still loading) shows the Compare Report
+   end state. .hero-grid spans the full width over the video, so it passes
+   clicks through to the pause toggle and only .hero-copy takes them. */
+.hero-media{position:absolute;top:0;right:0;bottom:0;width:min(1000px,calc(100% - max(0px,(100% - var(--max-width-wide)) / 2) - 48px - var(--hero-copy-w)))}
+.hero-video{display:block;width:100%;height:100%;object-fit:cover;object-position:0 50%;background:#fff;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 72px);mask-image:linear-gradient(90deg,transparent 0,#000 72px)}
+.hero-video-toggle{position:absolute;right:24px;bottom:24px;min-height:44px;padding:0 18px;border:1px solid var(--border-neutral);border-radius:var(--radius-pill);background:rgba(255,255,255,0.92);color:var(--navy);font-family:var(--font-heading);font-weight:600;font-size:0.8rem;box-shadow:var(--shadow-sm)}
+.hero-video-toggle:hover{background:#fff}
+.hero-video-toggle[hidden]{display:none}
+
+/* How it works - numbered steps */
+.step-num{font-family:var(--font-heading);font-weight:700;font-size:0.78rem;letter-spacing:0.04em;color:var(--ink-400)}
+
+@media (max-width:900px){
+  .hero-grid{display:block;min-height:0;padding-top:8px}
+  .hero-copy{width:auto}
+  .hero-media{position:relative;width:auto;height:clamp(240px,62vw,440px)}
+  .hero-video{object-position:50% 50%;-webkit-mask-image:linear-gradient(180deg,#000 70%,transparent);mask-image:linear-gradient(180deg,#000 70%,transparent)}
+  .hero-video-toggle{right:16px;bottom:auto;top:16px}
+}
+/* Phase 9 Part 1: below 560px the trust bar wraps and the separator after
+   the last item on a line is left dangling. The row gap already reads as
+   separation, so the dots come out. */
+@media (max-width:560px){
+  .trust-bar{gap:6px 14px}
+  .trust-bar .dot-sep{display:none}
+}
+
+/* Compare Report visual - design language lifted from the live
+   TF Sample Comparison Report (STAR v2): navy gradient masthead, fact
+   strip, S.T.A.R. winner cards with a coloured top rule, navy table
+   head and gold "leads this column" cells. Retuned to site tokens
+   (DM Sans, 700 max weight, no icons) rather than the report's own
+   Work Sans/800. Lenders are de-identified as "Lender A", "Lender B"
+   and so on (Phase 9 Part 2) - we can not show an actual lender
+   against a rate. */
+.cr{margin-top:44px;background:#fff;border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-lg-soft)}
+.cr-head{background:linear-gradient(155deg,#001C44 0%,#012A63 48%,#000C22 100%);color:#fff;padding:26px 28px 24px}
+.cr-head-top{display:flex;justify-content:space-between;align-items:flex-start;gap:20px;flex-wrap:wrap}
+.cr-eyebrow{font-family:var(--font-heading);font-weight:700;font-size:0.66rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--skyblue-text)}
+.cr-meta{font-family:var(--font-heading);font-weight:600;font-size:0.62rem;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.6);text-align:right;line-height:1.7}
+.cr-title{font-family:var(--font-heading);font-weight:700;font-size:clamp(1.25rem,2.2vw,1.6rem);letter-spacing:-0.02em;line-height:1.1;margin:10px 0 0}
+.cr-sub{max-width:62ch;margin:10px 0 0;font-size:0.86rem;line-height:1.55;color:rgba(255,255,255,0.8)}
+.cr-facts{margin-top:20px;display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,0.14);border:1px solid rgba(255,255,255,0.16);border-radius:10px;overflow:hidden}
+.cr-fact{background:rgba(255,255,255,0.04);padding:11px 14px}
+.cr-fact-k{font-family:var(--font-heading);font-weight:600;font-size:0.6rem;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.58)}
+.cr-fact-v{font-family:var(--font-heading);font-weight:700;font-size:0.88rem;margin-top:4px;color:#fff;letter-spacing:-0.01em}
+
+.cr-body{padding:26px 28px 28px}
+.cr-sec-head{margin-bottom:16px}
+.cr-sec-head .cr-kicker{font-family:var(--font-heading);font-weight:700;font-size:0.66rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--skyblue-text)}
+.cr-rule{width:72px;height:3px;border-radius:3px;background:var(--gold);margin:10px 0 0}
+.cr-sec-head h3{font-family:var(--font-heading);font-weight:700;font-size:1.08rem;letter-spacing:-0.015em;color:var(--navy);margin:10px 0 0}
+.cr-sec-head p{color:var(--text-secondary);font-size:0.84rem;line-height:1.55;margin:6px 0 0;max-width:72ch}
+
+.cr-chip{display:inline-flex;align-items:center;justify-content:center;font-family:var(--font-heading);font-weight:700;font-size:0.64rem;width:18px;height:18px;border-radius:6px;flex:0 0 auto}
+.cr-chip-lg{width:28px;height:28px;font-size:0.92rem;border-radius:9px}
+.cr-chip-s{background:var(--star-s);color:#fff}
+.cr-chip-t{background:var(--star-t);color:var(--navy)}
+.cr-chip-a{background:var(--star-a);color:#3A2A07}
+.cr-chip-r{background:var(--star-r);color:#fff}
+
+.cr-wgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.cr-wcard{position:relative;background:#fff;border:1px solid var(--border);border-radius:var(--radius-lg);padding:18px;overflow:hidden;box-shadow:var(--shadow-sm)}
+.cr-wcard::before{content:"";position:absolute;inset:0 0 auto;height:4px;background:var(--cr-accent,var(--navy))}
+.cr-wcard-top{display:flex;align-items:center;gap:10px}
+.cr-wcard-kicker{font-family:var(--font-heading);font-weight:700;font-size:0.64rem;letter-spacing:0.13em;text-transform:uppercase;color:var(--ink-400)}
+.cr-wcard-value{font-family:var(--font-heading);font-weight:700;font-size:1.4rem;letter-spacing:-0.03em;color:var(--navy);margin-top:13px;line-height:1}
+.cr-wcard-lender{font-family:var(--font-heading);font-weight:700;font-size:0.9rem;color:var(--navy);margin-top:6px}
+.cr-wcard-note{font-size:0.78rem;color:var(--text-secondary);margin-top:8px;line-height:1.5}
+
+.cr-sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+
+.cr-legend{display:flex;flex-wrap:wrap;gap:16px;margin-top:18px;padding:13px 18px;background:var(--bg-soft);border:1px solid var(--border);border-radius:10px}
+.cr-legend-i{display:flex;align-items:center;gap:9px;font-size:0.78rem;color:var(--text-secondary)}
+.cr-legend-i b{color:var(--navy);font-family:var(--font-heading);font-weight:700}
+
+.cr-tbl-wrap{margin-top:26px;border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden}
+table.cr-tbl{border-collapse:collapse;width:100%;background:#fff;table-layout:fixed;font-variant-numeric:tabular-nums}
+.cr-tbl th{background:var(--navy);color:#fff;font-family:var(--font-heading);font-weight:700;font-size:0.72rem;letter-spacing:0.04em;padding:10px 12px;text-align:center}
+.cr-tbl th.cr-th-left{text-align:left}
+.cr-tbl td{text-align:center;padding:10px 12px;font-size:0.8rem;border-bottom:1px solid var(--border);font-family:var(--font-heading);font-weight:600;color:var(--navy)}
+.cr-tbl tbody tr:last-child td{border-bottom:none}
+.cr-tbl td.cr-starcell{padding:10px 4px;white-space:nowrap}
+.cr-tbl td.cr-starcell .cr-chip{margin:0 1px;vertical-align:middle}
+.cr-tbl td.cr-lender{text-align:left;font-weight:700;font-size:0.86rem;letter-spacing:-0.01em}
+.cr-tbl td.cr-price{background:var(--bg-soft)}
+.cr-tbl td.cr-win{background:var(--gold-soft);box-shadow:inset 0 0 0 1.5px rgba(251,183,102,0.55)}
+.cr-tbl td.cr-win .cr-chip{margin-left:6px;vertical-align:middle}
+.cr-tbl td.cr-sectd{text-align:left;font-weight:400;font-size:0.78rem;color:var(--text-secondary);line-height:1.5}
+.cr-foot{padding:14px 28px;background:var(--bg-soft);border-top:1px solid var(--border);font-size:0.76rem;color:var(--text-secondary);line-height:1.55}
+
+@media (max-width:900px){
+  .cr-facts{grid-template-columns:1fr 1fr}
+  .cr-wgrid{grid-template-columns:1fr 1fr}
+  .cr-tbl col.cr-col-sec,.cr-tbl th.cr-th-sec,.cr-tbl td.cr-sectd{display:none}
+}
+@media (max-width:600px){
+  .cr-head,.cr-body{padding-left:18px;padding-right:18px}
+  .cr-foot{padding-left:18px;padding-right:18px}
+  .cr-head-top{flex-direction:column-reverse;gap:8px}
+  .cr-meta{text-align:left}
+  .cr-wgrid{grid-template-columns:1fr}
+  .cr-tbl col.cr-col-lead,.cr-tbl th.cr-th-lead,.cr-tbl td.cr-starcell{display:none}
+  .cr-tbl th,.cr-tbl td{padding:9px 8px;font-size:0.74rem}
+}
+</style>
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<a class="tf-skip-link" href="#main">Skip to content</a>
+
+<!-- NAVBAR -->
+<header class="tf-header">
+<nav class="tf-nav" aria-label="Primary">
+<div class="tf-nav-inner">
+<a href="index.html" class="tf-nav-logo"><img width="1000" height="160" src="assets/img/logo-navy.png" alt="Trade Funding"></a>
+<div class="tf-nav-links" style="justify-content:flex-start;width:auto">
+<div class="tf-nav-item">
+<a href="home-shared/how-it-works/index.html" class="tf-nav-link" aria-haspopup="true" aria-expanded="false">Cashper Compare Engine<span class="tf-caret" aria-hidden="true"></span></a>
+<div class="tf-mega-panel tf-mega-panel-wide">
+<div class="tf-mega-wide-inner">
+<a href="home-shared/how-it-works/index.html" class="tf-mega-wide-lead">How it works<span class="tf-mega-arrow" aria-hidden="true">&rarr;</span></a>
+<div class="tf-mega-wide-grid tf-mega-wide-grid-3">
+<div class="tf-mega-wide-step-cell">
+<span class="tf-mega-wide-step-num">01</span>
+<span class="tf-mega-wide-step-title">Tell Cashper what you need</span>
+<div class="tf-mega-wide-sub">New capital, a facility review, a customer's sale, or something personal.</div>
+</div>
+<div class="tf-mega-wide-step-cell">
+<span class="tf-mega-wide-step-num">02</span>
+<span class="tf-mega-wide-step-title">It qualifies you across our panel of 70+ lenders</span>
+<div class="tf-mega-wide-sub">Banks, non-banks and fintechs, and private credit providers, scored on S.T.A.R. facts.</div>
+</div>
+<div class="tf-mega-wide-step-cell">
+<span class="tf-mega-wide-step-num">03</span>
+<span class="tf-mega-wide-step-title">You get a Compare Report</span>
+<div class="tf-mega-wide-sub">Side by side, ranked best-fit options, with no credit check until you choose to proceed.</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="tf-nav-item">
+<button type="button" class="tf-nav-link" aria-haspopup="true" aria-expanded="false">Funding For<span class="tf-caret" aria-hidden="true"></span></button>
+<div class="tf-mega-panel tf-mega-panel-wide">
+<div class="tf-mega-wide-inner">
+<button type="button" class="tf-mega-wide-lead tf-router-open" style="background:none;cursor:pointer;font-family:inherit">Different Funding Support Options for Businesses<span class="tf-mega-arrow" aria-hidden="true">&rarr;</span></button>
+<div class="tf-mega-wide-grid tf-mega-wide-grid-3">
+<div style="border-top:3px solid var(--skyblue);padding-top:12px">
+<a href="commercial/index.html" class="tf-mega-wide-link tf-mega-wide-split" style="font-weight:700;font-size:0.92rem"><span class="tf-mega-wide-split-lead">Your Business</span><span class="tf-mega-wide-arrow-slot"><span class="tf-mega-arrow" aria-hidden="true">&rarr;</span></span><span class="tf-mega-wide-split-sub">Commercial Funding</span></a>
+<div class="tf-mega-wide-sub">Compare qualified options to establish new funding, or replace what you have.</div>
+</div>
+<div style="border-top:3px solid var(--gold);padding-top:12px">
+<a href="connect/index.html" class="tf-mega-wide-link tf-mega-wide-split" style="font-weight:700;font-size:0.92rem"><span class="tf-mega-wide-split-lead">Your Customers</span><span class="tf-mega-wide-arrow-slot"><span class="tf-mega-arrow" aria-hidden="true">&rarr;</span></span><span class="tf-mega-wide-split-sub">Trade Funding Connect</span></a>
+<div class="tf-mega-wide-sub">A free QR code that gives your customers qualified payment options at the point of sale.</div>
+</div>
+<div style="border-top:3px solid var(--peach);padding-top:12px">
+<a href="personal-and-property/index.html" class="tf-mega-wide-link tf-mega-wide-split" style="font-weight:700;font-size:0.92rem"><span class="tf-mega-wide-split-lead">You Personally</span><span class="tf-mega-wide-arrow-slot"><span class="tf-mega-arrow" aria-hidden="true">&rarr;</span></span><span class="tf-mega-wide-split-sub">Personal &amp; Property Funding</span></a>
+<div class="tf-mega-wide-sub">Personal funding, tailored to business owners and how they actually earn.</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="tf-nav-item">
+<button type="button" class="tf-nav-link" aria-haspopup="true" aria-expanded="false">Products<span class="tf-caret" aria-hidden="true"></span></button>
+<div class="tf-mega-panel tf-mega-panel-wide">
+<div class="tf-mega-wide-inner">
+<a href="commercial/products/index.html" class="tf-mega-wide-lead">Every Business Capital Product<span class="tf-mega-arrow" aria-hidden="true">&rarr;</span></a>
+<div class="tf-mega-wide-grid tf-mega-wide-grid-3">
+<div class="tf-mega-wide-col">
+<span class="tf-mega-wide-group-label">Loans &amp; Credit</span>
+<div class="tf-mega-wide-links">
+<a href="commercial/business-term-loans/index.html" class="tf-mega-wide-link">Business Term Loans<span class="tf-mega-arrow" aria-hidden="true">&rarr;</span></a>
+<a href="commercial/business-line-of-credit/index.html" class="tf-mega-wide-link">Business Line of Credit<span class="tf-mega-arrow" aria-hidden="true">&rarr;</span></a>
+<a href="commercial/overdraft/index.html" class="tf-mega-wide-link">Business Overdraft<span class="tf-mega-arrow" aria-hidden="true">&rarr;</span></a>
+<a href="commercial/charge-card/index.html" class="tf-mega-wide-link">Business Charge Card<span class="tf-mega-arrow" aria-hidden="true">&rarr;</span></a>
+</div>
+</div>
+<div class="tf-mega-wide-col">
+<span class="tf-mega-wide-group-label">Asset &amp; Trade</span>
+<div class="tf-mega-wide-links">
+<a href="commercial/chattel-mortgage/index.html" class="tf-mega-wide-link">Chattel Mortgage<span class="tf-mega-arrow" aria-hidden="true">&rarr;</span></a>
+<a href="commercial/finance-lease/index.html" class="tf-mega-wide-link">Finance Lease<span class="tf-mega-arrow" aria-hidden="true">&rarr;</span></a>
+<a href="commercial/operating-lease/index.html" class="tf-mega-wide-link">Operating Lease<span class="tf-mega-arrow" aria-hidden="true">&rarr;</span></a>
+<a href="commercial/trade-finance/index.html" class="tf-mega-wide-link">Trade Finance<span class="tf-mega-arrow" aria-hidden="true">&rarr;</span></a>
+<a href="commercial/export-finance/index.html" class="tf-mega-wide-link">Export Finance<span class="tf-mega-arrow" aria-hidden="true">&rarr;</span></a>
+</div>
+</div>
+<div class="tf-mega-wide-col">
+<span class="tf-mega-wide-group-label">Cash Flow &amp; Growth</span>
+<div class="tf-mega-wide-links">
+<a href="commercial/invoice-finance/index.html" class="tf-mega-wide-link">Invoice Finance<span class="tf-mega-arrow" aria-hidden="true">&rarr;</span></a>
+<a href="commercial/fund-an-invoice/index.html" class="tf-mega-wide-link">Fund an Invoice<span class="tf-mega-arrow" aria-hidden="true">&rarr;</span></a>
+<a href="commercial/merchant-cash-advance/index.html" class="tf-mega-wide-link">Merchant Cash Advance<span class="tf-mega-arrow" aria-hidden="true">&rarr;</span></a>
+<a href="commercial/supply-chain-funding/index.html" class="tf-mega-wide-link">Supply Chain Funding<span class="tf-mega-arrow" aria-hidden="true">&rarr;</span></a>
+<a href="commercial/r-and-d-funding/index.html" class="tf-mega-wide-link">R&amp;D Tax Incentive Funding<span class="tf-mega-arrow" aria-hidden="true">&rarr;</span></a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="tf-nav-item">
+<button type="button" class="tf-nav-link" aria-haspopup="true" aria-expanded="false">Compare Tools<span class="tf-caret" aria-hidden="true"></span></button>
+<div class="tf-mega-panel tf-mega-panel-wide">
+<div class="tf-mega-wide-inner">
+<a href="commercial/compare-report/index.html" class="tf-mega-wide-lead">Compare your options<span class="tf-mega-arrow" aria-hidden="true">&rarr;</span></a>
+<div class="tf-mega-wide-grid tf-mega-wide-grid-compact">
+<div class="tf-mega-wide-col">
+<span class="tf-mega-wide-group-label">Compare</span>
+<div class="tf-mega-wide-links">
+<a href="commercial/compare-report/index.html" class="tf-mega-wide-link">Compare Report<span class="tf-mega-arrow" aria-hidden="true">&rarr;</span></a>
+<a href="commercial/compare-report/index.html#business-overview" class="tf-mega-wide-link">Business Overview<span class="tf-mega-arrow" aria-hidden="true">&rarr;</span></a>
+<a href="home-shared/lender-panel/index.html" class="tf-mega-wide-link">Lender Panel<span class="tf-mega-arrow" aria-hidden="true">&rarr;</span></a>
+</div>
+</div>
+<div class="tf-mega-wide-col">
+<span class="tf-mega-wide-group-label">Calculators</span>
+<div class="tf-mega-wide-links">
+<a href="commercial/business-loan-calculator/index.html" class="tf-mega-wide-link">Business Loan Calculator<span class="tf-mega-arrow" aria-hidden="true">&rarr;</span></a>
+<a href="commercial/equipment-calculator/index.html" class="tf-mega-wide-link">Equipment Finance Calculator<span class="tf-mega-arrow" aria-hidden="true">&rarr;</span></a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="tf-nav-item">
+<button type="button" class="tf-nav-link" aria-haspopup="true" aria-expanded="false">About<span class="tf-caret" aria-hidden="true"></span></button>
+<div class="tf-mega-panel tf-mega-panel-wide">
+<div class="tf-mega-wide-inner">
+<a href="home-shared/about/index.html" class="tf-mega-wide-lead">About Trade Funding<span class="tf-mega-arrow" aria-hidden="true">&rarr;</span></a>
+<div class="tf-mega-wide-grid tf-mega-wide-grid-compact">
+<div class="tf-mega-wide-col">
+<span class="tf-mega-wide-group-label">Company</span>
+<div class="tf-mega-wide-links">
+<a href="home-shared/about/index.html" class="tf-mega-wide-link">About Us<span class="tf-mega-arrow" aria-hidden="true">&rarr;</span></a>
+<a href="home-shared/partner-with-us/index.html" class="tf-mega-wide-link">Partner With Us<span class="tf-mega-arrow" aria-hidden="true">&rarr;</span></a>
+<a href="home-shared/careers/index.html" class="tf-mega-wide-link">A Trade Funding Career<span class="tf-mega-arrow" aria-hidden="true">&rarr;</span></a>
+<a href="home-shared/resources/index.html" class="tf-mega-wide-link">Resources<span class="tf-mega-arrow" aria-hidden="true">&rarr;</span></a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="tf-nav-cta-group">
+<a href="home-shared/contact/index.html" class="tf-nav-contact-link">Get In Contact</a>
+<a href="commercial/compare-report/index.html" class="btn btn-primary tf-nav-cta">Get my Compare Report</a>
+</div>
+</div>
+</nav>
+</header>
+<div id="main" tabindex="-1"></div>
+
+<!-- 1. HERO -->
+<!-- Phase 8 Part M: "How Cashper Works" is a permanent top-level nav link
+     again (as "Cashper Compare Engine"), so the hero no longer duplicates
+     it - "Get my Compare Report" is the single hero CTA. It's still the
+     universal front door: on channel pages the equivalent CTA starts that
+     channel's Compare Report directly; here on Home, with no channel
+     context yet, it asks one question first via the existing "Not sure
+     yet?" router (components.css / main.js, Phase 7 Part H), then routes. -->
+<section class="hero-section">
+<!-- Background video: decorative, so hidden from assistive tech. No autoplay
+     attribute - main.js starts it unless the visitor prefers reduced motion,
+     and the toggle is its pause control (WCAG 2.2.2). -->
+<div class="hero-media">
+<video class="hero-video" data-hero-video muted loop playsinline preload="none" disablepictureinpicture disableremoteplayback poster="assets/img/hero-poster.jpg" aria-hidden="true">
+<source src="assets/video/hero-animation.mp4" type="video/mp4">
+</video>
+<button type="button" class="hero-video-toggle" data-hero-video-toggle hidden>Pause video</button>
+</div>
+<div class="hero-grid">
+<div class="hero-copy">
+<!-- AFCA Member Number: Matt's copy asked for the actual number here
+     ("AFCA Member Number: add") - not supplied yet, kept as a label-only
+     placeholder rather than a fabricated number. Flag before this ships. -->
+<div class="trust-bar">
+<span>ACL Holder: 387856</span><span class="dot-sep">&middot;</span>
+<span>AFCA Member</span><span class="dot-sep">&middot;</span>
+<a href="https://maps.google.com/?cid=18175296584824146345" target="_blank" rel="noopener noreferrer" class="tf-rating-link" aria-label="5.0 Google Rating from 50 reviews, opens Google Maps in a new tab"><span class="trust-stars"><span aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span> 5.0 Google Rating</span></a>
+</div>
+<div class="hero-trust-divider" aria-hidden="true"></div>
+<span class="eyebrow" style="color:var(--text-secondary)">Supporting businesses, and the people building and running them.</span>
+<h1 style="font-family:var(--font-heading);font-weight:700;font-size:clamp(2rem,3.2vw,2.75rem);line-height:1.12;letter-spacing:-0.015em;color:var(--navy);margin:14px 0 18px">Clarity, before every funding decision you make.</h1>
+<p style="font-size:0.96rem;line-height:1.65;color:var(--text-secondary);margin:0;max-width:520px">We believe accurate, reliable and qualified options should be accessible for the business you run, the customers you support, and for you personally.</p>
+<div class="hero-cta-group">
+<button type="button" class="btn btn-primary tf-router-open">Get my Compare Report</button>
+</div>
+</div>
+</div>
+</section>
+
+<!-- 2. THREE DOORS -->
+<section style="background:var(--bg-soft);padding:var(--section-y) 0">
+<div class="container-wide" style="text-align:center;margin-bottom:48px">
+<h2 class="section-title" style="margin-top:14px;max-width:760px;margin-left:auto;margin-right:auto">Three doors. One sophisticated Cashper Engine, delivering great, qualified and competitive options for each pathway.</h2>
+</div>
+<div class="tf-mobile-grid container-wide" style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;align-items:stretch">
+
+<div class="card" data-hover-card style="--channel-accent:var(--skyblue);--channel-accent-text:var(--skyblue-text);padding:32px;display:flex;flex-direction:column;gap:12px">
+<h3 style="font-family:var(--font-heading);font-weight:600;font-size:1.1rem;color:var(--navy);margin:0">Fund my business</h3>
+<span class="eyebrow tf-card-channel" style="margin-bottom:0">Business Capital</span>
+<p style="font-size:0.9rem;line-height:1.6;color:var(--text-secondary);margin:0">Compare qualified product options including term loans, credit lines, asset and invoice finance, and more. Review new funding options or improve existing product facilities.</p>
+<!-- Phase 9 Part 1: the supporting line each channel box reveals on
+     hover (Matt-Website-Brief.md sections on the large framed channel
+     boxes). Connect's line is his, verbatim. The other two are drafted
+     from the card copy already on the page and need his sign-off in
+     Part 3 - they are not approved copy yet. -->
+<p data-hover-detail style="font-size:0.86rem;line-height:1.5;color:var(--text-secondary);margin:0">Know what you qualify for before a single application goes in.</p>
+<!-- Reverted on request: back to the two explicit buttons. The Sept 14
+     sprint had asked for one button per card with the new-vs-review
+     question moved into a prompt after the click - that version is in
+     git (9477c6f) and the .tf-intent-open dialog it used can be
+     reinstated from there if this is revisited. -->
+<div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:auto;padding-top:14px">
+<a href="commercial/index.html" class="btn btn-primary btn-sm">Get new funding</a>
+<a href="commercial/compare-report/index.html" class="btn btn-outline btn-sm">Review funding I have</a>
+</div>
+</div>
+
+<div class="card" data-hover-card style="--channel-accent:var(--gold);--channel-accent-text:var(--gold-text);padding:32px;display:flex;flex-direction:column;gap:12px">
+<h3 style="font-family:var(--font-heading);font-weight:600;font-size:1.1rem;color:var(--navy);margin:0">Fund My Customers</h3>
+<span class="eyebrow tf-card-channel" style="margin-bottom:0">Trade Funding Connect</span>
+<p style="font-size:0.9rem;line-height:1.6;color:var(--text-secondary);margin:0">Open up the lending market and qualified payment options for your customers on sales quotes, invoices or late payment reminders. Non-invasive payment options to support customers paying you.</p>
+<p data-hover-detail style="font-size:0.86rem;line-height:1.5;color:var(--text-secondary);margin:0">Help your customers say yes, and get paid on the spot.</p>
+<div style="margin-top:auto;padding-top:14px">
+<a href="connect/become-a-partner/index.html" class="btn btn-primary btn-sm">Become a partner</a>
+</div>
+</div>
+
+<div class="card" data-hover-card style="--channel-accent:var(--peach);--channel-accent-text:var(--peach-text);padding:32px;display:flex;flex-direction:column;gap:12px">
+<h3 style="font-family:var(--font-heading);font-weight:600;font-size:1.1rem;color:var(--navy);margin:0">Fund Me, Personally</h3>
+<span class="eyebrow tf-card-channel" style="margin-bottom:0">Personal &amp; Property</span>
+<p style="font-size:0.9rem;line-height:1.6;color:var(--text-secondary);margin:0">Home and investment property finance, vehicles and personal funding solutions for the owners behind the ABN.</p>
+<p data-hover-detail style="font-size:0.86rem;line-height:1.5;color:var(--text-secondary);margin:0">The same clarity your business gets, for the owner behind it.</p>
+<div style="margin-top:auto;padding-top:14px">
+<a href="personal-and-property/index.html" class="btn btn-primary btn-sm">Compare my options</a>
+</div>
+</div>
+
+</div>
+</section>
+
+<!-- 3. WHY THIS MATTERS -->
+<section style="background:#fff;padding:var(--section-y) 0">
+<div class="container-wide" style="text-align:center;margin-bottom:40px">
+<span class="eyebrow" style="text-align:center">Why this matters</span>
+<h2 class="section-title" style="margin:14px 0 16px;max-width:680px;margin-left:auto;margin-right:auto">Knowing your qualified options before you proceed is good business.</h2>
+<p style="font-size:1rem;line-height:1.6;color:var(--text-secondary);max-width:560px;margin:0 auto">Comparing 70+ lenders and 100+ products, finding the best fit, checking eligibility and reviewing fine print traps, could take weeks. And guessing is likely to be an expensive shortcut.</p>
+</div>
+<div class="tf-mobile-grid container-wide" style="display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:900px">
+<div class="card" style="padding:32px">
+<h3 style="font-family:var(--font-heading);font-weight:700;font-size:1.3rem;color:var(--navy);margin:0 0 10px">100+ products</h3>
+<p style="font-size:0.92rem;line-height:1.65;color:var(--text-secondary);margin:0">across our panel of 70+ lenders, each with its own rates, security, eligibility and fine print. Too many variables to compare fairly by hand.</p>
+</div>
+<div class="card" style="padding:32px">
+<h3 style="font-family:var(--font-heading);font-weight:700;font-size:1.3rem;color:var(--navy);margin:0 0 10px">The wrong fit costs more</h3>
+<p style="font-size:0.92rem;line-height:1.65;color:var(--text-secondary);margin:0">than the 24 to 48 hours it typically takes to compare properly - in rate, in assets you didn't need to put up as security, and in time to your next round of funding.</p>
+</div>
+</div>
+</section>
+
+<!-- 4. HOW IT WORKS -->
+<section style="background:var(--bg-soft);padding:var(--section-y) 0">
+<div class="container-wide" style="text-align:center;margin-bottom:48px">
+<span class="eyebrow" style="text-align:center">How it works</span>
+<h2 class="section-title" style="margin-top:14px;max-width:640px;margin-left:auto;margin-right:auto">Cashper, our intelligent engine, reveals real, qualified options. You make the call.</h2>
+</div>
+<div class="tf-mobile-grid container-wide" style="display:grid;grid-template-columns:repeat(3,1fr);gap:32px">
+<div>
+<span class="step-num">01</span>
+<h3 style="font-family:var(--font-heading);font-weight:600;font-size:1.1rem;color:var(--navy);margin:10px 0 8px">Tell Cashper what you need</h3>
+<p style="font-size:0.88rem;line-height:1.6;color:var(--text-secondary);margin:0">New capital, a review, a customer's sale, or something personal, just provide some info about your business and see your qualified options. No obligation.</p>
+</div>
+<div>
+<span class="step-num">02</span>
+<h3 style="font-family:var(--font-heading);font-weight:600;font-size:1.1rem;color:var(--navy);margin:10px 0 8px">It qualifies you across our panel of 70+ lenders</h3>
+<p style="font-size:0.88rem;line-height:1.6;color:var(--text-secondary);margin:0">Banks, non-banks and fintechs, and private credit providers, scored on S.T.A.R. facts, not sales spin or favoured options.</p>
+</div>
+<div>
+<span class="step-num">03</span>
+<h3 style="font-family:var(--font-heading);font-weight:600;font-size:1.1rem;color:var(--navy);margin:10px 0 8px">You get a Compare Report</h3>
+<p style="font-size:0.88rem;line-height:1.6;color:var(--text-secondary);margin:0">Side by side, ranked best-fit product options, with no credit check until you choose to proceed.</p>
+</div>
+</div>
+<div class="container-wide">
+<div class="cr">
+<div class="cr-head">
+<div class="cr-head-top">
+<div>
+<span class="cr-eyebrow">Compare Report &middot; Sample</span>
+<h3 class="cr-title">Eight options, side by side.</h3>
+</div>
+<div class="cr-meta">Sample report<br>Illustrative figures</div>
+</div>
+<p class="cr-sub">An indicative comparison of matched lenders, set out on the S.T.A.R. framework: Security, Term, Amount and Rate. There is no overall score and no recommended badge. Each lender leads where it genuinely leads, so you can weigh the trade-offs yourself.</p>
+<div class="cr-facts">
+<div class="cr-fact"><div class="cr-fact-k">Prepared for</div><div class="cr-fact-v">Example Business Pty Ltd</div></div>
+<div class="cr-fact"><div class="cr-fact-k">Facility types</div><div class="cr-fact-v">Line of credit &amp; term loan</div></div>
+<div class="cr-fact"><div class="cr-fact-k">Options compared</div><div class="cr-fact-v">8 matched &middot; 1 not eligible</div></div>
+<div class="cr-fact"><div class="cr-fact-k">Limits available</div><div class="cr-fact-v">$200,000 to $450,000</div></div>
+</div>
+</div>
+
+<div class="cr-body">
+<div class="cr-sec-head">
+<span class="cr-kicker">01 &middot; The headline</span>
+<div class="cr-rule"></div>
+<h3>S.T.A.R. Highlights</h3>
+<p>Because rate is not the only consideration. One winner per dimension, drawn from every option on the panel. The same lender can lead more than one.</p>
+</div>
+<div class="cr-wgrid">
+<div class="cr-wcard" style="--cr-accent:var(--star-s)">
+<div class="cr-wcard-top"><span class="cr-chip cr-chip-lg cr-chip-s">S</span><span class="cr-wcard-kicker">Lightest security</span></div>
+<div class="cr-wcard-value">Guarantee only</div>
+<div class="cr-wcard-lender">Lender A</div>
+<p class="cr-wcard-note">Directors guarantee and nothing further. No caveat and no PPSR at the $300,000 limit offered.</p>
+</div>
+<div class="cr-wcard" style="--cr-accent:var(--star-t)">
+<div class="cr-wcard-top"><span class="cr-chip cr-chip-lg cr-chip-t">T</span><span class="cr-wcard-kicker">Longest term</span></div>
+<div class="cr-wcard-value">48 months</div>
+<div class="cr-wcard-lender">Lender B</div>
+<p class="cr-wcard-note">Longest facility life on the panel, at double the shortest line of credit term.</p>
+</div>
+<div class="cr-wcard" style="--cr-accent:var(--star-a)">
+<div class="cr-wcard-top"><span class="cr-chip cr-chip-lg cr-chip-a">A</span><span class="cr-wcard-kicker">Largest limit</span></div>
+<div class="cr-wcard-value">$450,000</div>
+<div class="cr-wcard-lender">Lender B</div>
+<p class="cr-wcard-note">Largest line of credit available. A term loan lender matches the figure.</p>
+</div>
+<div class="cr-wcard" style="--cr-accent:var(--star-r)">
+<div class="cr-wcard-top"><span class="cr-chip cr-chip-lg cr-chip-r">R</span><span class="cr-wcard-kicker">Lowest rate</span></div>
+<div class="cr-wcard-value">16.10% APR</div>
+<div class="cr-wcard-lender">Lender C</div>
+<p class="cr-wcard-note">Lowest cost on drawn funds across both panels, with no establishment fee.</p>
+</div>
+</div>
+<div class="cr-legend">
+<div class="cr-legend-i"><span class="cr-chip cr-chip-s">S</span><span><b>Security</b> &middot; what the lender takes</span></div>
+<div class="cr-legend-i"><span class="cr-chip cr-chip-t">T</span><span><b>Term</b> &middot; how long you commit</span></div>
+<div class="cr-legend-i"><span class="cr-chip cr-chip-a">A</span><span><b>Amount</b> &middot; the limit available</span></div>
+<div class="cr-legend-i"><span class="cr-chip cr-chip-r">R</span><span><b>Rate</b> &middot; cost of the funds</span></div>
+</div>
+
+<div class="cr-tbl-wrap">
+<table class="cr-tbl">
+<caption class="cr-sr">Sample Compare Report: line of credit options, with lenders de-identified and figures illustrative.</caption>
+<colgroup>
+<col class="cr-col-lead" style="width:9%"><col style="width:17%"><col style="width:13%"><col style="width:14%"><col style="width:11%"><col class="cr-col-sec" style="width:36%">
+</colgroup>
+<thead><tr>
+<th class="cr-th-lead" scope="col">Leads</th>
+<th class="cr-th-left" scope="col">Lender</th>
+<th scope="col">Limit</th>
+<th scope="col">Term</th>
+<th scope="col">APR</th>
+<th class="cr-th-left cr-th-sec" scope="col">Security</th>
+</tr></thead>
+<tbody>
+<tr>
+<td class="cr-starcell"><span class="cr-chip cr-chip-r">R</span></td>
+<td class="cr-lender">Lender C</td>
+<td>$250,000</td>
+<td>36 months</td>
+<td class="cr-win">16.10% <span class="cr-chip cr-chip-r">R</span></td>
+<td class="cr-sectd">Directors guarantee &middot; caveat above $200,000 &middot; PPSR above $300,000</td>
+</tr>
+<tr>
+<td class="cr-starcell"><span class="cr-chip cr-chip-s">S</span></td>
+<td class="cr-lender">Lender A</td>
+<td>$300,000</td>
+<td>24 months</td>
+<td class="cr-price">17.80%</td>
+<td class="cr-sectd cr-win">Directors guarantee &middot; caveat above $300,000 &middot; no PPSR</td>
+</tr>
+<tr>
+<td class="cr-starcell"><span class="cr-chip cr-chip-t">T</span><span class="cr-chip cr-chip-a">A</span></td>
+<td class="cr-lender">Lender B</td>
+<td class="cr-win">$450,000 <span class="cr-chip cr-chip-a">A</span></td>
+<td class="cr-win">48 months <span class="cr-chip cr-chip-t">T</span></td>
+<td class="cr-price">19.60%</td>
+<td class="cr-sectd">Directors guarantee &middot; caveat above $450,000 &middot; PPSR above $300,000</td>
+</tr>
+<tr>
+<td class="cr-starcell"></td>
+<td class="cr-lender">Lender D</td>
+<td>$200,000</td>
+<td>Up to 36 months</td>
+<td class="cr-price">35.90%</td>
+<td class="cr-sectd">Directors guarantee &middot; property security above $500,000 &middot; PPSR above $500,000</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="cr-foot">Sample report. Lenders are de-identified and all figures are illustrative. A live Compare Report is indicative only, is not an offer or an approval of credit, and is subject to full assessment against each lender's criteria.</div>
+</div>
+</div>
+</section>
+
+<!-- 5. TRUST -->
+<section style="background:#fff;padding:var(--section-y) 0;text-align:center">
+<div class="container-prose">
+<p style="font-family:var(--font-heading);font-weight:600;font-size:1.15rem;line-height:1.5;color:var(--navy);margin:0 0 28px">We work with sophisticated business lenders, not a list of everyone who'll take your application.</p>
+<div class="trust-bar" style="justify-content:center;margin-bottom:44px">
+<span>ACL 387856</span><span class="dot-sep">&middot;</span>
+<span>AFCA Member</span><span class="dot-sep">&middot;</span>
+<span>CAFBA Member</span><span class="dot-sep">&middot;</span>
+<span>FinTech Australia Member</span>
+</div>
+<div style="border:1px dashed var(--border-neutral);border-radius:var(--radius-lg);padding:48px 32px;color:var(--text-secondary);font-size:0.9rem">Client testimonial - to be supplied.</div>
+</div>
+</section>
+
+<!-- 6. FAQ + FINAL CTA -->
+<section style="background:var(--bg-soft);padding:var(--section-y) 0">
+<div class="container-prose">
+<span class="eyebrow" style="text-align:center">Common questions</span>
+<h2 class="section-title" style="text-align:center;margin:14px 0 8px">Before you apply.</h2>
+<div style="margin-top:24px">
+<div class="faq-item" data-accordion-item>
+<button class="faq-btn" data-accordion-toggle="home-faq" aria-expanded="false" style="width:100%;background:none;border:none;cursor:pointer;text-align:left;padding:18px 0;display:flex;align-items:center;justify-content:space-between;gap:16px;border-bottom:1px solid var(--border)"><span style="font-family:var(--font-heading);font-weight:600;font-size:1rem;color:var(--navy)">What is the cost of comparing options for my business?</span></button>
+<p data-accordion-panel hidden style="padding:0 0 20px;font-size:0.92rem;line-height:1.65;color:var(--text-secondary)">Getting your Compare Report is free, with no credit check, and no obligation to proceed if we don't find you a great option.</p>
+</div>
+<div class="faq-item" data-accordion-item>
+<button class="faq-btn" data-accordion-toggle="home-faq" aria-expanded="false" style="width:100%;background:none;border:none;cursor:pointer;text-align:left;padding:18px 0;display:flex;align-items:center;justify-content:space-between;gap:16px;border-bottom:1px solid var(--border)"><span style="font-family:var(--font-heading);font-weight:600;font-size:1rem;color:var(--navy)">Is this only for new funding requirements, or can Cashper review funding I already have?</span></button>
+<p data-accordion-panel hidden style="padding:0 0 20px;font-size:0.92rem;line-height:1.65;color:var(--text-secondary)">Both. Tell Cashper you want a facility review, and it checks your existing rate, security and term against 100+ products we qualify and review.</p>
+</div>
+<div class="faq-item" data-accordion-item>
+<button class="faq-btn" data-accordion-toggle="home-faq" aria-expanded="false" style="width:100%;background:none;border:none;cursor:pointer;text-align:left;padding:18px 0;display:flex;align-items:center;justify-content:space-between;gap:16px;border-bottom:1px solid var(--border)"><span style="font-family:var(--font-heading);font-weight:600;font-size:1rem;color:var(--navy)">How does Trade Funding Connect work for my customers?</span></button>
+<p data-accordion-panel hidden style="padding:0 0 20px;font-size:0.92rem;line-height:1.65;color:var(--text-secondary)">Connect allows partners to place a QR code on sales proposals, quotes and invoices, and their own website or forms. Your customer scans the code, enters some information, and sees qualified ways to pay, helping more orders and invoices proceed, at no cost to your business.</p>
+</div>
+<div class="faq-item" data-accordion-item>
+<button class="faq-btn" data-accordion-toggle="home-faq" aria-expanded="false" style="width:100%;background:none;border:none;cursor:pointer;text-align:left;padding:18px 0;display:flex;align-items:center;justify-content:space-between;gap:16px;border-bottom:1px solid var(--border)"><span style="font-family:var(--font-heading);font-weight:600;font-size:1rem;color:var(--navy)">Is Trade Funding regulated?</span></button>
+<p data-accordion-panel hidden style="padding:0 0 20px;font-size:0.92rem;line-height:1.65;color:var(--text-secondary)">Yes - we're a licensed credit intermediary (ACL 387856) and an AFCA member.</p>
+</div>
+</div>
+<div style="text-align:center;margin-top:56px">
+<a href="commercial/compare-report/index.html" class="btn btn-primary" style="padding:16px 32px;margin-bottom:14px">Get my Compare Report &rarr;</a>
+<div style="font-size:0.86rem;color:var(--text-secondary);margin-bottom:6px">No credit score impact &middot; No commitment &middot; Typically ready in 24 hours</div>
+<div style="font-size:0.86rem;color:var(--text-secondary)">Or call <a href="tel:1300161641" style="color:var(--navy);font-weight:600">1300 161 641</a></div>
+</div>
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer class="tf-footer">
+<div class="container-wide">
+<div class="tf-footer-top">
+<div>
+<img loading="lazy" decoding="async" width="844" height="140" src="assets/img/logo-white.png" alt="Trade Funding" style="height:20px;width:auto;display:block;margin-bottom:16px;">
+<p class="tf-footer-blurb">Know before you apply. We compare 100+ products across our panel of 70+ lenders, lay out your qualified options, then support you through to settlement. Free, with no credit score impact.</p>
+<div class="tf-footer-contact">
+<a href="tel:1300161641">1300 161 641</a>
+<a href="mailto:support@tradefunding.com.au">support@tradefunding.com.au</a>
+<span>Level 8, 387 George Street, Sydney, NSW, 2000</span>
+</div>
+<div class="tf-footer-badges">
+<span class="tf-footer-badge">ACL 387856</span>
+<span class="tf-footer-badge">AFCA Member</span>
+<span class="tf-footer-badge">CAFBA</span>
+<span class="tf-footer-badge">FinTech Australia</span>
+</div>
+</div>
+<div class="tf-footer-cols">
+<div class="tf-footer-col">
+<div class="tf-footer-col-heading">Channels</div>
+<a href="home-shared/how-it-works/index.html">How Cashper Works</a>
+<a href="commercial/index.html">Business Capital</a>
+<a href="connect/index.html">Fund Your Customers</a>
+<a href="personal-and-property/index.html">Personal &amp; Property</a>
+<a href="home-shared/resources/index.html">Resources</a>
+</div>
+<div class="tf-footer-col">
+<div class="tf-footer-col-heading">Company</div>
+<a href="home-shared/about/index.html">About Us</a>
+<a href="home-shared/broker-portal/index.html">Broker Portal</a>
+<a href="connect/become-a-partner/index.html">Become a Partner</a>
+<a href="home-shared/contact/index.html">Contact</a>
+<a href="home-shared/apply/index.html">Get Started</a>
+</div>
+<div class="tf-footer-col">
+<div class="tf-footer-col-heading">Legal</div>
+<a href="home-shared/credit-guide/index.html">Credit Guide</a>
+<a href="home-shared/privacy/index.html">Privacy Policy</a>
+<a href="home-shared/terms/index.html">Terms &amp; Conditions</a>
+</div>
+</div>
+</div>
+<div class="tf-footer-legal">
+<p>Credit products are provided by third-party lenders and credit offers are subject to a full credit review. Read our <a href="home-shared/credit-guide/index.html" style="color:rgba(255,255,255,0.85)">Credit Guide</a> | <a href="home-shared/terms/index.html" style="color:rgba(255,255,255,0.85)">Terms &amp; Conditions</a> | ACL 387856</p>
+</div>
+<div class="tf-footer-bottom">
+<span>&copy; 2026 Trade Funding Pty Ltd. All rights reserved.</span>
+</div>
+</div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+
+</body>
+</html>

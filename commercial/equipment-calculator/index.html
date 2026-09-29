@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/png" sizes="32x32" href="../../assets/img/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="../../assets/img/favicon-192.png">
+<link rel="apple-touch-icon" href="../../assets/img/apple-touch-icon.png">
+<title>Equipment Finance Calculator: Lease vs Buy - Trade Funding</title>
+<meta name="description" content="Compare a finance lease against an equipment loan. Adjust the asset cost, rate and term to see monthly payments and total cost side by side.">
+<link rel="canonical" href="https://tradefunding.com.au/commercial/equipment-calculator/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Trade Funding">
+<meta property="og:locale" content="en_AU">
+<meta property="og:title" content="Equipment Finance Calculator: Lease vs Buy - Trade Funding">
+<meta property="og:description" content="Compare a finance lease against an equipment loan. Adjust the asset cost, rate and term to see monthly payments and total cost side by side.">
+<meta property="og:url" content="https://tradefunding.com.au/commercial/equipment-calculator/">
+<meta property="og:image" content="https://tradefunding.com.au/assets/img/og-default.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Trade Funding. Clarity, before every funding decision.">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Trade Funding",
+  "url": "https://tradefunding.com.au/",
+  "logo": "https://tradefunding.com.au/assets/img/logo-navy.png",
+  "telephone": "+61-1300-161-641",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Level 8, 387 George Street",
+    "addressLocality": "Sydney",
+    "addressRegion": "NSW",
+    "postalCode": "2000",
+    "addressCountry": "AU"
+  },
+  "sameAs": []
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/css/tokens.css">
+<link rel="stylesheet" href="../../assets/css/base.css">
+<link rel="stylesheet" href="../../assets/css/components.css">
+<style>
+input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:6px;border-radius:3px;background:var(--bg-soft);outline:none;cursor:pointer}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:18px;height:18px;border-radius:50%;background:var(--skyblue);border:3px solid #fff;box-shadow:0 1px 4px rgba(0,0,0,0.3);cursor:pointer}
+input[type=range]::-moz-range-thumb{width:18px;height:18px;border-radius:50%;background:var(--skyblue);border:3px solid #fff;cursor:pointer}
+.ec-field-label{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:10px}
+.ec-field-label span:first-child{font-weight:500;font-size:0.95rem;color:var(--navy)}
+.ec-field-label span:last-child{font-weight:700;font-size:1.3rem;color:var(--skyblue-text)}
+.ec-range-scale{display:flex;justify-content:space-between;margin-top:6px;font-size:0.72rem;color:var(--ink-400)}
+.ec-text-input{margin-top:10px;width:100%;box-sizing:border-box;border:1px solid var(--border-neutral);border-radius:6px;padding:10px 12px;font-family:var(--font-heading);font-weight:500;font-size:0.9rem;color:var(--navy)}
+.ec-output-card{background:var(--navy);border-radius:var(--radius-sm);padding:32px;color:#fff}
+.ec-output-line{margin-bottom:16px}
+.ec-output-eyebrow{font-size:11px;letter-spacing:0.1em;color:rgba(255,255,255,0.6);margin-bottom:4px}
+.ec-output-value{font-weight:700;color:var(--skyblue-text)}
+.ec-hr{height:1px;background:rgba(255,255,255,0.15);margin:16px 0}
+.ec-compare-card{border-radius:var(--radius-sm);padding:32px;border:1px solid var(--border-neutral)}
+.ec-compare-card--lease{background:var(--navy);color:#fff;border-color:var(--navy)}
+.ec-compare-card--loan{background:#fff;color:var(--navy)}
+.ec-compare-badge{display:inline-block;font-family:var(--font-heading);font-size:0.68rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;padding:5px 12px;border-radius:50px;margin-bottom:18px}
+.ec-compare-card--lease .ec-compare-badge{background:rgba(84,180,246,0.2);color:var(--skyblue)}
+.ec-compare-card--loan .ec-compare-badge{background:var(--bg-soft);color:var(--navy)}
+.ec-compare-title{font-weight:600;font-size:1.15rem;margin-bottom:22px}
+.ec-compare-row{display:flex;justify-content:space-between;align-items:center;padding:13px 0;border-bottom:1px solid rgba(255,255,255,0.12)}
+.ec-compare-card--loan .ec-compare-row{border-bottom:1px solid var(--border-neutral)}
+.ec-compare-row:last-of-type{border-bottom:none}
+.ec-compare-label{font-weight:500;font-size:0.8rem;text-transform:uppercase;letter-spacing:0.04em;color:rgba(255,255,255,0.6)}
+.ec-compare-card--loan .ec-compare-label{color:var(--text-secondary)}
+.ec-compare-value{font-weight:700;font-size:1.2rem;color:var(--skyblue-text)}
+.ec-compare-card--loan .ec-compare-value{color:var(--navy)}
+.ec-compare-note{font-size:0.8rem;margin-top:18px;padding-top:16px;border-top:1px solid rgba(255,255,255,0.12);line-height:1.6;color:rgba(255,255,255,0.6)}
+.ec-compare-card--loan .ec-compare-note{border-top-color:var(--border-neutral);color:var(--text-secondary)}
+.ec-verdict{background:var(--navy);border-radius:var(--radius-sm);padding:28px 32px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.ec-verdict-eyebrow{font-family:var(--font-heading);font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--skyblue);margin-bottom:6px}
+.ec-verdict-title{font-weight:700;font-size:1.2rem;color:#fff}
+.ec-verdict-savings{font-size:0.88rem;color:rgba(255,255,255,0.7);margin-top:4px}
+.ec-star-card{border-top:2px solid var(--skyblue);padding:24px 20px 0}
+.ec-star-badge{width:32px;height:32px;border:1.5px solid var(--navy);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.9rem;margin-bottom:16px;color:var(--navy)}
+.ec-tool-card{background:#fff;border:1px solid var(--border-neutral);border-radius:var(--radius-sm);padding:28px}
+details.faq{border-bottom:1px solid var(--border-neutral);padding:20px 0;cursor:pointer}
+details.faq summary{list-style:none;font-weight:500;font-size:1rem;color:var(--navy)}
+details.faq summary::-webkit-details-marker{display:none}
+details.faq[open] summary{font-weight:600}
+details.faq p{font-size:0.9rem;color:var(--text-secondary);line-height:1.65;margin-top:12px}
+@media (max-width:900px){.ec-grid-2{grid-template-columns:1fr!important}.ec-grid-3{grid-template-columns:1fr!important}.ec-grid-4{grid-template-columns:repeat(2,1fr)!important}}
+</style>
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="channel-commercial">
+<a class="tf-skip-link" href="#main">Skip to content</a>
+
+<!-- NAVBAR -->
+<header class="tf-header">
+<nav class="tf-nav" aria-label="Primary">
+<div class="tf-nav-inner">
+<a href="../../index.html" class="tf-nav-logo"><img width="1000" height="160" src="../../assets/img/logo-navy.png" alt="Trade Funding"></a>
+<div class="tf-nav-links" style="justify-content:flex-start;width:auto">
+<div class="tf-nav-item">
+<a href="../../home-shared/how-it-works/index.html" class="tf-nav-link" aria-haspopup="true" aria-expanded="false">Cashper Compare Engine<span class="tf-caret" aria-hidden="true"></span></a>
+<div class="tf-mega-panel tf-mega-panel-wide">
+<div class="tf-mega-wide-inner">
+<a href="../../home-shared/how-it-works/index.html" class="tf-mega-wide-lead">How it works<span class="tf-mega-arrow" aria-hidden="true">&rarr;</span></a>
+<div class="tf-mega-wide-grid tf-mega-wide-grid-3">
+<div class="tf-mega-wide-step-cell">
+<span class="tf-mega-wide-step-num">01</span>
+<span class="tf-mega-wide-step-title">Tell Cashper what you need</span>
+<div class="tf-mega-wide-sub">New capital, a facility review, a customer's sale, or something personal.</div>
+</div>
+<div class="tf-mega-wide-step-cell">
+<span class="tf-mega-wide-step-num">02</span>
+<span class="tf-mega-wide-step-title">It qualifies you across our panel of 70+ lenders</span>
+<div class="tf-mega-wide-sub">Banks, non-banks and fintechs, and private credit providers, scored on S.T.A.R. facts.</div>
+</div>
+<div class="tf-mega-wide-step-cell">
+<span class="tf-mega-wide-step-num">03</span>
+<span class="tf-mega-wide-step-title">You get a Compare Report</span>
+<div class="tf-mega-wide-sub">Side by side, ranked best-fit options, with no credit check until you choose to proceed.</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="tf-nav-item">
+<button type="button" class="tf-nav-link" aria-haspopup="true" aria-expanded="false">Funding For<span class="tf-caret" aria-hidden="true"></span></button>
+<div class="tf-mega-panel tf-mega-panel-wide">
+<div class="tf-mega-wide-inner">
+<button type="button" class="tf-mega-wide-lead tf-router-open" style="background:none;cursor:pointer;font-family:inherit">Different Funding Support Options for Businesses<span class="tf-mega-arrow" aria-hidden="true">&rarr;</span></button>
+<div class="tf-mega-wide-grid tf-mega-wide-grid-3">
+<div style="border-top:3px solid var(--skyblue);padding-top:12px">
+<a href="../../commercial/index.html" class="tf-mega-wide-link tf-mega-wide-split" style="font-weight:700;font-size:0.92rem"><span class="tf-mega-wide-split-lead">Your Business</span><span class="tf-mega-wide-arrow-slot"><span class="tf-mega-arrow" aria-hidden="true">&rarr;</span></span><span class="tf-mega-wide-split-sub">Commercial Funding</span></a>
+<div class="tf-mega-wide-sub">Compare qualified options to establish new funding, or replace what you have.</div>
+</div>
+<div style="border-top:3px solid var(--gold);padding-top:12px">
+<a href="../../connect/index.html" class="tf-mega-wide-link tf-mega-wide-split" style="font-weight:700;font-size:0.92rem"><span class="tf-mega-wide-split-lead">Your Customers</span><span class="tf-mega-wide-arrow-slot"><span class="tf-mega-arrow" aria-hidden="true">&rarr;</span></span><span class="tf-mega-wide-split-sub">Trade Funding Connect</span></a>
+<div class="tf-mega-wide-sub">A free QR code that gives your customers qualified payment options at the point of sale.</div>
+</div>
+<div style="border-top:3px solid var(--peach);padding-top:12px">
+<a href="../../personal-and-property/index.html" class="tf-mega-wide-link tf-mega-wide-split" style="font-weight:700;font-size:0.92rem"><span class="tf-mega-wide-split-lead">You Personally</span><span class="tf-mega-wide-arrow-slot"><span class="tf-mega-arrow" aria-hidden="true">&rarr;</span></span><span class="tf-mega-wide-split-sub">Personal &amp; Property Funding</span></a>
+<div class="tf-mega-wide-sub">Personal funding, tailored to business owners and how they actually earn.</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="tf-nav-item">
+<button type="button" class="tf-nav-link" aria-haspopup="true" aria-expanded="false">Products<span class="tf-caret" aria-hidden="true"></span></button>
+<div class="tf-mega-panel tf-mega-panel-wide">
+<div class="tf-mega-wide-inner">
+<a href="../../commercial/products/index.html" class="tf-mega-wide-lead">Every Business Capital Product<span class="tf-mega-arrow" aria-hidden="true">&rarr;</span></a>
+<div class="tf-mega-wide-grid tf-mega-wide-grid-3">
+<div class="tf-mega-wide-col">
+<span class="tf-mega-wide-group-label">Loans &amp; Credit</span>
+<div class="tf-mega-wide-links">
+<a href="../../commercial/business-term-loans/index.html" class="tf-mega-wide-link">Business Term Loans<span class="tf-mega-arrow" aria-hidden="true">&rarr;</span></a>
+<a href="../../commercial/business-line-of-credit/index.html" class="tf-mega-wide-link">Business Line of Credit<span class="tf-mega-arrow" aria-hidden="true">&rarr;</span></a>
+<a href="../../commercial/overdraft/index.html" class="tf-mega-wide-link">Business Overdraft<span class="tf-mega-arrow" aria-hidden="true">&rarr;</span></a>
+<a href="../../commercial/charge-card/index.html" class="tf-mega-wide-link">Business Charge Card<span class="tf-mega-arrow" aria-hidden="true">&rarr;</span></a>
+</div>
+</div>
+<div class="tf-mega-wide-col">
+<span class="tf-mega-wide-group-label">Asset &amp; Trade</span>
+<div class="tf-mega-wide-links">
+<a href="../../commercial/chattel-mortgage/index.html" class="tf-mega-wide-link">Chattel Mortgage<span class="tf-mega-arrow" aria-hidden="true">&rarr;</span></a>
+<a href="../../commercial/finance-lease/index.html" class="tf-mega-wide-link">Finance Lease<span class="tf-mega-arrow" aria-hidden="true">&rarr;</span></a>
+<a href="../../commercial/operating-lease/index.html" class="tf-mega-wide-link">Operating Lease<span class="tf-mega-arrow" aria-hidden="true">&rarr;</span></a>
+<a href="../../commercial/trade-finance/index.html" class="tf-mega-wide-link">Trade Finance<span class="tf-mega-arrow" aria-hidden="true">&rarr;</span></a>
+<a href="../../commercial/export-finance/index.html" class="tf-mega-wide-link">Export Finance<span class="tf-mega-arrow" aria-hidden="true">&rarr;</span></a>
+</div>
+</div>
+<div class="tf-mega-wide-col">
+<span class="tf-mega-wide-group-label">Cash Flow &amp; Growth</span>
+<div class="tf-mega-wide-links">
+<a href="../../commercial/invoice-finance/index.html" class="tf-mega-wide-link">Invoice Finance<span class="tf-mega-arrow" aria-hidden="true">&rarr;</span></a>
+<a href="../../commercial/fund-an-invoice/index.html" class="tf-mega-wide-link">Fund an Invoice<span class="tf-mega-arrow" aria-hidden="true">&rarr;</span></a>
+<a href="../../commercial/merchant-cash-advance/index.html" class="tf-mega-wide-link">Merchant Cash Advance<span class="tf-mega-arrow" aria-hidden="true">&rarr;</span></a>
+<a href="../../commercial/supply-chain-funding/index.html" class="tf-mega-wide-link">Supply Chain Funding<span class="tf-mega-arrow" aria-hidden="true">&rarr;</span></a>
+<a href="../../commercial/r-and-d-funding/index.html" class="tf-mega-wide-link">R&amp;D Tax Incentive Funding<span class="tf-mega-arrow" aria-hidden="true">&rarr;</span></a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="tf-nav-item">
+<button type="button" class="tf-nav-link" aria-haspopup="true" aria-expanded="false">Compare Tools<span class="tf-caret" aria-hidden="true"></span></button>
+<div class="tf-mega-panel tf-mega-panel-wide">
+<div class="tf-mega-wide-inner">
+<a href="../../commercial/compare-report/index.html" class="tf-mega-wide-lead">Compare your options<span class="tf-mega-arrow" aria-hidden="true">&rarr;</span></a>
+<div class="tf-mega-wide-grid tf-mega-wide-grid-compact">
+<div class="tf-mega-wide-col">
+<span class="tf-mega-wide-group-label">Compare</span>
+<div class="tf-mega-wide-links">
+<a href="../../commercial/compare-report/index.html" class="tf-mega-wide-link">Compare Report<span class="tf-mega-arrow" aria-hidden="true">&rarr;</span></a>
+<a href="../../commercial/compare-report/index.html#business-overview" class="tf-mega-wide-link">Business Overview<span class="tf-mega-arrow" aria-hidden="true">&rarr;</span></a>
+<a href="../../home-shared/lender-panel/index.html" class="tf-mega-wide-link">Lender Panel<span class="tf-mega-arrow" aria-hidden="true">&rarr;</span></a>
+</div>
+</div>
+<div class="tf-mega-wide-col">
+<span class="tf-mega-wide-group-label">Calculators</span>
+<div class="tf-mega-wide-links">
+<a href="../../commercial/business-loan-calculator/index.html" class="tf-mega-wide-link">Business Loan Calculator<span class="tf-mega-arrow" aria-hidden="true">&rarr;</span></a>
+<a href="../../commercial/equipment-calculator/index.html" class="tf-mega-wide-link">Equipment Finance Calculator<span class="tf-mega-arrow" aria-hidden="true">&rarr;</span></a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="tf-nav-item">
+<button type="button" class="tf-nav-link" aria-haspopup="true" aria-expanded="false">About<span class="tf-caret" aria-hidden="true"></span></button>
+<div class="tf-mega-panel tf-mega-panel-wide">
+<div class="tf-mega-wide-inner">
+<a href="../../home-shared/about/index.html" class="tf-mega-wide-lead">About Trade Funding<span class="tf-mega-arrow" aria-hidden="true">&rarr;</span></a>
+<div class="tf-mega-wide-grid tf-mega-wide-grid-compact">
+<div class="tf-mega-wide-col">
+<span class="tf-mega-wide-group-label">Company</span>
+<div class="tf-mega-wide-links">
+<a href="../../home-shared/about/index.html" class="tf-mega-wide-link">About Us<span class="tf-mega-arrow" aria-hidden="true">&rarr;</span></a>
+<a href="../../home-shared/partner-with-us/index.html" class="tf-mega-wide-link">Partner With Us<span class="tf-mega-arrow" aria-hidden="true">&rarr;</span></a>
+<a href="../../home-shared/careers/index.html" class="tf-mega-wide-link">A Trade Funding Career<span class="tf-mega-arrow" aria-hidden="true">&rarr;</span></a>
+<a href="../../home-shared/resources/index.html" class="tf-mega-wide-link">Resources<span class="tf-mega-arrow" aria-hidden="true">&rarr;</span></a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="tf-nav-cta-group">
+<a href="../../home-shared/contact/index.html" class="tf-nav-contact-link">Get In Contact</a>
+<a href="../../commercial/compare-report/index.html" class="btn btn-primary tf-nav-cta">Get my Compare Report</a>
+</div>
+</div>
+</nav>
+</header>
+<div id="main" tabindex="-1"></div>
+
+<!-- HERO + CALCULATOR -->
+<section style="background:var(--bg-soft);padding:56px 0 72px">
+<div class="container">
+<span class="eyebrow">Lease vs Buy</span>
+<h1 class="section-title" style="margin:14px 0">Equipment Finance Calculator</h1>
+<p style="font-size:1rem;color:var(--text-secondary);margin-bottom:40px;max-width:640px">Compare the total cost of a finance lease against an equipment loan. Adjust the cost, rate and term. Payments update live.</p>
+
+<div class="ec-grid-2" style="display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start">
+
+<div class="card" style="padding:32px">
+<h2 style="font-size:1.25rem;font-weight:600;margin-bottom:28px;color:var(--navy)">Equipment &amp; Finance Details</h2>
+
+<div style="margin-bottom:28px">
+<div class="ec-field-label"><span>Equipment cost</span><span id="ec-cost-display">$100,000</span></div>
+<input type="range" aria-label="Equipment cost" id="ec-cost-slider" min="5000" max="2000000" step="5000" value="100000">
+<div class="ec-range-scale"><span>$5k</span><span>$2M</span></div>
+<input type="text" id="ec-cost-text" aria-label="Equipment cost" class="ec-text-input" value="$100,000">
+</div>
+
+<div style="margin-bottom:28px">
+<div class="ec-field-label"><span>Finance Lease rate (p.a.)</span><span id="ec-lease-rate-display">8.0%</span></div>
+<input type="range" aria-label="Finance Lease rate (p.a.)" id="ec-lease-rate-slider" min="5" max="15" step="0.1" value="8">
+<div class="ec-range-scale"><span>5.0%</span><span>15.0%</span></div>
+<input type="text" id="ec-lease-rate-text" aria-label="Lease rate" class="ec-text-input" value="8.0%">
+</div>
+
+<div style="margin-bottom:28px">
+<div class="ec-field-label"><span>Equipment Loan rate (p.a.)</span><span id="ec-loan-rate-display">10.0%</span></div>
+<input type="range" aria-label="Equipment Loan rate (p.a.)" id="ec-loan-rate-slider" min="7" max="20" step="0.1" value="10">
+<div class="ec-range-scale"><span>7.0%</span><span>20.0%</span></div>
+<input type="text" id="ec-loan-rate-text" aria-label="Loan rate" class="ec-text-input" value="10.0%">
+</div>
+
+<div>
+<span style="font-weight:500;font-size:0.95rem;color:var(--navy);display:block;margin-bottom:10px">Finance term</span>
+<select id="ec-term-select" aria-label="Term" class="ec-text-input" style="margin-top:0">
+<option value="12">12 months (1 year)</option>
+<option value="24">24 months (2 years)</option>
+<option value="36" selected>36 months (3 years)</option>
+<option value="48">48 months (4 years)</option>
+<option value="60">60 months (5 years)</option>
+</select>
+</div>
+</div>
+
+<div class="ec-output-card">
+<h2 style="font-size:1.25rem;font-weight:600;margin-bottom:24px;color:#fff">Monthly Payment Comparison</h2>
+<div class="ec-output-line"><div class="ec-output-eyebrow">FINANCE LEASE</div><div class="ec-output-value" style="font-size:2rem" id="ec-lease-monthly">$2,820</div></div>
+<div class="ec-hr"></div>
+<div class="ec-output-line"><div class="ec-output-eyebrow">EQUIPMENT LOAN</div><div class="ec-output-value" style="font-size:2rem" id="ec-loan-monthly">$3,227</div></div>
+<div class="ec-hr" style="margin:20px 0"></div>
+<div style="display:flex;justify-content:space-between;margin-bottom:10px"><span style="font-size:1rem;font-weight:500;color:rgba(255,255,255,0.85)">RESIDUAL (10%)</span><span style="font-size:1rem;font-weight:500" id="ec-residual">$10,000</span></div>
+<div style="display:flex;justify-content:space-between;margin-bottom:28px"><span style="font-size:1rem;font-weight:500;color:rgba(255,255,255,0.85)">FINANCE TERM</span><span style="font-size:1rem;font-weight:500" id="ec-term-label">36 months (3 years)</span></div>
+<a href="../../home-shared/apply/index.html?purpose=purchase_equipment" class="btn btn-primary" style="width:100%;padding:14px;justify-content:center">Get my free Compare Report &rarr;</a>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- FULL COMPARISON -->
+<section style="background:#fff;padding:72px 0">
+<div class="container">
+<h2 class="section-title" style="margin-bottom:32px">Lease the equipment, or buy it outright?</h2>
+<div class="ec-grid-2" style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:24px">
+
+<div class="ec-compare-card ec-compare-card--lease">
+<span class="ec-compare-badge">Finance Lease</span>
+<h3 class="ec-compare-title">Lease the Equipment</h3>
+<div class="ec-compare-row"><span class="ec-compare-label">Monthly Payment</span><span class="ec-compare-value" id="ec-lease-monthly-2">$2,820</span></div>
+<div class="ec-compare-row"><span class="ec-compare-label">Total Payments</span><span class="ec-compare-value" id="ec-lease-total-payments">$101,531</span></div>
+<div class="ec-compare-row"><span class="ec-compare-label">Residual (10%)</span><span class="ec-compare-value" id="ec-lease-residual">$10,000</span></div>
+<div class="ec-compare-row"><span class="ec-compare-label">Total Cost</span><span class="ec-compare-value" id="ec-lease-total-cost">$111,531</span></div>
+<p class="ec-compare-note">You pay a 10% residual (balloon) at the end of the term to own the asset. Lower monthly payments during the lease.</p>
+</div>
+
+<div class="ec-compare-card ec-compare-card--loan">
+<span class="ec-compare-badge">Equipment Loan</span>
+<h3 class="ec-compare-title">Buy the Equipment</h3>
+<div class="ec-compare-row"><span class="ec-compare-label">Monthly Payment</span><span class="ec-compare-value" id="ec-loan-monthly-2">$3,227</span></div>
+<div class="ec-compare-row"><span class="ec-compare-label">Total Payments</span><span class="ec-compare-value" id="ec-loan-total-payments">$116,174</span></div>
+<div class="ec-compare-row"><span class="ec-compare-label">Residual</span><span class="ec-compare-value">$0</span></div>
+<div class="ec-compare-row"><span class="ec-compare-label">Total Cost</span><span class="ec-compare-value" id="ec-loan-total-cost">$116,174</span></div>
+<p class="ec-compare-note">You own the asset from day one. The full principal is repaid over the term with no balloon at the end.</p>
+</div>
+
+</div>
+
+<div class="ec-verdict">
+<div>
+<div class="ec-verdict-eyebrow">On these numbers</div>
+<div class="ec-verdict-title" id="ec-verdict-title">Finance Lease saves you more</div>
+<div class="ec-verdict-savings" id="ec-verdict-savings">You save $4,643 in total cost with a finance lease</div>
+</div>
+<a href="../../home-shared/apply/index.html?purpose=purchase_equipment" class="btn btn-primary">Get my free Compare Report &rarr;</a>
+</div>
+
+</div>
+</section>
+
+<!-- REALITY GAP -->
+<section style="background:#fff;padding:0 0 72px">
+<div class="container">
+<div class="card" style="border-left:3px solid var(--peach);padding:32px">
+<h3 style="font-size:1.25rem;font-weight:600;margin-bottom:14px;color:var(--navy)">What this calculator can't see.</h3>
+<p style="font-size:0.95rem;line-height:1.7;color:var(--text-secondary);margin-bottom:18px;max-width:820px">This tool assumes a flat interest rate and a fixed 10% residual on the lease. Your actual rate and residual depend on what a calculator cannot capture: asset type and age, security, trading track record and credit profile.</p>
+<p style="font-size:0.85rem;font-weight:600;color:var(--navy)">Finance Lease: 5% to 15% p.a. &middot; Equipment Loan: 7% to 20% p.a. &middot; Residual (balloon) typically 10% to 50% of asset value.</p>
+</div>
+</div>
+</section>
+
+<!-- S.T.A.R. -->
+<section style="background:#fff;padding:0 0 72px">
+<div class="container">
+<h2 class="section-title" style="margin-bottom:32px">How your calculation ties to S.T.A.R. facts</h2>
+<div class="ec-grid-4" style="display:grid;grid-template-columns:repeat(4,1fr);gap:20px">
+<div class="ec-star-card" style="border-top-color:var(--star-s)"><div class="ec-star-badge">S</div><div style="font-weight:600;font-size:0.95rem;margin-bottom:8px;color:var(--navy)">Security</div><p style="font-size:0.85rem;color:var(--text-secondary);line-height:1.6">The equipment itself is the lender's security (what it can claim if repayments stop), on a lease or a loan. That's why rates usually sit below unsecured loans.</p></div>
+<div class="ec-star-card" style="border-top-color:var(--star-t)"><div class="ec-star-badge">T</div><div style="font-weight:600;font-size:0.95rem;margin-bottom:8px;color:var(--navy)">Term</div><p style="font-size:0.85rem;color:var(--text-secondary);line-height:1.6">Modelled on <span id="ec-term-label-2">36 months (3 years)</span>. Longer terms lower monthly payments but increase total interest.</p></div>
+<div class="ec-star-card" style="border-top-color:var(--star-a)"><div class="ec-star-badge">A</div><div style="font-weight:600;font-size:0.95rem;margin-bottom:8px;color:var(--navy)">Amount</div><p style="font-size:0.85rem;color:var(--text-secondary);line-height:1.6"><span id="ec-cost-label">$100,000</span> is widely supported across our panel of 70+ lenders, from $5,000 for smaller equipment to $2,000,000+ for major plant.</p></div>
+<div class="ec-star-card" style="border-top-color:var(--star-r)"><div class="ec-star-badge">R</div><div style="font-weight:600;font-size:0.95rem;margin-bottom:8px;color:var(--navy)">Rate</div><p style="font-size:0.85rem;color:var(--text-secondary);line-height:1.6"><span id="ec-rate-label">8.0% &ndash; 10.0%</span> is an indicative benchmark range. Your actual rate is set by the lender, based on your profile.</p></div>
+</div>
+</div>
+</section>
+
+<!-- TOOL FAMILY -->
+<section style="background:var(--bg-soft);padding:72px 0">
+<div class="container">
+<span class="eyebrow">Lending Tools</span>
+<h2 class="section-title" style="margin:14px 0 32px">Run the numbers across our calculator suite</h2>
+<div class="ec-grid-3" style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px">
+<div class="ec-tool-card"><div style="font-weight:600;font-size:1.05rem;margin-bottom:8px;color:var(--navy)">Equipment Finance Calculator</div><p style="font-size:0.88rem;color:var(--text-secondary);line-height:1.6;margin-bottom:16px">You&rsquo;re using it now.</p><span style="font-weight:600;font-size:0.85rem;color:var(--ink-400)">Active Tool</span></div>
+<div class="ec-tool-card"><div style="font-weight:600;font-size:1.05rem;margin-bottom:8px;color:var(--navy)">Business Loan Calculator</div><p style="font-size:0.88rem;color:var(--text-secondary);line-height:1.6;margin-bottom:16px">See weekly, fortnightly, and monthly repayments on a term loan.</p><a href="../business-loan-calculator/index.html" style="font-weight:600;font-size:0.85rem;color:var(--skyblue-text)">Try it &rarr;</a></div>
+<div class="ec-tool-card"><div style="font-weight:600;font-size:1.05rem;margin-bottom:8px;color:var(--navy)">Compare Rate Calculator</div><p style="font-size:0.88rem;color:var(--text-secondary);line-height:1.6;margin-bottom:16px">Line up lender offers side by side, apples to apples.</p><span style="font-weight:600;font-size:0.85rem;color:var(--navy)">Coming soon</span></div>
+</div>
+</div>
+</section>
+
+<!-- FAQ -->
+<section style="background:#fff;padding:72px 0">
+<div class="container-prose">
+<h2 class="section-title" style="margin-bottom:8px">Calculator FAQs</h2>
+<div style="margin-top:24px">
+<details class="faq" open><summary>What is the difference between a finance lease and an equipment loan?</summary><p>With a finance lease, the lender owns the equipment and you make regular payments to use it. At the end of the lease, you typically pay a residual value (usually 10% of the asset cost) to take ownership. With an equipment loan, you own the asset from day one and repay the full principal plus interest over the term. Loans generally have higher monthly payments but no balloon payment at the end.</p></details>
+<details class="faq"><summary>Is it better to lease or buy equipment for my business?</summary><p>It depends on your situation. Leasing offers lower monthly payments, due to the residual, and may provide tax benefits since lease payments are typically fully deductible. Buying via a loan means you own the asset outright and can claim depreciation. Leasing suits businesses that upgrade equipment frequently, while buying suits long-term assets that hold their value.</p></details>
+<details class="faq"><summary>What is a residual or balloon payment on a finance lease?</summary><p>A residual, or balloon, payment is a lump sum due at the end of a finance lease. It represents the estimated remaining value of the equipment. This calculator uses a fixed 10% of the original asset cost, though lenders can structure residuals anywhere from 10% to 50% depending on the asset. At the end, you can pay the residual to own the asset, refinance it, or return the equipment.</p></details>
+<details class="faq"><summary>Can I claim tax deductions on leased or financed equipment?</summary><p>Generally yes, but the treatment differs. With a finance lease you can typically claim depreciation on the asset and the interest component of the payments. With an equipment loan you can claim depreciation, interest, and potentially the instant asset write-off for eligible assets. Always confirm the current rules with your accountant before deciding.</p></details>
+</div>
+</div>
+</section>
+
+<!-- EXIT CTA -->
+<section style="background:var(--bg-soft);padding:72px 0;text-align:center">
+<div class="container-prose">
+<span class="eyebrow" style="text-align:center">No Credit Score Impact</span>
+<h2 class="section-title" style="margin:14px 0">Not sure which option suits you?</h2>
+<p style="font-size:1rem;color:var(--text-secondary);line-height:1.6;margin-bottom:32px">Your free Compare Report lays out qualified equipment finance options across our panel of 70+ lenders, with rates, terms and the reasoning shown.</p>
+<a href="../../home-shared/apply/index.html?purpose=purchase_equipment" class="btn btn-primary" style="height:52px;padding:0 32px;margin-bottom:16px">Get my free Compare Report &rarr;</a>
+<p style="font-size:0.85rem;color:var(--text-secondary)">No credit score impact &middot; No commitment &middot; Typically ready in 24 hours</p>
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer class="tf-footer">
+<div class="container-wide">
+<div class="tf-footer-top">
+<div>
+<img loading="lazy" decoding="async" width="844" height="140" src="../../assets/img/logo-white.png" alt="Trade Funding" style="height:20px;width:auto;display:block;margin-bottom:16px;">
+<p class="tf-footer-blurb">Know before you apply. We compare 100+ products across our panel of 70+ lenders, lay out your qualified options, then support you through to settlement. Free, with no credit score impact.</p>
+<div class="tf-footer-contact">
+<a href="tel:1300161641">1300 161 641</a>
+<a href="mailto:support@tradefunding.com.au">support@tradefunding.com.au</a>
+<span>Level 8, 387 George Street, Sydney, NSW, 2000</span>
+</div>
+<div class="tf-footer-badges">
+<span class="tf-footer-badge">ACL 387856</span>
+<span class="tf-footer-badge">AFCA Member</span>
+<span class="tf-footer-badge">CAFBA</span>
+<span class="tf-footer-badge">FinTech Australia</span>
+</div>
+</div>
+<div class="tf-footer-cols">
+<div class="tf-footer-col">
+<div class="tf-footer-col-heading">Channels</div>
+<a href="../../home-shared/how-it-works/index.html">How Cashper Works</a>
+<a href="../../commercial/index.html">Business Capital</a>
+<a href="../../connect/index.html">Fund Your Customers</a>
+<a href="../../personal-and-property/index.html">Personal &amp; Property</a>
+<a href="../../home-shared/resources/index.html">Resources</a>
+</div>
+<div class="tf-footer-col">
+<div class="tf-footer-col-heading">Company</div>
+<a href="../../home-shared/about/index.html">About Us</a>
+<a href="../../home-shared/broker-portal/index.html">Broker Portal</a>
+<a href="../../connect/become-a-partner/index.html">Become a Partner</a>
+<a href="../../home-shared/contact/index.html">Contact</a>
+<a href="../../home-shared/apply/index.html">Get Started</a>
+</div>
+<div class="tf-footer-col">
+<div class="tf-footer-col-heading">Legal</div>
+<a href="../../home-shared/credit-guide/index.html">Credit Guide</a>
+<a href="../../home-shared/privacy/index.html">Privacy Policy</a>
+<a href="../../home-shared/terms/index.html">Terms &amp; Conditions</a>
+</div>
+</div>
+</div>
+<div class="tf-footer-legal">
+<p>Credit products are provided by third-party lenders and credit offers are subject to a full credit review. Read our <a href="../../home-shared/credit-guide/index.html" style="color:rgba(255,255,255,0.85)">Credit Guide</a> | <a href="../../home-shared/terms/index.html" style="color:rgba(255,255,255,0.85)">Terms &amp; Conditions</a> | ACL 387856</p>
+</div>
+<div class="tf-footer-bottom">
+<span>&copy; 2026 Trade Funding Pty Ltd. All rights reserved.</span>
+</div>
+</div>
+</footer>
+
+<script src="../../assets/js/main.js"></script>
+<script>
+(function(){
+  function fmtMoney(n){ return '$' + Math.round(n).toLocaleString('en-AU'); }
+
+  var costSlider = document.getElementById('ec-cost-slider');
+  var costText = document.getElementById('ec-cost-text');
+  var leaseRateSlider = document.getElementById('ec-lease-rate-slider');
+  var leaseRateText = document.getElementById('ec-lease-rate-text');
+  var loanRateSlider = document.getElementById('ec-loan-rate-slider');
+  var loanRateText = document.getElementById('ec-loan-rate-text');
+  var termSelect = document.getElementById('ec-term-select');
+
+  function updateSliderFill(slider){
+    var pct = ((slider.value - slider.min) / (slider.max - slider.min)) * 100;
+    slider.style.background = 'linear-gradient(90deg, #54B4F6 ' + pct + '%, #e2e8f0 ' + pct + '%)';
+  }
+
+  function amortise(principal, annualRatePct, months){
+    var r = annualRatePct / 100 / 12;
+    if (r === 0) return principal / months;
+    return principal * (r * Math.pow(1 + r, months)) / (Math.pow(1 + r, months) - 1);
+  }
+
+  function compute(){
+    var P = Number(costSlider.value);
+    var leaseRate = Number(leaseRateSlider.value);
+    var loanRate = Number(loanRateSlider.value);
+    var n = Number(termSelect.value);
+    var residual = P * 0.10;
+
+    var leaseFinanced = P - residual;
+    var leaseMonthly = amortise(leaseFinanced, leaseRate, n);
+    var leaseTotalPayments = leaseMonthly * n;
+    var leaseTotalCost = leaseTotalPayments + residual;
+
+    var loanMonthly = amortise(P, loanRate, n);
+    var loanTotalCost = loanMonthly * n;
+
+    return {
+      residual: residual,
+      leaseMonthly: leaseMonthly,
+      leaseTotalPayments: leaseTotalPayments,
+      leaseTotalCost: leaseTotalCost,
+      loanMonthly: loanMonthly,
+      loanTotalCost: loanTotalCost
+    };
+  }
+
+  function render(){
+    var P = Number(costSlider.value);
+    var leaseRate = Number(leaseRateSlider.value);
+    var loanRate = Number(loanRateSlider.value);
+    var termLabel = termSelect.options[termSelect.selectedIndex].text;
+    var out = compute();
+
+    document.getElementById('ec-cost-display').textContent = fmtMoney(P);
+    costText.value = fmtMoney(P);
+    document.getElementById('ec-lease-rate-display').textContent = leaseRate.toFixed(1) + '%';
+    leaseRateText.value = leaseRate.toFixed(1) + '%';
+    document.getElementById('ec-loan-rate-display').textContent = loanRate.toFixed(1) + '%';
+    loanRateText.value = loanRate.toFixed(1) + '%';
+
+    document.getElementById('ec-lease-monthly').textContent = fmtMoney(out.leaseMonthly);
+    document.getElementById('ec-loan-monthly').textContent = fmtMoney(out.loanMonthly);
+    document.getElementById('ec-residual').textContent = fmtMoney(out.residual);
+    document.getElementById('ec-term-label').textContent = termLabel;
+
+    document.getElementById('ec-lease-monthly-2').textContent = fmtMoney(out.leaseMonthly);
+    document.getElementById('ec-lease-total-payments').textContent = fmtMoney(out.leaseTotalPayments);
+    document.getElementById('ec-lease-residual').textContent = fmtMoney(out.residual);
+    document.getElementById('ec-lease-total-cost').textContent = fmtMoney(out.leaseTotalCost);
+
+    document.getElementById('ec-loan-monthly-2').textContent = fmtMoney(out.loanMonthly);
+    document.getElementById('ec-loan-total-payments').textContent = fmtMoney(out.loanTotalCost);
+    document.getElementById('ec-loan-total-cost').textContent = fmtMoney(out.loanTotalCost);
+
+    document.getElementById('ec-term-label-2').textContent = termLabel;
+    document.getElementById('ec-cost-label').textContent = fmtMoney(P);
+    document.getElementById('ec-rate-label').textContent = leaseRate.toFixed(1) + '% – ' + loanRate.toFixed(1) + '%';
+
+    updateSliderFill(costSlider);
+    updateSliderFill(leaseRateSlider);
+    updateSliderFill(loanRateSlider);
+
+    var diff = Math.abs(out.leaseTotalCost - out.loanTotalCost);
+    var verdictTitle = document.getElementById('ec-verdict-title');
+    var verdictSavings = document.getElementById('ec-verdict-savings');
+
+    if (out.leaseTotalCost < out.loanTotalCost) {
+      verdictTitle.textContent = 'Finance Lease costs less on these numbers';
+      verdictSavings.textContent = 'You save ' + fmtMoney(diff) + ' in total cost with a finance lease';
+    } else if (out.loanTotalCost < out.leaseTotalCost) {
+      verdictTitle.textContent = 'Equipment Loan costs less on these numbers';
+      verdictSavings.textContent = 'You save ' + fmtMoney(diff) + ' in total cost with an equipment loan';
+    } else {
+      verdictTitle.textContent = 'Both options cost the same';
+      verdictSavings.textContent = 'The total cost is identical for both finance options';
+    }
+  }
+
+  costSlider.addEventListener('input', render);
+  leaseRateSlider.addEventListener('input', render);
+  loanRateSlider.addEventListener('input', render);
+  termSelect.addEventListener('change', render);
+
+  costText.addEventListener('change', function(){
+    var v = Number(String(costText.value).replace(/[^0-9.]/g, ''));
+    if (!isNaN(v)) { costSlider.value = Math.min(2000000, Math.max(5000, v)); render(); }
+  });
+  leaseRateText.addEventListener('change', function(){
+    var v = Number(String(leaseRateText.value).replace(/[^0-9.]/g, ''));
+    if (!isNaN(v)) { leaseRateSlider.value = Math.min(15, Math.max(5, v)); render(); }
+  });
+  loanRateText.addEventListener('change', function(){
+    var v = Number(String(loanRateText.value).replace(/[^0-9.]/g, ''));
+    if (!isNaN(v)) { loanRateSlider.value = Math.min(20, Math.max(7, v)); render(); }
+  });
+
+  render();
+})();
+</script>
+</body>
+</html>

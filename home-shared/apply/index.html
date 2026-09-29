@@ -1,0 +1,1813 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/png" sizes="32x32" href="../../assets/img/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="../../assets/img/favicon-192.png">
+<link rel="apple-touch-icon" href="../../assets/img/apple-touch-icon.png">
+<title>Apply | Get Your Free Compare Report - Trade Funding</title>
+<meta name="description" content="Start your free application with Trade Funding. Compare 100+ products across our panel of 70+ lenders, with your Compare Report typically ready in 24 hours.">
+<link rel="canonical" href="https://tradefunding.com.au/home-shared/apply/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Trade Funding">
+<meta property="og:locale" content="en_AU">
+<meta property="og:title" content="Apply | Get Your Free Compare Report - Trade Funding">
+<meta property="og:description" content="Start your free application with Trade Funding. Compare 100+ products across our panel of 70+ lenders, with your Compare Report typically ready in 24 hours.">
+<meta property="og:url" content="https://tradefunding.com.au/home-shared/apply/">
+<meta property="og:image" content="https://tradefunding.com.au/assets/img/og-default.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Trade Funding. Clarity, before every funding decision.">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Trade Funding",
+  "url": "https://tradefunding.com.au/",
+  "logo": "https://tradefunding.com.au/assets/img/logo-navy.png",
+  "telephone": "+61-1300-161-641",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Level 8, 387 George Street",
+    "addressLocality": "Sydney",
+    "addressRegion": "NSW",
+    "postalCode": "2000",
+    "addressCountry": "AU"
+  },
+  "sameAs": []
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/css/tokens.css">
+<link rel="stylesheet" href="../../assets/css/base.css">
+<link rel="stylesheet" href="../../assets/css/components.css">
+<style>
+/* ---- Trust strip ---- */
+.ap-trust-strip { display:flex; align-items:center; justify-content:center; gap:8px; padding:8px 16px; background:var(--tint-sky-08); border-bottom:1px solid var(--border); font-size:0.78rem; color:var(--text-secondary); text-align:center; }
+.ap-trust-strip strong { color:var(--navy); font-weight:600; }
+
+/* ---- Step bar ---- */
+.ap-stepbar { background:var(--white); border-bottom:1px solid var(--border); padding:12px 24px; display:flex; align-items:center; justify-content:center; gap:8px; flex-wrap:wrap; }
+.ap-step { font-family:var(--font-heading); font-size:0.75rem; font-weight:600; padding:7px 16px; border-radius:var(--radius-pill); color:var(--ink-400); background:rgba(0,28,68,0.04); transition:all 0.3s var(--ease); }
+.ap-step--active { color:var(--navy); background:var(--skyblue); }
+.ap-step--done { color:var(--skyblue-text); background:var(--tint-sky-10); }
+
+/* ---- Layout ---- */
+.ap-layout { display:grid; grid-template-columns:1fr 380px; gap:0; align-items:start; }
+
+/* ---- LEFT: Form ---- */
+.ap-form-panel { padding:32px 40px 64px; }
+.ap-panel-header { margin-bottom:20px; }
+.ap-step-label { font-family:var(--font-heading); font-weight:600; font-size:0.7rem; text-transform:uppercase; letter-spacing:0.14em; color:var(--skyblue-text); margin-bottom:6px; }
+.ap-panel-title { font-family:var(--font-heading); font-weight:700; font-size:1.5rem; color:var(--navy); margin-bottom:6px; line-height:1.2; }
+.ap-panel-sub { font-size:0.92rem; color:var(--text-secondary); line-height:1.55; max-width:520px; }
+
+.ap-field { margin-bottom:16px; }
+.ap-field__label { display:block; font-family:var(--font-heading); font-size:0.8rem; font-weight:600; color:var(--navy); margin-bottom:5px; }
+.ap-field__hint { font-size:0.74rem; color:var(--ink-400); margin-bottom:5px; }
+.ap-field__input, .ap-field__select {
+  width:100%; padding:11px 14px; border:1px solid var(--border-neutral); border-radius:var(--radius-sm);
+  font-size:0.9rem; color:var(--navy); background:var(--white); outline:none; font-family:var(--font-body);
+  transition:border-color var(--transition-fast);
+}
+.ap-field__input:focus, .ap-field__select:focus { border-color:var(--skyblue); box-shadow:0 0 0 3px var(--tint-sky-10); }
+.ap-field__select { cursor:pointer; }
+.ap-field__select optgroup { font-family:var(--font-heading); font-weight:600; color:var(--navy); }
+
+.ap-amount { font-family:var(--font-heading); font-weight:700; font-size:1.7rem; color:var(--navy); display:flex; align-items:baseline; gap:2px; margin-bottom:8px; }
+.ap-amount input { font-family:var(--font-heading); font-weight:700; font-size:1.7rem; color:var(--skyblue-text); border:none; outline:none; background:transparent; width:100%; }
+.ap-slider { -webkit-appearance:none; appearance:none; width:100%; height:6px; border-radius:3px; background:var(--border-neutral); outline:none; cursor:pointer; }
+.ap-slider::-webkit-slider-thumb { -webkit-appearance:none; width:20px; height:20px; border-radius:50%; background:var(--white); border:3px solid var(--skyblue); box-shadow:var(--shadow-sm); cursor:pointer; }
+.ap-slider::-moz-range-thumb { width:20px; height:20px; border-radius:50%; background:var(--white); border:3px solid var(--skyblue); cursor:pointer; }
+.ap-slider-labels { display:flex; justify-content:space-between; font-size:0.72rem; color:var(--ink-400); margin-top:5px; }
+
+.ap-pills { display:flex; gap:6px; }
+.ap-pill { flex:1; min-height:44px; box-sizing:border-box; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:9px 6px; border:1px solid var(--border-neutral); border-radius:var(--radius-sm); text-align:center; cursor:pointer; transition:all 0.25s var(--ease); background:var(--white); }
+.ap-pill__label { font-family:var(--font-heading); font-size:0.78rem; font-weight:600; color:var(--navy); }
+.ap-pill__sub { font-size:0.6rem; color:var(--ink-400); margin-top:1px; }
+.ap-pill:hover { border-color:var(--skyblue); }
+.ap-pill--active { border-color:var(--skyblue); background:var(--tint-sky-08); }
+.ap-pill--active .ap-pill__label { color:var(--skyblue-text); }
+
+.ap-toggle-row { display:flex; gap:6px; }
+.ap-toggle { flex:1; min-height:44px; box-sizing:border-box; display:flex; align-items:center; justify-content:center; padding:9px; border:1px solid var(--border-neutral); border-radius:var(--radius-sm); text-align:center; font-family:var(--font-heading); font-size:0.8rem; font-weight:600; color:var(--navy); cursor:pointer; transition:all 0.25s var(--ease); background:var(--white); }
+.ap-toggle:hover { border-color:var(--skyblue); }
+.ap-toggle--active { border-color:var(--skyblue); background:var(--tint-sky-08); color:var(--skyblue-text); }
+
+.ap-section { background:var(--white); border:1px solid var(--border); border-top:3px solid var(--skyblue); border-radius:var(--radius-md); padding:20px 22px; margin-bottom:16px; }
+.ap-section--navy { border-top-color:var(--navy); }
+.ap-section__header { margin-bottom:14px; padding-bottom:10px; border-bottom:1px solid var(--border); }
+.ap-section__title { font-family:var(--font-heading); font-size:0.85rem; font-weight:700; color:var(--navy); }
+.ap-section__subtitle { font-size:0.72rem; color:var(--ink-400); margin-top:2px; }
+
+.ap-field-row { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+.ap-field--inline { display:flex; align-items:center; justify-content:space-between; margin-bottom:10px; padding:9px 0; border-bottom:1px solid var(--border); }
+.ap-field--inline:last-child { border-bottom:none; margin-bottom:0; }
+.ap-field--inline .ap-field__label { margin-bottom:0; font-size:0.82rem; }
+.ap-field--inline .ap-toggle-row { flex-shrink:0; }
+.ap-field--inline .ap-toggle { padding:6px 16px; min-height:44px; box-sizing:border-box; font-size:0.76rem; min-width:52px; }
+
+.ap-form-nav { display:flex; justify-content:space-between; align-items:center; margin-top:20px; padding-top:16px; border-top:1px solid var(--border); }
+.ap-btn-back { font-family:var(--font-heading); font-size:0.88rem; font-weight:500; color:var(--ink-400); background:none; border:none; cursor:pointer; padding:14px 20px; min-height:44px; box-sizing:border-box; }
+.ap-btn-back:hover { color:var(--navy); }
+.ap-btn-next { font-family:var(--font-heading); font-size:0.92rem; font-weight:600; color:var(--navy); background:var(--peach); border:none; border-radius:var(--radius-pill-btn); padding:15px 32px; cursor:pointer; box-shadow:var(--shadow-peach); transition:all 0.3s var(--ease); }
+.ap-btn-next:hover { transform:translateY(-2px); box-shadow:var(--shadow-peach-hover); }
+.ap-btn-next:disabled { opacity:0.4; cursor:not-allowed; transform:none; box-shadow:none; }
+
+.ap-abn-status { font-size:0.74rem; margin-top:5px; }
+.ap-abn-status--loading { color:var(--skyblue-text); }
+.ap-abn-status--found { color:var(--success-text); }
+.ap-abn-status--error { color:var(--peach-text); }
+.ap-abn-autofill { background:var(--tint-sky-08); border:1px solid var(--tint-sky-10); border-radius:var(--radius-sm); padding:12px 14px; margin-top:8px; }
+.ap-abn-autofill__row { display:flex; justify-content:space-between; font-size:0.82rem; padding:3px 0; }
+.ap-abn-autofill__label { color:var(--text-secondary); }
+.ap-abn-autofill__value { color:var(--navy); font-weight:500; }
+.ap-abn-result { display:block; width:100%; text-align:left; font:inherit; background:var(--white); padding:9px 12px; border:1px solid var(--border-neutral); border-radius:var(--radius-sm); margin-bottom:5px; cursor:pointer; transition:background 0.2s ease; font-size:0.85rem; }
+.ap-abn-result:hover { background:var(--tint-sky-08); border-color:var(--skyblue); }
+.ap-abn-result-name { display:block; font-weight:600; color:var(--navy); }
+.ap-abn-result-meta { display:block; font-size:0.74rem; color:var(--text-secondary); }
+
+.ap-autofill-row { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-bottom:10px; }
+.ap-autofill-field { background:var(--tint-sky-08); border:1px solid var(--tint-sky-10); border-radius:var(--radius-sm); padding:11px 14px; }
+.ap-autofill-field__label { font-size:0.68rem; font-weight:600; text-transform:uppercase; letter-spacing:0.06em; color:var(--text-secondary); margin-bottom:4px; }
+.ap-autofill-field__value { font-family:var(--font-heading); font-weight:600; font-size:0.92rem; color:var(--navy); }
+.ap-autofill-field__sub { font-size:0.72rem; color:var(--text-secondary); margin-top:2px; }
+.ap-autofill-note { font-size:0.74rem; color:var(--skyblue-text); margin-top:5px; }
+
+.ap-trade-detail { display:none; margin-top:8px; }
+.ap-trade-detail--visible { display:block; }
+
+.ap-field__input--error, .ap-field__select--error { border-color:var(--peach) !important; box-shadow:0 0 0 3px var(--tint-peach-08) !important; }
+
+.ap-trust-inline { font-size:0.76rem; color:var(--text-secondary); opacity:0.8; margin-top:12px; }
+
+/* ---- RIGHT: Live report panel ---- */
+.ap-report-panel { background:var(--navy); color:var(--white); padding:24px 22px; position:sticky; top:24px; border-radius:var(--radius-lg); margin:32px 24px 32px 0; }
+.ap-report-header { margin-bottom:16px; }
+.ap-report-eyebrow { font-family:var(--font-heading); font-size:0.68rem; font-weight:600; text-transform:uppercase; letter-spacing:0.14em; color:var(--skyblue); margin-bottom:8px; }
+.ap-report-title { font-family:var(--font-heading); font-size:1.15rem; font-weight:700; margin-bottom:4px; }
+.ap-report-sub { font-size:0.8rem; color:rgba(255,255,255,0.72); }
+
+.ap-star-legend { display:flex; gap:10px; margin-bottom:14px; padding:9px 12px; background:rgba(255,255,255,0.04); border-radius:var(--radius-sm); border:1px solid rgba(255,255,255,0.07); flex-wrap:wrap; }
+.ap-star-legend__item { display:flex; align-items:center; gap:5px; font-size:0.66rem; color:rgba(255,255,255,0.55); }
+.ap-star-dot { width:7px; height:7px; border-radius:50%; flex-shrink:0; }
+
+.ap-match-section { margin-bottom:20px; }
+.ap-match-label { font-family:var(--font-heading); font-size:0.62rem; font-weight:600; text-transform:uppercase; letter-spacing:0.1em; color:rgba(255,255,255,0.72); margin-bottom:8px; }
+.ap-match-card { background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.08); border-radius:var(--radius-md); padding:13px 15px; margin-bottom:7px; }
+.ap-match-card--eligible { border-left:3px solid var(--skyblue); }
+.ap-match-card--ineligible { border-left:3px solid rgba(255,93,92,0.4); }
+.ap-match-top { display:flex; justify-content:space-between; align-items:start; margin-bottom:8px; gap:8px; }
+.ap-match-name { font-family:var(--font-heading); font-weight:700; font-size:0.9rem; }
+.ap-match-badge { font-size:0.58rem; font-weight:700; text-transform:uppercase; letter-spacing:0.06em; padding:3px 8px; border-radius:4px; white-space:nowrap; }
+.ap-match-badge--eligible { background:var(--tint-sky-10); color:var(--skyblue); }
+.ap-match-badge--ineligible { background:rgba(255,93,92,0.12); color:#FF8A89; }
+.ap-match-stats { display:grid; grid-template-columns:1fr 1fr 1fr; gap:8px; }
+.ap-match-stat-label { font-size:0.58rem; text-transform:uppercase; letter-spacing:0.06em; color:rgba(255,255,255,0.72); margin-bottom:2px; }
+.ap-match-stat-value { font-family:var(--font-heading); font-weight:700; font-size:0.84rem; color:var(--skyblue); }
+.ap-match-reason { font-size:0.72rem; color:rgba(255,255,255,0.72); margin-top:6px; }
+
+.ap-report-empty { padding:32px 8px; text-align:center; }
+.ap-report-empty__title { font-family:var(--font-heading); font-weight:700; font-size:1rem; margin-bottom:6px; }
+.ap-report-empty__text { font-size:0.84rem; color:rgba(255,255,255,0.72); line-height:1.6; }
+
+.ap-report-progress { margin-top:20px; padding-top:16px; border-top:1px solid rgba(255,255,255,0.08); }
+.ap-progress-bar { height:4px; background:rgba(255,255,255,0.1); border-radius:2px; overflow:hidden; margin-bottom:8px; }
+.ap-progress-fill { height:100%; background:var(--skyblue); border-radius:2px; transition:width 0.5s var(--ease); }
+.ap-progress-text { font-size:0.72rem; color:rgba(255,255,255,0.72); display:flex; justify-content:space-between; }
+
+.ap-cashper-msg { display:flex; align-items:flex-start; gap:12px; padding:14px; background:rgba(255,255,255,0.05); border-radius:var(--radius-md); margin-bottom:16px; }
+.ap-cashper-avatar { width:36px; height:44px; flex-shrink:0; }
+.ap-cashper-avatar img { width:100%; height:100%; object-fit:contain; }
+.ap-cashper-text { font-size:0.8rem; color:rgba(255,255,255,0.75); line-height:1.5; }
+
+/* ---- Final results table (Step 3) ---- */
+.ap-result-row { display:grid; grid-template-columns:1fr 72px 72px 90px; gap:10px; align-items:center; padding:12px 14px; border-bottom:1px solid var(--border); border-left:3px solid var(--skyblue); }
+.ap-result-row--ineligible { opacity:0.45; border-left-color:rgba(255,93,92,0.4); }
+.ap-result-name { font-family:var(--font-heading); font-weight:600; font-size:0.88rem; color:var(--navy); }
+.ap-result-reason { font-size:0.72rem; color:var(--peach-text); margin-top:2px; }
+.ap-result-stat-label { font-size:0.55rem; text-transform:uppercase; letter-spacing:0.06em; color:var(--ink-400); text-align:right; }
+.ap-result-stat-value { font-family:var(--font-heading); font-weight:700; font-size:0.85rem; color:var(--navy); text-align:right; }
+.ap-result-stat-value--accent { color:var(--skyblue-text); }
+
+.ap-next-note { background:var(--tint-sky-08); border:1px solid var(--tint-sky-10); border-radius:var(--radius-sm); padding:14px 18px; margin-top:14px; }
+.ap-next-note h3 { font-family:var(--font-heading); font-size:0.85rem; font-weight:600; margin-bottom:4px; }
+.ap-next-note p { font-size:0.8rem; color:var(--text-secondary); line-height:1.6; }
+
+/* ---- Thank you state ---- */
+.ap-thankyou { text-align:center; padding:48px 24px; }
+.ap-thankyou__rule { height:3px; width:64px; border-radius:2px; background:var(--skyblue); margin:0 auto 24px; }
+.ap-thankyou__title { font-family:var(--font-heading); font-size:1.5rem; font-weight:700; color:var(--navy); margin-bottom:12px; }
+.ap-thankyou__sub { font-size:0.94rem; color:var(--text-secondary); line-height:1.65; max-width:440px; margin:0 auto 28px; }
+.ap-thankyou__steps { display:flex; flex-direction:column; gap:16px; max-width:400px; margin:0 auto 28px; text-align:left; }
+.ap-thankyou__step { display:flex; align-items:flex-start; gap:14px; }
+.ap-thankyou__step-num { width:28px; height:28px; border-radius:50%; border:1.5px solid var(--skyblue); color:var(--skyblue-text); font-family:var(--font-heading); font-weight:700; font-size:0.78rem; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+.ap-thankyou__step-text { font-size:0.88rem; color:var(--text-secondary); line-height:1.5; }
+.ap-thankyou__step-text strong { color:var(--navy); }
+.ap-thankyou__note { font-size:0.8rem; color:var(--ink-400); }
+
+/* ---- Responsive ---- */
+@media (max-width:900px) {
+  .ap-layout { grid-template-columns:1fr; }
+  .ap-report-panel { position:relative; top:0; margin:0 24px 32px; }
+  .ap-field-row, .ap-autofill-row { grid-template-columns:1fr; }
+  .ap-form-panel { padding:24px 20px 40px; }
+  .ap-pills { flex-wrap:wrap; }
+  .ap-pill { flex:0 0 calc(50% - 3px); }
+  .ap-form-nav { flex-direction:column; gap:10px; }
+  .ap-btn-next { width:100%; }
+  .ap-btn-back { order:2; }
+  .ap-result-row { grid-template-columns:1fr; text-align:left; }
+  .ap-result-stat-label, .ap-result-stat-value { text-align:left; }
+}
+</style>
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<a class="tf-skip-link" href="#main">Skip to content</a>
+
+<div class="ap-trust-strip">Trusted by Australian businesses &middot; <strong>ACL 387856</strong> &middot; <a href="https://maps.google.com/?cid=18175296584824146345" target="_blank" rel="noopener noreferrer" class="tf-rating-link" aria-label="5.0 Google Rating from 50 reviews, opens Google Maps in a new tab"><strong>5.0 Google Rating</strong> (50 reviews)</a> &middot; Panel of 70+ lenders</div>
+
+<header class="tf-header">
+<nav class="tf-nav" aria-label="Primary">
+<div class="tf-nav-inner">
+<a href="../../index.html" class="tf-nav-logo"><img width="1000" height="160" src="../../assets/img/logo-navy.png" alt="Trade Funding"></a>
+<div class="tf-nav-links" style="justify-content:flex-start;width:auto">
+<div class="tf-nav-item">
+<a href="../../home-shared/how-it-works/index.html" class="tf-nav-link" aria-haspopup="true" aria-expanded="false">Cashper Compare Engine<span class="tf-caret" aria-hidden="true"></span></a>
+<div class="tf-mega-panel tf-mega-panel-wide">
+<div class="tf-mega-wide-inner">
+<a href="../../home-shared/how-it-works/index.html" class="tf-mega-wide-lead">How it works<span class="tf-mega-arrow" aria-hidden="true">&rarr;</span></a>
+<div class="tf-mega-wide-grid tf-mega-wide-grid-3">
+<div class="tf-mega-wide-step-cell">
+<span class="tf-mega-wide-step-num">01</span>
+<span class="tf-mega-wide-step-title">Tell Cashper what you need</span>
+<div class="tf-mega-wide-sub">New capital, a facility review, a customer's sale, or something personal.</div>
+</div>
+<div class="tf-mega-wide-step-cell">
+<span class="tf-mega-wide-step-num">02</span>
+<span class="tf-mega-wide-step-title">It qualifies you across our panel of 70+ lenders</span>
+<div class="tf-mega-wide-sub">Banks, non-banks and fintechs, and private credit providers, scored on S.T.A.R. facts.</div>
+</div>
+<div class="tf-mega-wide-step-cell">
+<span class="tf-mega-wide-step-num">03</span>
+<span class="tf-mega-wide-step-title">You get a Compare Report</span>
+<div class="tf-mega-wide-sub">Side by side, ranked best-fit options, with no credit check until you choose to proceed.</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="tf-nav-item">
+<button type="button" class="tf-nav-link" aria-haspopup="true" aria-expanded="false">Funding For<span class="tf-caret" aria-hidden="true"></span></button>
+<div class="tf-mega-panel tf-mega-panel-wide">
+<div class="tf-mega-wide-inner">
+<button type="button" class="tf-mega-wide-lead tf-router-open" style="background:none;cursor:pointer;font-family:inherit">Different Funding Support Options for Businesses<span class="tf-mega-arrow" aria-hidden="true">&rarr;</span></button>
+<div class="tf-mega-wide-grid tf-mega-wide-grid-3">
+<div style="border-top:3px solid var(--skyblue);padding-top:12px">
+<a href="../../commercial/index.html" class="tf-mega-wide-link tf-mega-wide-split" style="font-weight:700;font-size:0.92rem"><span class="tf-mega-wide-split-lead">Your Business</span><span class="tf-mega-wide-arrow-slot"><span class="tf-mega-arrow" aria-hidden="true">&rarr;</span></span><span class="tf-mega-wide-split-sub">Commercial Funding</span></a>
+<div class="tf-mega-wide-sub">Compare qualified options to establish new funding, or replace what you have.</div>
+</div>
+<div style="border-top:3px solid var(--gold);padding-top:12px">
+<a href="../../connect/index.html" class="tf-mega-wide-link tf-mega-wide-split" style="font-weight:700;font-size:0.92rem"><span class="tf-mega-wide-split-lead">Your Customers</span><span class="tf-mega-wide-arrow-slot"><span class="tf-mega-arrow" aria-hidden="true">&rarr;</span></span><span class="tf-mega-wide-split-sub">Trade Funding Connect</span></a>
+<div class="tf-mega-wide-sub">A free QR code that gives your customers qualified payment options at the point of sale.</div>
+</div>
+<div style="border-top:3px solid var(--peach);padding-top:12px">
+<a href="../../personal-and-property/index.html" class="tf-mega-wide-link tf-mega-wide-split" style="font-weight:700;font-size:0.92rem"><span class="tf-mega-wide-split-lead">You Personally</span><span class="tf-mega-wide-arrow-slot"><span class="tf-mega-arrow" aria-hidden="true">&rarr;</span></span><span class="tf-mega-wide-split-sub">Personal &amp; Property Funding</span></a>
+<div class="tf-mega-wide-sub">Personal funding, tailored to business owners and how they actually earn.</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="tf-nav-item">
+<button type="button" class="tf-nav-link" aria-haspopup="true" aria-expanded="false">Products<span class="tf-caret" aria-hidden="true"></span></button>
+<div class="tf-mega-panel tf-mega-panel-wide">
+<div class="tf-mega-wide-inner">
+<a href="../../commercial/products/index.html" class="tf-mega-wide-lead">Every Business Capital Product<span class="tf-mega-arrow" aria-hidden="true">&rarr;</span></a>
+<div class="tf-mega-wide-grid tf-mega-wide-grid-3">
+<div class="tf-mega-wide-col">
+<span class="tf-mega-wide-group-label">Loans &amp; Credit</span>
+<div class="tf-mega-wide-links">
+<a href="../../commercial/business-term-loans/index.html" class="tf-mega-wide-link">Business Term Loans<span class="tf-mega-arrow" aria-hidden="true">&rarr;</span></a>
+<a href="../../commercial/business-line-of-credit/index.html" class="tf-mega-wide-link">Business Line of Credit<span class="tf-mega-arrow" aria-hidden="true">&rarr;</span></a>
+<a href="../../commercial/overdraft/index.html" class="tf-mega-wide-link">Business Overdraft<span class="tf-mega-arrow" aria-hidden="true">&rarr;</span></a>
+<a href="../../commercial/charge-card/index.html" class="tf-mega-wide-link">Business Charge Card<span class="tf-mega-arrow" aria-hidden="true">&rarr;</span></a>
+</div>
+</div>
+<div class="tf-mega-wide-col">
+<span class="tf-mega-wide-group-label">Asset &amp; Trade</span>
+<div class="tf-mega-wide-links">
+<a href="../../commercial/chattel-mortgage/index.html" class="tf-mega-wide-link">Chattel Mortgage<span class="tf-mega-arrow" aria-hidden="true">&rarr;</span></a>
+<a href="../../commercial/finance-lease/index.html" class="tf-mega-wide-link">Finance Lease<span class="tf-mega-arrow" aria-hidden="true">&rarr;</span></a>
+<a href="../../commercial/operating-lease/index.html" class="tf-mega-wide-link">Operating Lease<span class="tf-mega-arrow" aria-hidden="true">&rarr;</span></a>
+<a href="../../commercial/trade-finance/index.html" class="tf-mega-wide-link">Trade Finance<span class="tf-mega-arrow" aria-hidden="true">&rarr;</span></a>
+<a href="../../commercial/export-finance/index.html" class="tf-mega-wide-link">Export Finance<span class="tf-mega-arrow" aria-hidden="true">&rarr;</span></a>
+</div>
+</div>
+<div class="tf-mega-wide-col">
+<span class="tf-mega-wide-group-label">Cash Flow &amp; Growth</span>
+<div class="tf-mega-wide-links">
+<a href="../../commercial/invoice-finance/index.html" class="tf-mega-wide-link">Invoice Finance<span class="tf-mega-arrow" aria-hidden="true">&rarr;</span></a>
+<a href="../../commercial/fund-an-invoice/index.html" class="tf-mega-wide-link">Fund an Invoice<span class="tf-mega-arrow" aria-hidden="true">&rarr;</span></a>
+<a href="../../commercial/merchant-cash-advance/index.html" class="tf-mega-wide-link">Merchant Cash Advance<span class="tf-mega-arrow" aria-hidden="true">&rarr;</span></a>
+<a href="../../commercial/supply-chain-funding/index.html" class="tf-mega-wide-link">Supply Chain Funding<span class="tf-mega-arrow" aria-hidden="true">&rarr;</span></a>
+<a href="../../commercial/r-and-d-funding/index.html" class="tf-mega-wide-link">R&amp;D Tax Incentive Funding<span class="tf-mega-arrow" aria-hidden="true">&rarr;</span></a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="tf-nav-item">
+<button type="button" class="tf-nav-link" aria-haspopup="true" aria-expanded="false">Compare Tools<span class="tf-caret" aria-hidden="true"></span></button>
+<div class="tf-mega-panel tf-mega-panel-wide">
+<div class="tf-mega-wide-inner">
+<a href="../../commercial/compare-report/index.html" class="tf-mega-wide-lead">Compare your options<span class="tf-mega-arrow" aria-hidden="true">&rarr;</span></a>
+<div class="tf-mega-wide-grid tf-mega-wide-grid-compact">
+<div class="tf-mega-wide-col">
+<span class="tf-mega-wide-group-label">Compare</span>
+<div class="tf-mega-wide-links">
+<a href="../../commercial/compare-report/index.html" class="tf-mega-wide-link">Compare Report<span class="tf-mega-arrow" aria-hidden="true">&rarr;</span></a>
+<a href="../../commercial/compare-report/index.html#business-overview" class="tf-mega-wide-link">Business Overview<span class="tf-mega-arrow" aria-hidden="true">&rarr;</span></a>
+<a href="../../home-shared/lender-panel/index.html" class="tf-mega-wide-link">Lender Panel<span class="tf-mega-arrow" aria-hidden="true">&rarr;</span></a>
+</div>
+</div>
+<div class="tf-mega-wide-col">
+<span class="tf-mega-wide-group-label">Calculators</span>
+<div class="tf-mega-wide-links">
+<a href="../../commercial/business-loan-calculator/index.html" class="tf-mega-wide-link">Business Loan Calculator<span class="tf-mega-arrow" aria-hidden="true">&rarr;</span></a>
+<a href="../../commercial/equipment-calculator/index.html" class="tf-mega-wide-link">Equipment Finance Calculator<span class="tf-mega-arrow" aria-hidden="true">&rarr;</span></a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="tf-nav-item">
+<button type="button" class="tf-nav-link" aria-haspopup="true" aria-expanded="false">About<span class="tf-caret" aria-hidden="true"></span></button>
+<div class="tf-mega-panel tf-mega-panel-wide">
+<div class="tf-mega-wide-inner">
+<a href="../../home-shared/about/index.html" class="tf-mega-wide-lead">About Trade Funding<span class="tf-mega-arrow" aria-hidden="true">&rarr;</span></a>
+<div class="tf-mega-wide-grid tf-mega-wide-grid-compact">
+<div class="tf-mega-wide-col">
+<span class="tf-mega-wide-group-label">Company</span>
+<div class="tf-mega-wide-links">
+<a href="../../home-shared/about/index.html" class="tf-mega-wide-link">About Us<span class="tf-mega-arrow" aria-hidden="true">&rarr;</span></a>
+<a href="../../home-shared/partner-with-us/index.html" class="tf-mega-wide-link">Partner With Us<span class="tf-mega-arrow" aria-hidden="true">&rarr;</span></a>
+<a href="../../home-shared/careers/index.html" class="tf-mega-wide-link">A Trade Funding Career<span class="tf-mega-arrow" aria-hidden="true">&rarr;</span></a>
+<a href="../../home-shared/resources/index.html" class="tf-mega-wide-link">Resources<span class="tf-mega-arrow" aria-hidden="true">&rarr;</span></a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="tf-nav-cta-group">
+<a href="../../home-shared/contact/index.html" class="tf-nav-contact-link">Get In Contact</a>
+<a href="../../commercial/compare-report/index.html" class="btn btn-primary tf-nav-cta">Get my Compare Report</a>
+</div>
+</div>
+</nav>
+</header>
+<div id="main" tabindex="-1"></div>
+
+<div class="ap-stepbar">
+<span class="ap-step ap-step--active" id="navStep1">1. Funding &amp; Contact</span>
+<span class="ap-step" id="navStep2">2. Business Profile</span>
+<span class="ap-step" id="navStep3">3. Results</span>
+</div>
+
+<div class="ap-layout">
+
+  <!-- LEFT: Progressive Form -->
+  <div class="ap-form-panel">
+
+    <!-- STEP 1: Funding Purpose -->
+    <div id="step1" class="ap-step-panel">
+      <div class="ap-panel-header">
+        <div class="ap-step-label">Step 1 of 3</div>
+        <h1 class="ap-panel-title" id="step1Title">What do you need funding for?</h1>
+        <p class="ap-panel-sub" id="step1Sub">Tell us what you need and how to reach you. This helps us match the right products across our panel of 70+ lenders.</p>
+      </div>
+
+      <div class="ap-section">
+        <div class="ap-section__header"><div class="ap-section__title">Funding Purpose</div></div>
+        <select class="ap-field__select" id="purposeSelect" aria-label="Funding purpose" style="width:100%">
+          <option value="">Select your funding purpose...</option>
+          <optgroup label="Cashflow & Expansion">
+            <option value="cashflow_working_capital">Working Capital</option>
+            <option value="cashflow_expansion">Business Expansion</option>
+          </optgroup>
+          <optgroup label="Pay">
+            <option value="pay_suppliers">Suppliers</option>
+            <option value="pay_expenses">Expenses</option>
+            <option value="pay_invoices">Invoices</option>
+            <option value="pay_gov_tax">Government (Tax / BAS)</option>
+          </optgroup>
+          <optgroup label="Unlock">
+            <option value="advance_invoices">Cash Tied Up in Unpaid Invoices</option>
+            <option value="rd_tax_incentive">R&amp;D Tax Incentive Claim</option>
+          </optgroup>
+          <optgroup label="Purchase">
+            <option value="purchase_equipment">Equipment / Technology</option>
+            <option value="purchase_vehicle">Vehicle</option>
+            <option value="purchase_business">Business Acquisition</option>
+            <option value="purchase_commercial_property">Commercial Property</option>
+            <option value="purchase_residential_property">Residential Property</option>
+          </optgroup>
+          <optgroup label="Other">
+            <option value="new_business">New Business / Startup</option>
+            <option value="refinance">Refinance</option>
+            <option value="restructure">Debt Consolidation</option>
+          </optgroup>
+          <optgroup label="Connect">
+            <option value="connect_customer_finance">Point-of-Sale Purchase</option>
+            <option value="connect_vendor_finance">Becoming a Connect Vendor Partner</option>
+          </optgroup>
+        </select>
+      </div>
+
+      <div class="ap-section">
+        <div class="ap-section__header"><div class="ap-section__title">Amount &amp; Timeline</div></div>
+        <div class="ap-field" style="margin-bottom:10px;">
+          <div class="ap-amount"><span>$</span><input type="text" inputmode="numeric" id="amt1" aria-label="Funding amount" value="250,000"></div>
+          <input type="range" class="ap-slider" id="amtSlider" aria-label="Funding amount" min="10000" max="5000000" step="10000" value="250000">
+          <div class="ap-slider-labels"><span id="sliderMin">$10k</span><span id="sliderMax">$5M</span></div>
+        </div>
+        <div class="ap-field" style="margin-bottom:0;">
+          <label class="ap-field__label">When do you need it?</label>
+          <select class="ap-field__select" id="timeline" aria-label="When do you need it?">
+            <option value="asap">ASAP</option>
+            <option value="within_2_weeks">Within 2 weeks</option>
+            <option value="within_1_month">Within 1 month</option>
+            <option value="within_3_months">Within 3 months</option>
+            <option value="no_rush">No rush</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="ap-section ap-section--navy">
+        <div class="ap-section__header"><div class="ap-section__title">Your Details</div><div class="ap-section__subtitle">So we can send your Compare Report</div></div>
+        <div class="ap-field-row">
+          <div class="ap-field" style="margin-bottom:8px;"><label class="ap-field__label">First Name</label><input type="text" class="ap-field__input" id="firstName" placeholder="Ben"></div>
+          <div class="ap-field" style="margin-bottom:8px;"><label class="ap-field__label">Last Name</label><input type="text" class="ap-field__input" id="lastName" placeholder="Lyons"></div>
+          <div class="ap-field" style="margin-bottom:8px;"><label class="ap-field__label">Email</label><input type="email" class="ap-field__input" id="email" placeholder="ben@business.com.au"></div>
+          <div class="ap-field" style="margin-bottom:8px;"><label class="ap-field__label">Phone</label><input type="tel" class="ap-field__input" id="phone" placeholder="0412 345 678"></div>
+          <div class="ap-field" style="grid-column:1/-1;margin-bottom:0;">
+            <label class="ap-field__label">ABN or Business Name</label>
+            <input type="text" class="ap-field__input" id="abnSearch" placeholder="Start typing ABN or business name...">
+            <div class="ap-abn-status" id="abnStatus"></div>
+            <div class="ap-abn-autofill" id="abnAutofill" style="display:none;">
+              <div class="ap-abn-autofill__row"><span class="ap-abn-autofill__label">Business Name</span><span class="ap-abn-autofill__value" id="abnBizName">-</span></div>
+              <div class="ap-abn-autofill__row"><span class="ap-abn-autofill__label">ABN</span><span class="ap-abn-autofill__value" id="abnNumber">-</span></div>
+              <div class="ap-abn-autofill__row"><span class="ap-abn-autofill__label">Entity Type</span><span class="ap-abn-autofill__value" id="abnEntityType">-</span></div>
+              <div class="ap-abn-autofill__row"><span class="ap-abn-autofill__label">GST Registered</span><span class="ap-abn-autofill__value" id="abnGst">-</span></div>
+              <div class="ap-abn-autofill__row"><span class="ap-abn-autofill__label">State</span><span class="ap-abn-autofill__value" id="abnState">-</span></div>
+            </div>
+            <input type="hidden" id="bizName" value="">
+            <input type="hidden" id="abn" value="">
+          </div>
+        </div>
+        <p class="ap-trust-inline">Your data is secure. Australian Credit Licence 387856.</p>
+      </div>
+
+      <div class="ap-form-nav">
+        <div></div>
+        <button type="button" class="ap-btn-next" data-go-step="2">Next: Business Profile &rarr;</button>
+      </div>
+    </div>
+
+    <!-- STEP 2: Business Profile -->
+    <div id="step2" class="ap-step-panel" style="display:none;">
+      <div class="ap-panel-header">
+        <div class="ap-step-label">Step 2 of 3</div>
+        <h2 class="ap-panel-title">Tell us about your business</h2>
+        <p class="ap-panel-sub">The more you share, the more accurate your matches become. Watch the report update in real-time.</p>
+      </div>
+
+      <div class="ap-section">
+        <div class="ap-section__header"><div class="ap-section__title">Business Basics</div><div class="ap-section__subtitle">How established is your business?</div></div>
+
+        <div id="abrAutoFields" style="display:none;margin-bottom:14px;">
+          <div class="ap-autofill-row">
+            <div class="ap-autofill-field"><div class="ap-autofill-field__label">Entity Type</div><div class="ap-autofill-field__value" id="autoEntityType">-</div></div>
+            <div class="ap-autofill-field"><div class="ap-autofill-field__label">Business State</div><div class="ap-autofill-field__value" id="autoState">-</div></div>
+          </div>
+          <div class="ap-autofill-row">
+            <div class="ap-autofill-field"><div class="ap-autofill-field__label">GST Registered</div><div class="ap-autofill-field__value" id="autoGstStatus">-</div><div class="ap-autofill-field__sub" id="autoGstDuration"></div></div>
+            <div class="ap-autofill-field"><div class="ap-autofill-field__label">ABN Active Since</div><div class="ap-autofill-field__value" id="autoAbnDate">-</div><div class="ap-autofill-field__sub" id="autoTradingYears"></div></div>
+          </div>
+        </div>
+
+        <div class="ap-field-row">
+          <div class="ap-field" style="margin-bottom:0;">
+            <label class="ap-field__label">Trading Duration</label>
+            <select class="ap-field__select" id="tradingDuration" aria-label="Time trading">
+              <option value="">Select trading duration</option>
+              <option value="lt_1_year">Less than 1 year</option>
+              <option value="1_2_years">1-2 years</option>
+              <option value="2_5_years">2-5 years</option>
+              <option value="5_plus_years">5+ years</option>
+            </select>
+            <div class="ap-autofill-note" id="tradingDurationNote" style="display:none;"><span id="tradingDurationNoteText"></span></div>
+          </div>
+          <div class="ap-field" style="margin-bottom:0;">
+            <label class="ap-field__label">Citizenship</label>
+            <select class="ap-field__select" id="citizenship" aria-label="Citizenship status">
+              <option value="australian_citizen">Australian Citizen</option>
+              <option value="permanent_resident">Permanent Resident</option>
+              <option value="temporary_resident">Temporary Resident</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="ap-section">
+        <div class="ap-section__header"><div class="ap-section__title">Financial Profile</div><div class="ap-section__subtitle">Revenue, credit, and obligations</div></div>
+        <div class="ap-field" style="margin-bottom:12px;">
+          <label class="ap-field__label">Annual Revenue</label>
+          <div style="display:flex;align-items:center;gap:8px;margin-bottom:5px;">
+            <span style="font-family:var(--font-heading);font-weight:700;font-size:1.4rem;color:var(--navy);">$</span>
+            <input type="text" inputmode="numeric" id="revInput" aria-label="Annual Revenue" value="0" style="font-family:var(--font-heading);font-weight:700;font-size:1.4rem;color:var(--navy);border:none;outline:none;background:transparent;width:100%;">
+          </div>
+          <input type="range" class="ap-slider" id="revSlider" aria-label="Annual Revenue" min="0" max="50000000" step="50000" value="0">
+          <div class="ap-slider-labels"><span>$0</span><span>$50M+</span></div>
+        </div>
+        <div class="ap-field" style="margin-bottom:10px;">
+          <label class="ap-field__label">Credit History</label>
+          <div class="ap-pills">
+            <div class="ap-pill" data-credit="perfect" role="button" tabindex="0" aria-pressed="false"><div class="ap-pill__label">Perfect</div><div class="ap-pill__sub">No defaults</div></div>
+            <div class="ap-pill" data-credit="excellent" role="button" tabindex="0" aria-pressed="false"><div class="ap-pill__label">Excellent</div><div class="ap-pill__sub">Minor enquiries</div></div>
+            <div class="ap-pill" data-credit="good" role="button" tabindex="0" aria-pressed="false"><div class="ap-pill__label">Good</div><div class="ap-pill__sub">Some history</div></div>
+            <div class="ap-pill" data-credit="issues" role="button" tabindex="0" aria-pressed="false"><div class="ap-pill__label">Issues</div><div class="ap-pill__sub">Defaults/judgments</div></div>
+          </div>
+        </div>
+        <div class="ap-field--inline">
+          <label class="ap-field__label">Any outstanding tax debt?</label>
+          <div class="ap-toggle-row">
+            <div class="ap-toggle" data-val="yes" data-field="hasTaxDebt" role="button" tabindex="0" aria-pressed="false">Yes</div>
+            <div class="ap-toggle" data-val="no" data-field="hasTaxDebt" role="button" tabindex="0" aria-pressed="false">No</div>
+          </div>
+        </div>
+        <div id="taxDebtField" style="display:none;">
+          <div class="ap-field-row" style="margin-top:10px;">
+            <div class="ap-field" style="margin-bottom:0;"><label class="ap-field__label">Tax Debt Amount</label><input type="text" class="ap-field__input" id="taxDebtAmount" placeholder="e.g. 25,000"></div>
+            <div class="ap-field" style="margin-bottom:0;">
+              <label class="ap-field__label">On ATO payment plan?</label>
+              <div class="ap-toggle-row" style="margin-top:6px;">
+                <div class="ap-toggle" data-val="yes" data-field="taxPaymentPlan" role="button" tabindex="0" aria-pressed="false">Yes</div>
+                <div class="ap-toggle" data-val="no" data-field="taxPaymentPlan" role="button" tabindex="0" aria-pressed="false">No</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ap-section">
+        <div class="ap-section__header"><div class="ap-section__title">Assets &amp; Operations</div><div class="ap-section__subtitle">Property, suppliers, and trade terms</div></div>
+        <div class="ap-field--inline">
+          <label class="ap-field__label">Do directors own property?</label>
+          <div class="ap-toggle-row">
+            <div class="ap-toggle" data-val="yes" data-field="ownProperty" role="button" tabindex="0" aria-pressed="false">Yes</div>
+            <div class="ap-toggle" data-val="no" data-field="ownProperty" role="button" tabindex="0" aria-pressed="false">No</div>
+          </div>
+        </div>
+        <div id="propertyFields" style="display:none;">
+          <div class="ap-field-row" style="margin-top:10px;">
+            <div class="ap-field" style="margin-bottom:0;"><label class="ap-field__label">Property Value</label><input type="text" class="ap-field__input" id="propertyValue" placeholder="e.g. 800,000"></div>
+            <div class="ap-field" style="margin-bottom:0;"><label class="ap-field__label">Mortgage Balance</label><input type="text" class="ap-field__input" id="mortgageBalance" placeholder="e.g. 400,000"></div>
+          </div>
+        </div>
+        <div class="ap-field--inline">
+          <label class="ap-field__label">Purchase from suppliers?</label>
+          <div class="ap-toggle-row">
+            <div class="ap-toggle" data-val="yes" data-field="purchasesFromSuppliers" role="button" tabindex="0" aria-pressed="false">Yes</div>
+            <div class="ap-toggle" data-val="no" data-field="purchasesFromSuppliers" role="button" tabindex="0" aria-pressed="false">No</div>
+          </div>
+        </div>
+        <div class="ap-field--inline">
+          <label class="ap-field__label">Offer trade terms to customers?</label>
+          <div class="ap-toggle-row">
+            <div class="ap-toggle" data-val="yes" data-field="offersTradeTerms" role="button" tabindex="0" aria-pressed="false">Yes</div>
+            <div class="ap-toggle" data-val="no" data-field="offersTradeTerms" role="button" tabindex="0" aria-pressed="false">No</div>
+          </div>
+        </div>
+        <div id="tradeTermsDetail" class="ap-trade-detail">
+          <div class="ap-field" style="margin-bottom:0;margin-top:10px;">
+            <label class="ap-field__label">Outstanding receivables balance</label>
+            <div class="ap-field__hint">Approximate total value of unpaid invoices from customers</div>
+            <div style="display:flex;align-items:center;gap:6px;">
+              <span style="font-family:var(--font-heading);font-weight:700;font-size:1rem;color:var(--navy);">$</span>
+              <input type="text" inputmode="numeric" class="ap-field__input" id="arBalance" placeholder="e.g. 150,000">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ap-form-nav">
+        <button type="button" class="ap-btn-back" data-go-step="1">&larr; Back</button>
+        <button type="button" class="ap-btn-next" data-go-step="3">See My Results &rarr;</button>
+      </div>
+    </div>
+
+    <!-- STEP 3: Results + Submit -->
+    <div id="step3" class="ap-step-panel" style="display:none;">
+      <div class="ap-panel-header">
+        <div class="ap-step-label">Your S.T.A.R. Scored Options</div>
+        <h2 class="ap-panel-title">Your personalised options</h2>
+        <p class="ap-panel-sub">Based on your business profile, these are the products and categories matched to your needs. Submit to receive your full S.T.A.R.-scored Compare Report, with specific offers from across our panel of 70+ lenders.</p>
+      </div>
+
+      <div id="finalResults"></div>
+
+      <div class="ap-next-note">
+        <h3>What happens next?</h3>
+        <p>A specialist reviews your profile and builds your full Compare Report with specific lender matches, typically within 24 hours. Free, with no credit check until you choose to proceed.</p>
+      </div>
+
+      <div class="ap-form-nav">
+        <button type="button" class="ap-btn-back" data-go-step="2">&larr; Back</button>
+        <button type="button" class="ap-btn-next" id="submitApplicationBtn">Get My Full Compare Report &rarr;</button>
+      </div>
+      <p class="tf-form-notice">We collect these details to prepare your Compare Report and contact you about it. Our <a href="../privacy/index.html">Privacy Policy</a> explains how we handle them, and our <a href="../credit-guide/index.html">Credit Guide</a> sets out how we work and how we're paid.</p>
+    </div>
+
+  </div>
+
+  <!-- RIGHT: Live Report Panel -->
+  <div class="ap-report-panel">
+    <div class="ap-report-header">
+      <div class="ap-report-eyebrow">Live Matching</div>
+      <div class="ap-report-title">Your Compare Report</div>
+      <div class="ap-report-sub" id="reportStatus">Answer questions to see matches appear</div>
+    </div>
+
+    <div class="ap-star-legend">
+      <div class="ap-star-legend__item"><span class="ap-star-dot" style="background:#fff"></span> Security</div>
+      <div class="ap-star-legend__item"><span class="ap-star-dot" style="background:var(--skyblue)"></span> Term</div>
+      <div class="ap-star-legend__item"><span class="ap-star-dot" style="background:var(--skyblue)"></span> Amount</div>
+      <div class="ap-star-legend__item"><span class="ap-star-dot" style="background:var(--peach)"></span> Rate</div>
+    </div>
+
+    <div class="ap-cashper-msg" id="cashperMsg">
+      <div class="ap-cashper-avatar"><img width="319" height="514" src="../../assets/img/cashper.png" alt="Cashper"></div>
+      <div class="ap-cashper-text" id="cashperText">Select a funding purpose and I'll start matching you across our panel of 70+ lenders.</div>
+    </div>
+
+    <div id="matchResults">
+      <div class="ap-report-empty">
+        <div class="ap-report-empty__title">Your report is building</div>
+        <div class="ap-report-empty__text">Select a funding purpose to see your first product matches appear here</div>
+      </div>
+    </div>
+
+    <div class="ap-report-progress">
+      <div class="ap-progress-bar"><div class="ap-progress-fill" id="progressFill" style="width:0%"></div></div>
+      <div class="ap-progress-text"><span id="progressLabel">0% complete</span><span id="matchCount">0 matches</span></div>
+    </div>
+  </div>
+
+</div>
+
+<footer class="tf-footer">
+<div class="container-wide">
+<div class="tf-footer-top">
+<div>
+<img loading="lazy" decoding="async" width="844" height="140" src="../../assets/img/logo-white.png" alt="Trade Funding" style="height:20px;width:auto;display:block;margin-bottom:16px;">
+<p class="tf-footer-blurb">Know before you apply. We compare 100+ products across our panel of 70+ lenders, lay out your qualified options, then support you through to settlement. Free, with no credit score impact.</p>
+<div class="tf-footer-contact">
+<a href="tel:1300161641">1300 161 641</a>
+<a href="mailto:support@tradefunding.com.au">support@tradefunding.com.au</a>
+<span>Level 8, 387 George Street, Sydney, NSW, 2000</span>
+</div>
+<div class="tf-footer-badges">
+<span class="tf-footer-badge">ACL 387856</span>
+<span class="tf-footer-badge">AFCA Member</span>
+<span class="tf-footer-badge">CAFBA</span>
+<span class="tf-footer-badge">FinTech Australia</span>
+</div>
+</div>
+<div class="tf-footer-cols">
+<div class="tf-footer-col">
+<div class="tf-footer-col-heading">Channels</div>
+<a href="../../home-shared/how-it-works/index.html">How Cashper Works</a>
+<a href="../../commercial/index.html">Business Capital</a>
+<a href="../../connect/index.html">Fund Your Customers</a>
+<a href="../../personal-and-property/index.html">Personal &amp; Property</a>
+<a href="../../home-shared/resources/index.html">Resources</a>
+</div>
+<div class="tf-footer-col">
+<div class="tf-footer-col-heading">Company</div>
+<a href="../about/index.html">About Us</a>
+<a href="../broker-portal/index.html">Broker Portal</a>
+<a href="../../connect/become-a-partner/index.html">Become a Partner</a>
+<a href="../contact/index.html">Contact</a>
+<a href="index.html" aria-current="page">Get Started</a>
+</div>
+<div class="tf-footer-col">
+<div class="tf-footer-col-heading">Legal</div>
+<a href="../credit-guide/index.html">Credit Guide</a>
+<a href="../privacy/index.html">Privacy Policy</a>
+<a href="../terms/index.html">Terms &amp; Conditions</a>
+</div>
+</div>
+</div>
+<div class="tf-footer-legal">
+<p>Credit products are provided by third-party lenders and credit offers are subject to a full credit review. Read our <a href="../credit-guide/index.html" style="color:rgba(255,255,255,0.85)">Credit Guide</a> | <a href="../terms/index.html" style="color:rgba(255,255,255,0.85)">Terms &amp; Conditions</a> | ACL 387856</p>
+</div>
+<div class="tf-footer-bottom">
+<span>&copy; 2026 Trade Funding Pty Ltd. All rights reserved.</span>
+</div>
+</div>
+</footer>
+
+<script>
+// State
+var state = {
+  purpose: '', amount: 250000, timeline: 'asap',
+  tradingDuration: '', revenue: 0, credit: '', citizenship: 'australian_citizen',
+  ownProperty: null, propertyValue: 0, mortgageBalance: 0,
+  hasTaxDebt: null, taxDebtAmount: 0, taxPaymentPlan: null,
+  purchasesFromSuppliers: null, offersTradeTerms: null,
+  step: 1,
+  entityType: '', businessState: '',
+  gstRegistered: null, gstMonths: 0, gstDate: '',
+  abnActiveDate: '', abnMonthsTrading: 0
+};
+
+var purposeLabels = {
+  cashflow_working_capital: 'working capital',
+  cashflow_expansion: 'business expansion',
+  pay_suppliers: 'supplier payments',
+  pay_expenses: 'business expenses',
+  pay_invoices: 'invoice payments',
+  pay_gov_tax: 'tax obligations',
+  advance_invoices: 'unlocking unpaid invoices',
+  rd_tax_incentive: 'your R&D Tax Incentive claim',
+  purchase_equipment: 'equipment finance',
+  purchase_vehicle: 'vehicle finance',
+  purchase_business: 'business acquisition',
+  purchase_commercial_property: 'commercial property',
+  purchase_residential_property: 'residential property',
+  new_business: 'startup funding',
+  refinance: 'refinancing',
+  restructure: 'debt consolidation',
+  connect_customer_finance: 'your point-of-sale purchase',
+  connect_vendor_finance: 'becoming a Connect vendor partner'
+};
+
+(function() {
+  var params = new URLSearchParams(window.location.search);
+  var purpose = params.get('purpose');
+  var product = params.get('product');
+  var label = purposeLabels[purpose] || product;
+  if (label) {
+    var titleEl = document.getElementById('step1Title');
+    var subEl = document.getElementById('step1Sub');
+    if (titleEl) titleEl.textContent = "You're exploring " + label + " - let's find what fits.";
+    if (subEl) subEl.textContent = "We'll match your business across 100+ products from our panel of 70+ lenders for " + label + ". Confirm the details below to get your personalised Compare Report.";
+  }
+})();
+
+function updateCashper() {
+  var el = document.getElementById('cashperText');
+  if (!el) return;
+  if (state.step === 1) {
+    if (state.purpose) {
+      el.textContent = "I'm matching " + (purposeLabels[state.purpose] || 'your needs') + " across our panel of 70+ lenders. Fill in your details to see your options.";
+    } else {
+      el.textContent = "Select a funding purpose and I'll start matching you across our panel of 70+ lenders.";
+    }
+  } else if (state.step === 2) {
+    el.textContent = "I'm assessing your business against each lender's criteria. The more detail you provide, the more accurate your matches.";
+  } else if (state.step === 3) {
+    el.textContent = "Your preliminary matches are ready. Submit to get your full S.T.A.R. scored Compare Report with specific lender offers.";
+  }
+}
+
+// ================================================================
+// CALCULATOR ENGINE - DIRECT 1:1 PORT FROM calculatorEngine.ts
+// DO NOT modify this logic. It matches the portal exactly.
+// ================================================================
+var purposeProductMap = {
+  cashflow_working_capital: { primary: ['term-loan','line'], secondary: ['invoice','second-mortgage'] },
+  cashflow_expansion: { primary: ['term-loan','line'], secondary: ['invoice','trade','second-mortgage'] },
+  pay_suppliers: { primary: ['trade','line'], secondary: ['term-loan','second-mortgage'] },
+  pay_expenses: { primary: ['line'], secondary: ['term-loan','second-mortgage'] },
+  pay_invoices: { primary: ['invoice','line'], secondary: ['term-loan','second-mortgage'] },
+  pay_gov_tax: { primary: ['line','term-loan'], secondary: ['invoice','second-mortgage'] },
+  advance_invoices: { primary: ['invoice'], secondary: ['line','trade'] },
+  rd_tax_incentive: { primary: ['invoice'], secondary: ['term-loan','trade'] },
+  purchase_equipment: { primary: ['lease'], secondary: ['term-loan','second-mortgage'] },
+  purchase_business: { primary: ['term-loan'], secondary: ['line','second-mortgage'] },
+  purchase_commercial_property: { primary: ['mortgage','second-mortgage'], secondary: ['term-loan'] },
+  purchase_residential_property: { primary: ['mortgage','second-mortgage'], secondary: [] },
+  purchase_vehicle: { primary: ['lease'], secondary: ['term-loan'] },
+  new_business: { primary: ['term-loan','mortgage','second-mortgage'], secondary: [] },
+  refinance: { primary: ['term-loan'], secondary: ['mortgage','second-mortgage'] },
+  restructure: { primary: ['term-loan'], secondary: ['mortgage','second-mortgage'] },
+  // Connect pages only - not part of the ported calculatorEngine.ts map above.
+  connect_customer_finance: { primary: ['trade','line'], secondary: ['term-loan'] },
+  connect_vendor_finance: { primary: ['trade','line'], secondary: ['term-loan'] }
+};
+
+// Label and term never change by role - flat.
+var productInfo = {
+  'lease': { label: 'Lease / Asset Finance', term: '84 months' },
+  'mortgage': { label: 'Commercial Mortgage', term: '30 years' },
+  'line': { label: 'Line of Credit', term: '60 months' },
+  'term-loan': { label: 'Term Loan', term: '60 months' },
+  'invoice': { label: 'Invoice Finance', term: '90 days' },
+  'trade': { label: 'Trade Finance', term: '120 days' },
+  'second-mortgage': { label: 'Second Mortgage', term: '12 months' }
+};
+
+// Rate depends on Primary vs Secondary role - per Excel Matrix (plan.md §4 Phase 6).
+var productRate = {
+  primary:   { lease: '7% APR', mortgage: '5.9% APR', line: '14% APR', 'term-loan': '9.9% ASR', invoice: '9.85% APR', trade: '9.85% APR', 'second-mortgage': '13% APR' },
+  secondary: { lease: '8.5% APR', mortgage: '6.5% APR', line: '14.9% APR', 'term-loan': '9.9% ASR', invoice: '6.5% APR', trade: '9.85% APR', 'second-mortgage': '7.5% APR' }
+};
+
+var durationMonths = { lt_1_year: 3, '1_2_years': 18, '2_5_years': 36, '5_plus_years': 84 };
+
+function getMonths() {
+  if (state.abnMonthsTrading > 0) return state.abnMonthsTrading;
+  return durationMonths[state.tradingDuration] || 0;
+}
+
+function assembleProfile() {
+  return {
+    purpose: state.purpose,
+    citizenshipStatus: state.citizenship,
+    fundingAmountRequired: state.amount,
+    monthsTrading: getMonths(),
+    gstRegistered: state.gstRegistered !== null ? state.gstRegistered : true,
+    gstMonths: state.gstMonths || 0,
+    entityType: state.entityType || '',
+    businessState: state.businessState || '',
+    creditRating: state.credit || 'good',
+    purchasesFromSuppliers: state.purchasesFromSuppliers === 'yes',
+    annualRevenue: state.revenue,
+    offersTradeTerms: state.offersTradeTerms === 'yes',
+    taxDebtAmount: state.hasTaxDebt === 'yes' ? state.taxDebtAmount : 0,
+    taxDebtOnPaymentPlan: state.taxPaymentPlan === 'yes',
+    arBalance: parseCur(document.getElementById('arBalance')),
+    directorsOwnProperty: state.ownProperty === 'yes',
+    propertyMarketValue: state.propertyValue,
+    outstandingMortgageBalance: state.mortgageBalance
+  };
+}
+
+function checkEligibility(cat) {
+  if (state.step === 1) {
+    return { eligible: true, reasons: [] };
+  }
+
+  var profile = assembleProfile();
+  var reasons = [];
+  var monthsTrading = profile.monthsTrading;
+  var monthlyRevenue = profile.annualRevenue / 12;
+  var taxDebtRatio = monthlyRevenue > 0 ? profile.taxDebtAmount / monthlyRevenue : 0;
+  var availableEquity = profile.directorsOwnProperty
+    ? profile.propertyMarketValue * 0.75 - profile.outstandingMortgageBalance
+    : 0;
+
+  if (cat === 'lease') {
+    if (profile.citizenshipStatus === 'temporary_resident') {
+      reasons.push('Australian Citizen or Permanent Resident required');
+    }
+    if (!profile.gstRegistered) {
+      reasons.push('GST registration required for asset finance');
+    }
+  }
+
+  else if (cat === 'mortgage') {
+    if (profile.citizenshipStatus === 'temporary_resident') {
+      reasons.push('Australian Citizen or Permanent Resident required');
+    }
+    if (monthsTrading < 6) {
+      reasons.push('Minimum 6 months trading history required');
+    }
+  }
+
+  else if (cat === 'line') {
+    if (monthsTrading < 6) {
+      reasons.push('Minimum 6 months trading history required');
+    }
+    if (profile.annualRevenue < 72000) {
+      reasons.push('Minimum $72,000 annual revenue required');
+    }
+    if (taxDebtRatio > 1.5 && profile.taxDebtAmount > 0) {
+      reasons.push('Tax debt to monthly revenue ratio exceeds 1.5x limit');
+    }
+  }
+
+  else if (cat === 'term-loan') {
+    if (profile.citizenshipStatus === 'temporary_resident') {
+      reasons.push('Australian Citizen or Permanent Resident required');
+    }
+    if (monthsTrading < 6) {
+      reasons.push('Minimum 6 months trading history required');
+    }
+    if (profile.annualRevenue < 72000) {
+      reasons.push('Minimum $72,000 annual revenue required');
+    }
+    if (taxDebtRatio > 1.5 && profile.taxDebtAmount > 0) {
+      reasons.push('Tax debt to monthly revenue ratio exceeds 1.5x limit');
+    }
+  }
+
+  else if (cat === 'invoice') {
+    if (profile.citizenshipStatus === 'temporary_resident') {
+      reasons.push('Australian Citizen or Permanent Resident required');
+    }
+    if (monthsTrading < 3) {
+      reasons.push('Minimum 3 months trading history required');
+    }
+    if (profile.annualRevenue < 60000) {
+      reasons.push('Minimum $60,000 annual revenue required');
+    }
+    if (!profile.offersTradeTerms) {
+      reasons.push('Must offer trade terms to customers');
+    }
+  }
+
+  else if (cat === 'trade') {
+    if (profile.citizenshipStatus === 'temporary_resident') {
+      reasons.push('Australian Citizen or Permanent Resident required');
+    }
+    if (monthsTrading < 12) {
+      reasons.push('Minimum 12 months trading history required');
+    }
+    if (profile.creditRating === 'issues') {
+      reasons.push('Credit history rating of Good or above required');
+    }
+    if (!profile.purchasesFromSuppliers) {
+      reasons.push('Must purchase goods or services from suppliers');
+    }
+    if (profile.annualRevenue < 100000) {
+      reasons.push('Minimum $100,000 annual revenue required');
+    }
+  }
+
+  else if (cat === 'second-mortgage') {
+    if (profile.citizenshipStatus === 'temporary_resident') {
+      reasons.push('Australian Citizen or Permanent Resident required');
+    }
+    if (monthsTrading < 3) {
+      reasons.push('Minimum 3 months trading history required');
+    }
+    if (profile.creditRating === 'issues') {
+      reasons.push('Credit history rating of Good or above required');
+    }
+    if (!profile.directorsOwnProperty) {
+      reasons.push('Directors must own property to secure a second mortgage');
+    }
+    if (availableEquity <= 0 && profile.directorsOwnProperty) {
+      reasons.push('Insufficient available equity in property (75% LVR)');
+    }
+  }
+
+  return { eligible: reasons.length === 0, reasons: reasons };
+}
+
+function calcAmount(cat, isPrimary) {
+  var profile = assembleProfile();
+  var monthlyRevenue = profile.annualRevenue / 12;
+  var availableEquity = profile.directorsOwnProperty
+    ? profile.propertyMarketValue * 0.75 - profile.outstandingMortgageBalance
+    : 0;
+
+  if (cat === 'lease') return 'TBC - Reviewed against asset';
+  if (cat === 'mortgage') return 'TBC - Reviewed against property';
+  if (cat === 'line') {
+    var mult = isPrimary ? 2 : 1.2; // Excel: 2x primary, 1.2x secondary
+    var a = Math.round(monthlyRevenue * mult);
+    return a > 0 ? '$' + a.toLocaleString() : 'TBC';
+  }
+  if (cat === 'term-loan') { var a = Math.round(monthlyRevenue * 2.5); return a > 0 ? '$' + a.toLocaleString() : 'TBC'; }
+  if (cat === 'invoice') {
+    var capped = Math.min(profile.arBalance, monthlyRevenue * 0.8); // Excel: MIN(AR balance, 80% monthly revenue)
+    var a = Math.round(capped);
+    return a > 0 ? '$' + a.toLocaleString() : 'TBC';
+  }
+  if (cat === 'trade') { var a = Math.round(monthlyRevenue * 1.5); return a > 0 ? '$' + a.toLocaleString() : 'TBC'; }
+  if (cat === 'second-mortgage') { return availableEquity > 0 ? '$' + Math.round(availableEquity).toLocaleString() : 'TBC'; }
+  return 'TBC';
+}
+
+function runCalc() {
+  if (!state.purpose) return null;
+  var map = purposeProductMap[state.purpose];
+  if (!map) return null;
+  var seen = {};
+  var results = { primary: [], secondary: [] };
+
+  map.primary.forEach(function(cat) {
+    if (seen[cat]) return;
+    seen[cat] = true;
+    var e = checkEligibility(cat);
+    var info = { label: productInfo[cat].label, term: productInfo[cat].term, rate: productRate.primary[cat] };
+    results.primary.push({ cat: cat, info: info, eligible: e.eligible, reasons: e.reasons, amount: calcAmount(cat, true) });
+  });
+
+  map.secondary.forEach(function(cat) {
+    if (seen[cat]) return;
+    seen[cat] = true;
+    var e = checkEligibility(cat);
+    var info = { label: productInfo[cat].label, term: productInfo[cat].term, rate: productRate.secondary[cat] };
+    results.secondary.push({ cat: cat, info: info, eligible: e.eligible, reasons: e.reasons, amount: calcAmount(cat, false) });
+  });
+
+  return results;
+}
+
+function renderMatches() {
+  var results = runCalc();
+  var container = document.getElementById('matchResults');
+
+  if (!results) {
+    container.innerHTML = '<div class="ap-report-empty"><div class="ap-report-empty__title">Your report is building</div><div class="ap-report-empty__text">Select a funding purpose to see product matches</div></div>';
+    updateProgress(0, 0);
+    return;
+  }
+
+  var html = '';
+  var eligible = 0, total = 0;
+
+  if (results.primary.length) {
+    html += '<div class="ap-match-section"><div class="ap-match-label">Primary Matches</div>';
+    results.primary.forEach(function(m) {
+      total++;
+      if (m.eligible) eligible++;
+      html += renderCard(m, true);
+    });
+    html += '</div>';
+  }
+
+  if (results.secondary.length) {
+    html += '<div class="ap-match-section"><div class="ap-match-label">Secondary Matches</div>';
+    results.secondary.forEach(function(m) {
+      total++;
+      if (m.eligible) eligible++;
+      html += renderCard(m, false);
+    });
+    html += '</div>';
+  }
+
+  container.innerHTML = html;
+  document.getElementById('reportStatus').textContent = eligible + ' of ' + total + ' products eligible';
+  updateProgress(getProgress(), eligible);
+}
+
+function renderCard(m, isPrimary) {
+  var cls = m.eligible ? 'ap-match-card--eligible' : 'ap-match-card--ineligible';
+  var badge = m.eligible
+    ? (isPrimary ? '<span class="ap-match-badge ap-match-badge--eligible">Primary</span>' : '<span class="ap-match-badge ap-match-badge--eligible">Eligible</span>')
+    : '<span class="ap-match-badge ap-match-badge--ineligible">Ineligible</span>';
+  var reason = !m.eligible && m.reasons.length ? '<div class="ap-match-reason">' + m.reasons[0] + '</div>' : '';
+
+  return '<div class="ap-match-card ' + cls + '">' +
+    '<div class="ap-match-top"><div class="ap-match-name">' + m.info.label + '</div>' + badge + '</div>' +
+    '<div class="ap-match-stats">' +
+      '<div><div class="ap-match-stat-label">Rate From</div><div class="ap-match-stat-value">' + m.info.rate + '</div></div>' +
+      '<div><div class="ap-match-stat-label">Max Term</div><div class="ap-match-stat-value">' + m.info.term + '</div></div>' +
+      '<div><div class="ap-match-stat-label">Est. Amount</div><div class="ap-match-stat-value">' + m.amount + '</div></div>' +
+    '</div>' + reason + '</div>';
+}
+
+function getProgress() {
+  var fields = 0, filled = 0;
+  fields++; if (state.purpose) filled++;
+  fields++; filled++;
+  fields++; if (state.tradingDuration) filled++;
+  fields++; if (state.revenue > 0) filled++;
+  fields++; if (state.credit) filled++;
+  fields++; if (state.citizenship) filled++;
+  fields++; if (state.ownProperty !== null) filled++;
+  fields++; if (state.hasTaxDebt !== null) filled++;
+  fields++; if (state.purchasesFromSuppliers !== null) filled++;
+  fields++; if (state.offersTradeTerms !== null) filled++;
+  return Math.round((filled / fields) * 100);
+}
+
+function updateProgress(pct, matches) {
+  document.getElementById('progressFill').style.width = pct + '%';
+  document.getElementById('progressLabel').textContent = pct + '% complete';
+  document.getElementById('matchCount').textContent = (matches || 0) + ' eligible';
+}
+
+function selectPurposeDropdown(el) {
+  state.purpose = el.value;
+  var ranges = { purchase_commercial_property: [100000,10000000,50000], purchase_residential_property: [100000,10000000,50000], purchase_business: [50000,5000000,25000] };
+  var r = ranges[state.purpose] || [10000,5000000,10000];
+  var sl = document.getElementById('amtSlider');
+  sl.min = r[0]; sl.max = r[1]; sl.step = r[2];
+  if (parseInt(sl.value) < r[0]) sl.value = r[0];
+  if (parseInt(sl.value) > r[1]) sl.value = r[1];
+  document.getElementById('sliderMin').textContent = fmt(r[0]);
+  document.getElementById('sliderMax').textContent = fmt(r[1]);
+  updateAmount(sl);
+  recalc();
+  updateCashper();
+}
+
+function selectCredit(el) {
+  document.querySelectorAll('.ap-pill').forEach(function(p) { p.classList.remove('ap-pill--active'); p.setAttribute('aria-pressed', 'false'); });
+  el.classList.add('ap-pill--active');
+  el.setAttribute('aria-pressed', 'true');
+  state.credit = el.getAttribute('data-credit');
+  recalc();
+}
+
+function selectToggle(el, field) {
+  el.parentElement.querySelectorAll('.ap-toggle').forEach(function(b) { b.classList.remove('ap-toggle--active'); b.setAttribute('aria-pressed', 'false'); });
+  el.classList.add('ap-toggle--active');
+  el.setAttribute('aria-pressed', 'true');
+  state[field] = el.getAttribute('data-val');
+  if (field === 'ownProperty') document.getElementById('propertyFields').style.display = state.ownProperty === 'yes' ? 'block' : 'none';
+  if (field === 'hasTaxDebt') document.getElementById('taxDebtField').style.display = state.hasTaxDebt === 'yes' ? 'block' : 'none';
+  if (field === 'offersTradeTerms') document.getElementById('tradeTermsDetail').className = state.offersTradeTerms === 'yes' ? 'ap-trade-detail ap-trade-detail--visible' : 'ap-trade-detail';
+  recalc();
+}
+
+function updateAmount(sl) {
+  var v = parseInt(sl.value);
+  state.amount = v;
+  document.getElementById('amt1').value = v.toLocaleString();
+  recalc();
+}
+
+function updateRevenue(sl) {
+  var v = parseInt(sl.value);
+  state.revenue = v;
+  document.getElementById('revInput').value = v.toLocaleString();
+  recalc();
+}
+
+function syncRevenueFromInput(el) {
+  var raw = el.value.replace(/[^0-9]/g, '');
+  var val = parseInt(raw) || 0;
+  val = Math.max(0, Math.min(50000000, val));
+  state.revenue = val;
+  document.getElementById('revSlider').value = val;
+  recalc();
+}
+
+function formatRevenueInput(el) {
+  var raw = el.value.replace(/[^0-9]/g, '');
+  var val = parseInt(raw) || 0;
+  val = Math.max(0, Math.min(50000000, val));
+  val = Math.round(val / 50000) * 50000;
+  state.revenue = val;
+  document.getElementById('revSlider').value = val;
+  el.value = val.toLocaleString();
+  recalc();
+}
+
+function recalc() {
+  state.tradingDuration = document.getElementById('tradingDuration').value;
+  state.citizenship = document.getElementById('citizenship').value;
+  state.propertyValue = parseCur(document.getElementById('propertyValue'));
+  state.mortgageBalance = parseCur(document.getElementById('mortgageBalance'));
+  state.taxDebtAmount = parseCur(document.getElementById('taxDebtAmount'));
+  renderMatches();
+}
+
+function parseCur(el) { return el ? parseInt(el.value.replace(/[^0-9]/g,'')) || 0 : 0; }
+function fmt(n) { return n>=1000000?'$'+(n/1000000).toFixed(0)+'M':n>=1000?'$'+(n/1000)+'k':'$'+n; }
+
+function validateStep1() {
+  var valid = true;
+  var fields = [
+    { id: 'purposeSelect', type: 'select' },
+    { id: 'firstName', type: 'input' },
+    { id: 'lastName', type: 'input' },
+    { id: 'email', type: 'input' },
+    { id: 'phone', type: 'input' },
+    { id: 'abnSearch', type: 'input' }
+  ];
+  document.querySelectorAll('.ap-field__input--error, .ap-field__select--error').forEach(function(el) {
+    el.classList.remove('ap-field__input--error', 'ap-field__select--error');
+  });
+  fields.forEach(function(f) {
+    var el = document.getElementById(f.id);
+    if (el && !el.value.trim()) {
+      el.classList.add(f.type === 'select' ? 'ap-field__select--error' : 'ap-field__input--error');
+      valid = false;
+    }
+  });
+  if (!state.purpose) {
+    var ps = document.getElementById('purposeSelect');
+    if (ps) ps.classList.add('ap-field__select--error');
+    valid = false;
+  }
+  if (!valid) {
+    var firstError = document.querySelector('.ap-field__input--error, .ap-field__select--error');
+    if (firstError) firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+  return valid;
+}
+
+function validateStep2() {
+  var valid = true;
+  document.querySelectorAll('.ap-field__select--error').forEach(function(el) { el.classList.remove('ap-field__select--error'); });
+  var td = document.getElementById('tradingDuration');
+  if (td && !td.value) { td.classList.add('ap-field__select--error'); valid = false; }
+  if (!state.credit) { valid = false; }
+  if (!valid) {
+    var firstError = document.querySelector('.ap-field__select--error');
+    if (firstError) firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+  return valid;
+}
+
+function goStep(n) {
+  if (n === 2 && !validateStep1()) return;
+  if (n === 3 && !validateStep2()) return;
+
+  for (var i=1;i<=3;i++) {
+    var stepEl = document.getElementById('step'+i);
+    if (stepEl) stepEl.style.display = i===n ? 'block' : 'none';
+    var nav = document.getElementById('navStep'+i);
+    if (nav) nav.className = 'ap-step' + (i===n?' ap-step--active':'') + (i<n?' ap-step--done':'');
+  }
+  state.step = n;
+  var td = document.getElementById('tradingDuration');
+  if (td) state.tradingDuration = td.value;
+  var cz = document.getElementById('citizenship');
+  if (cz) state.citizenship = cz.value;
+  state.propertyValue = parseCur(document.getElementById('propertyValue'));
+  state.mortgageBalance = parseCur(document.getElementById('mortgageBalance'));
+  state.taxDebtAmount = parseCur(document.getElementById('taxDebtAmount'));
+  renderMatches();
+  updateCashper();
+  if (n === 3) renderFinalResults();
+  window.scrollTo(0,0);
+}
+
+function renderFinalResults() {
+  var results = runCalc();
+  if (!results) return;
+  var all = results.primary.concat(results.secondary);
+  var html = '';
+
+  all.forEach(function(m) {
+    var isPrimary = results.primary.indexOf(m) !== -1;
+    var badge = isPrimary && m.eligible ? '<span class="ap-match-badge ap-match-badge--eligible" style="margin-left:6px;">Primary</span>' : '';
+    var rowCls = m.eligible ? 'ap-result-row' : 'ap-result-row ap-result-row--ineligible';
+
+    html += '<div class="' + rowCls + '">';
+    html += '<div><div class="ap-result-name">' + m.info.label + badge + '</div>';
+    if (!m.eligible && m.reasons.length) {
+      html += '<div class="ap-result-reason">' + m.reasons[0] + '</div>';
+    }
+    html += '</div>';
+    html += '<div><div class="ap-result-stat-label">Rate</div><div class="ap-result-stat-value ap-result-stat-value--accent">' + m.info.rate + '</div></div>';
+    html += '<div><div class="ap-result-stat-label">Term</div><div class="ap-result-stat-value">' + m.info.term + '</div></div>';
+    html += '<div><div class="ap-result-stat-label">Est. Amount</div><div class="ap-result-stat-value">' + m.amount + '</div></div>';
+    html += '</div>';
+  });
+
+  document.getElementById('finalResults').innerHTML = html;
+}
+
+// Zoho rejects an empty string for picklist and date fields, so unanswered questions are
+// omitted from the payload rather than sent blank. `0` and `false` are real answers here
+// (a $0 tax debt, "not GST registered") and are deliberately kept.
+function pruneUnanswered(obj) {
+  var out = {};
+  Object.keys(obj).forEach(function (key) {
+    var val = obj[key];
+    if (val === null || val === undefined || val === '') return;
+    out[key] = val;
+  });
+  return out;
+}
+
+/**
+ * Builds the Calculator Full Breakdown subform - one row per matched product, replacing the
+ * single JSON-blob field this used to send (plan.md §4 Phase 6). Primary matches are pushed
+ * first so the row order reflects match strength.
+ *
+ * The five row field names are Isabella-confirmed. Two things here are NOT confirmed and are
+ * the first things to check when the sandbox test runs (Prompt 6.13):
+ *  - the subform's own container name (`Calculator_Full_Breakdown`, derived from the "Calculator
+ *    Full Breakdown" label in plan.md - the API name was never actually sent through);
+ *  - whether `Eligible_Products_Matches` wants a Yes/No per row, as written here, or a single
+ *    rolled-up count. Primary-vs-secondary tier is conveyed by row order only; if the subform
+ *    turns out to need it as its own column, that's a sixth field Isabella would have to add.
+ */
+// Corrected 10 Sep against a screenshot of a real Zoho lead's "FINAL RESULTS/BREAKDOWN"
+// subform (from Isabella). The two main columns were semantically inverted here:
+//
+//   Best_Product_Categories   holds the TIER - "Primary Matches" / "Secondary Matches"
+//   Eligible_Products_Matches holds the PRODUCT - "Term Loan", "Line", "Invoice", "Trade"
+//
+// We had been sending the product in the first and a bare "Yes"/"No" in the second, so even
+// once a valid destination is found the values would have landed in the wrong columns.
+//
+// The screenshot also shows no Yes/No column at all, and lists only matched products - so the
+// rows are the eligible set, and ineligible products simply aren't rows. Ineligible ones are
+// therefore dropped rather than sent with "No".
+//
+// ⚠️ Interpretation from one screenshot, to confirm at the CRM demo. Also unresolved: where
+// these rows actually go. `Calculator_Full_Breakdown` is not a field on Leads, none of the five
+// column names exist as Lead fields either, and the records written to the `Provider_Matches`
+// module came out empty - so those names aren't that module's real field names. See plan.md §7e.
+function buildBreakdownRows() {
+  var results = runCalc();
+  if (!results) return [];
+  var rows = [];
+  var TIER_LABEL = { primary: 'Primary Matches', secondary: 'Secondary Matches' };
+  ['primary', 'secondary'].forEach(function (tier) {
+    results[tier].forEach(function (m) {
+      if (!m.eligible) return;
+      var row = {
+        Best_Product_Categories: TIER_LABEL[tier],
+        Eligible_Products_Matches: m.info.label,
+        Max_Term: m.info.term,
+        Rates_Start_From: m.info.rate
+      };
+      // Zoho confirmed this column is TEXT (not currency), so the display string goes as-is.
+      // That is preferable to forcing a number: the calculator legitimately returns "TBC" and
+      // "TBC - Reviewed against asset" for products priced against an asset.
+      if (m.amount) row.Indicate_Amount = String(m.amount);
+      rows.push(row);
+    });
+  });
+  return rows;
+}
+
+/**
+ * Maps Apply's site-native state onto Isabella's confirmed Zoho API field names (the full
+ * mapping table lives in plan.md §4 Phase 6).
+ *
+ * Two deliberate omissions, both confirmed rather than overlooked:
+ *  - `Owner` is never sent - lead assignment is Matt's Zoho-side workflow's job.
+ *  - `gstMonths` has no corresponding Zoho field (Isabella confirmed `GST_Registered_Months`
+ *    does not exist), so it is dropped entirely instead of guessed at.
+ *
+ * `Purpose` sends the site's stable option key (e.g. "cashflow_working_capital"), which is what
+ * this form has always submitted. plan.md notes the Zoho picklist holds 18 values "see
+ * purposeLabels" - but those labels are lowercase prose fragments written for on-page copy
+ * ("your R&D Tax Incentive claim"), so they're unlikely to be the literal option values. Worth
+ * confirming with Isabella; sending the key is the conservative choice until then.
+ */
+function buildApplyLeadData() {
+  var data = pruneUnanswered({
+    First_Name: document.getElementById('firstName').value,
+    Last_Name: document.getElementById('lastName').value,
+    Email: document.getElementById('email').value,
+    Mobile: document.getElementById('phone').value,
+    Company: document.getElementById('bizName').value,
+    ABN: document.getElementById('abn').value,
+    Purpose: state.purpose,
+    Funding_Amount_Required: state.amount,
+    // Number, not a picklist - getMonths() prefers the ABN-lookup value and falls back to the
+    // selected duration bucket.
+    Time_Trading_Months: getMonths(),
+    Citizenship_Status: state.citizenship,
+    Annual_Revenue: state.revenue,
+    Rate_your_credit_history: state.credit,
+    Do_any_directors_own_property_in_their_personal_na: state.ownProperty,
+    Tax_Debt_1: state.hasTaxDebt,
+    Tax_Debt_Amount: state.taxDebtAmount,
+    Is_it_on_a_payment_plan: state.taxPaymentPlan,
+    Do_you_purchase_goods_or_services_from_suppliers: state.purchasesFromSuppliers,
+    Do_you_offer_trade_terms_to_your_customers: state.offersTradeTerms,
+    What_is_your_AR_Balance: parseCur(document.getElementById('arBalance')),
+    Entity_Type: state.entityType,
+    State: state.businessState,
+    GST_Registered: state.gstRegistered,
+    GST_Registered_Date: state.gstDate,
+    ABN_Active_From: state.abnActiveDate,
+    Total_estimated_market_value_of_the_property_or_pr: state.propertyValue,
+    Total_outstanding_first_mortgage_balance_on_the_pr: state.mortgageBalance
+  });
+
+  var rows = buildBreakdownRows();
+  if (rows.length) data.Calculator_Full_Breakdown = rows;
+
+  return data;
+}
+
+// Submission state. The thank-you screen renders ONLY once the endpoint confirms the lead was
+// saved (HTTP 2xx and ok:true). Anything else - network error, CORS block, timeout, non-2xx,
+// ok:false - keeps every answer on the page and shows an error with a retry and the phone/email
+// fallback. (This used to render the thank-you unconditionally, back when the endpoint could
+// only answer zoho_not_configured; with live credentials that hid every lost lead.)
+var applySubmitting = false;
+var APPLY_SUBMIT_TIMEOUT_MS = 45000;
+
+function setApplySending(sending) {
+  var btn = document.getElementById('submitApplicationBtn');
+  var back = document.querySelector('#step3 .ap-btn-back');
+  if (btn) {
+    btn.disabled = sending;
+    if (sending) btn.setAttribute('aria-busy', 'true'); else btn.removeAttribute('aria-busy');
+    btn.innerHTML = sending ? 'Sending&hellip;' : 'Get My Full Compare Report &rarr;';
+  }
+  // Leaving step 3 mid-request would hide the result, so Back waits for the answer.
+  if (back) back.disabled = sending;
+}
+
+function showApplyError() {
+  var err = document.getElementById('applySubmitError');
+  var fresh = !err;
+  if (fresh) {
+    err = document.createElement('div');
+    err.id = 'applySubmitError';
+    err.className = 'ap-next-note';
+    err.setAttribute('role', 'alert');
+    err.style.borderColor = 'var(--peach)';
+    var nav = document.querySelector('#step3 .ap-form-nav');
+    if (nav && nav.parentNode) nav.parentNode.insertBefore(err, nav);
+  }
+  // (Re)writing the content is what makes role="alert" announce, including on a repeat failure.
+  err.innerHTML =
+    '<h3 class="ap-abn-status--error">We couldn\'t send your details</h3>' +
+    '<p>Nothing is lost: your answers are still here. Please try again, or call ' +
+    '<a href="tel:1300161641">1300 161 641</a> or email ' +
+    '<a href="mailto:support@tradefunding.com.au">support@tradefunding.com.au</a> and we\'ll take it from there.</p>' +
+    '<button type="button" class="ap-btn-next" id="applySubmitRetry" style="margin-top:12px">Try again</button>';
+  err.hidden = false;
+  var retry = document.getElementById('applySubmitRetry');
+  if (retry) {
+    retry.addEventListener('click', submitApplication);
+    retry.focus();
+  }
+}
+
+function hideApplyError() {
+  var err = document.getElementById('applySubmitError');
+  if (err) err.hidden = true;
+}
+
+function submitApplication() {
+  if (applySubmitting) return;
+  // Built before anything re-renders - Step 1's inputs are read from the DOM.
+  var data = buildApplyLeadData();
+
+  if (!data.Email || !window.TF_ZOHO || !window.TF_ZOHO.leadUrl) {
+    // Step 1 requires an email, so this means the page is broken rather than the visitor.
+    console.error('[apply] cannot submit - Email or the lead endpoint is missing');
+    showApplyError();
+    return;
+  }
+
+  applySubmitting = true;
+  hideApplyError();
+  setApplySending(true);
+
+  var controller = typeof AbortController === 'function' ? new AbortController() : null;
+  var timer = controller ? setTimeout(function () { controller.abort(); }, APPLY_SUBMIT_TIMEOUT_MS) : null;
+
+  // No keepalive: the page waits for the answer, and keepalive caps the body size.
+  fetch(window.TF_ZOHO.leadUrl(), {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ source: 'apply', data: data }),
+    signal: controller ? controller.signal : undefined
+  })
+    .then(function (res) {
+      return res.json().then(function (body) { return { ok: res.ok, body: body }; });
+    })
+    .then(function (result) {
+      if (!(result.ok && result.body && result.body.ok === true)) {
+        throw new Error((result.body && result.body.error) || 'submission_failed');
+      }
+      renderApplyThankYou();
+    })
+    .catch(function (err) {
+      console.error('[apply] lead submission failed', err && err.message);
+      setApplySending(false);
+      showApplyError();
+    })
+    .then(function () {
+      if (timer) clearTimeout(timer);
+      applySubmitting = false;
+    });
+}
+
+function renderApplyThankYou() {
+  document.getElementById('step3').innerHTML =
+    '<div class="ap-thankyou">' +
+      '<div class="ap-thankyou__rule"></div>' +
+      '<h2 class="ap-thankyou__title">Your Compare Report is on its way</h2>' +
+      '<p class="ap-thankyou__sub">Cashper is matching your business across our panel of 70+ lenders. Your S.T.A.R. scored Compare Report is typically ready within 24 hours.</p>' +
+      '<div class="ap-thankyou__steps">' +
+        '<div class="ap-thankyou__step"><div class="ap-thankyou__step-num">1</div><div class="ap-thankyou__step-text"><strong>Matching now.</strong> Your profile is being matched against each lender\'s criteria.</div></div>' +
+        '<div class="ap-thankyou__step"><div class="ap-thankyou__step-num">2</div><div class="ap-thankyou__step-text"><strong>Email incoming.</strong> Your report typically arrives within 24 hours.</div></div>' +
+        '<div class="ap-thankyou__step"><div class="ap-thankyou__step-num">3</div><div class="ap-thankyou__step-text"><strong>Guided walkthrough.</strong> A specialist will walk you through your options.</div></div>' +
+      '</div>' +
+      '<div class="ap-thankyou__note">No credit check has been performed, so there is no credit score impact. Your data is secure.</div>' +
+    '</div>';
+
+  var cashperEl = document.getElementById('cashperText');
+  if (cashperEl) cashperEl.textContent = "Your application is submitted! I'm building your full Compare Report now. You'll hear from us within 24 hours.";
+
+  for (var i=1;i<=3;i++) {
+    var nav = document.getElementById('navStep'+i);
+    if (nav) nav.className = 'ap-step ap-step--done';
+  }
+}
+
+function syncAmountFromText(el) {
+  var raw = el.value.replace(/[^0-9]/g, '');
+  var val = parseInt(raw) || 0;
+  var sl = document.getElementById('amtSlider');
+  var min = parseInt(sl.min), max = parseInt(sl.max);
+  val = Math.max(min, Math.min(max, val));
+  state.amount = val;
+  sl.value = val;
+  recalc();
+}
+function formatAmountText(el) {
+  var raw = el.value.replace(/[^0-9]/g, '');
+  var val = parseInt(raw) || 10000;
+  var sl = document.getElementById('amtSlider');
+  var min = parseInt(sl.min), max = parseInt(sl.max), step = parseInt(sl.step);
+  val = Math.max(min, Math.min(max, val));
+  val = Math.round(val / step) * step;
+  state.amount = val;
+  sl.value = val;
+  el.value = val.toLocaleString();
+  recalc();
+}
+
+// ABN Lookup - ABR JSONP API
+var ABR_GUID = '34f1d0c4-e8a4-4c8e-a347-069ef4df4c2b';
+var abnTimer = null;
+
+function abnJsonp(url) {
+  return new Promise(function(resolve) {
+    var cbName = 'abnCb_' + Date.now() + '_' + Math.random().toString(36).slice(2, 8);
+    var script = document.createElement('script');
+    var cleanup = function() { delete window[cbName]; script.remove(); };
+    window[cbName] = function(data) { cleanup(); resolve(data); };
+    script.src = url + '&callback=' + cbName;
+    script.onerror = function() { cleanup(); resolve(null); };
+    document.head.appendChild(script);
+    setTimeout(function() { cleanup(); resolve(null); }, 8000);
+  });
+}
+
+function abnLookup(query) {
+  clearTimeout(abnTimer);
+  var statusEl = document.getElementById('abnStatus');
+  var autofillEl = document.getElementById('abnAutofill');
+  var q = query.trim();
+
+  if (q.length < 3) {
+    statusEl.innerHTML = '';
+    autofillEl.style.display = 'none';
+    document.getElementById('bizName').value = '';
+    document.getElementById('abn').value = '';
+    return;
+  }
+
+  statusEl.innerHTML = '<span class="ap-abn-status--loading">Searching ABR&hellip;</span>';
+
+  abnTimer = setTimeout(function() {
+    var cleanDigits = q.replace(/\s/g, '');
+    var isAbn = /^\d{11}$/.test(cleanDigits);
+
+    if (isAbn) {
+      abnJsonp('https://abr.business.gov.au/json/AbnDetails.aspx?abn=' + cleanDigits + '&guid=' + ABR_GUID)
+        .then(function(data) { handleAbnDetails(data); });
+    } else {
+      abnJsonp('https://abr.business.gov.au/json/MatchingNames.aspx?name=' + encodeURIComponent(q) + '&maxResults=5&guid=' + ABR_GUID)
+        .then(function(data) { handleNameResults(data); });
+    }
+  }, 400);
+}
+
+function calcMonthsSince(dateStr) {
+  if (!dateStr) return 0;
+  var d = new Date(dateStr);
+  if (isNaN(d.getTime())) return 0;
+  var now = new Date();
+  return (now.getFullYear() - d.getFullYear()) * 12 + (now.getMonth() - d.getMonth());
+}
+
+function formatDateShort(dateStr) {
+  if (!dateStr) return '-';
+  var d = new Date(dateStr);
+  if (isNaN(d.getTime())) return dateStr;
+  var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  return d.getDate() + ' ' + months[d.getMonth()] + ' ' + d.getFullYear();
+}
+
+function monthsToText(m) {
+  if (m < 12) return m + ' months';
+  var y = Math.floor(m / 12);
+  var rem = m % 12;
+  return y + (y === 1 ? ' year' : ' years') + (rem > 0 ? ', ' + rem + ' months' : '');
+}
+
+function mapMonthsToBucket(m) {
+  if (m < 12) return 'lt_1_year';
+  if (m < 24) return '1_2_years';
+  if (m < 60) return '2_5_years';
+  return '5_plus_years';
+}
+
+function handleAbnDetails(data) {
+  var statusEl = document.getElementById('abnStatus');
+  var autofillEl = document.getElementById('abnAutofill');
+
+  if (!data || !data.Abn) {
+    statusEl.innerHTML = '<span class="ap-abn-status--error">ABN not found</span>';
+    autofillEl.style.display = 'none';
+    return;
+  }
+
+  var abn = data.Abn;
+  var name = data.EntityName || '';
+  var entityType = data.EntityTypeName || '';
+  var hasGst = data.Gst != null && (data.Gst + '').length > 0;
+  var gstDate = data.Gst || '';
+  var bizState = data.AddressState || '';
+  var abnStatus = data.AbnStatus || '';
+  var abnActiveDate = data.AbnStatusEffectiveFrom || '';
+  var formattedAbn = abn.replace(/(\d{2})(\d{3})(\d{3})(\d{3})/, '$1 $2 $3 $4');
+
+  var abnMonths = calcMonthsSince(abnActiveDate);
+  var gstMonths = hasGst ? calcMonthsSince(gstDate) : 0;
+
+  state.entityType = entityType;
+  state.businessState = bizState;
+  state.gstRegistered = hasGst;
+  state.gstMonths = gstMonths;
+  state.gstDate = gstDate;
+  state.abnActiveDate = abnActiveDate;
+  state.abnMonthsTrading = abnMonths;
+
+  document.getElementById('abnBizName').textContent = name;
+  document.getElementById('abnNumber').textContent = formattedAbn;
+  document.getElementById('abnEntityType').textContent = entityType;
+  document.getElementById('abnGst').textContent = hasGst ? 'Yes, since ' + formatDateShort(gstDate) : 'No';
+  document.getElementById('abnState').textContent = bizState;
+  document.getElementById('abn').value = abn;
+  document.getElementById('bizName').value = name;
+  autofillEl.style.display = 'block';
+
+  var abrFields = document.getElementById('abrAutoFields');
+  if (abrFields) {
+    abrFields.style.display = 'block';
+    document.getElementById('autoEntityType').textContent = entityType || '-';
+    document.getElementById('autoState').textContent = bizState || '-';
+    document.getElementById('autoGstStatus').textContent = hasGst ? 'Yes' : 'No';
+    document.getElementById('autoGstDuration').textContent = hasGst ? 'Since ' + formatDateShort(gstDate) + ' (' + monthsToText(gstMonths) + ')' : 'Not registered for GST';
+    document.getElementById('autoAbnDate').textContent = formatDateShort(abnActiveDate);
+    document.getElementById('autoTradingYears').textContent = abnMonths > 0 ? monthsToText(abnMonths) + ' trading' : '';
+  }
+
+  if (abnMonths > 0) {
+    var bucket = mapMonthsToBucket(abnMonths);
+    var td = document.getElementById('tradingDuration');
+    if (td) {
+      td.value = bucket;
+      state.tradingDuration = bucket;
+    }
+    var noteEl = document.getElementById('tradingDurationNote');
+    var noteText = document.getElementById('tradingDurationNoteText');
+    if (noteEl && noteText) {
+      noteEl.style.display = 'block';
+      noteText.textContent = 'Auto-filled from ABR. ABN active since ' + formatDateShort(abnActiveDate) + '. You can override if needed.';
+    }
+  }
+
+  if (abnStatus === 'Active') {
+    statusEl.innerHTML = '<span class="ap-abn-status--found">ABN verified: ' + escapeHtml(name) + '</span>';
+  } else {
+    statusEl.innerHTML = '<span class="ap-abn-status--error">ABN found but status: ' + escapeHtml(abnStatus) + '</span>';
+  }
+
+  recalc();
+}
+
+function handleNameResults(data) {
+  var statusEl = document.getElementById('abnStatus');
+  var autofillEl = document.getElementById('abnAutofill');
+
+  if (!data || !data.Names || data.Names.length === 0) {
+    statusEl.innerHTML = '<span class="ap-abn-status--error">No matching businesses found</span>';
+    autofillEl.style.display = 'none';
+    return;
+  }
+
+  var results = data.Names.slice(0, 5);
+  var html = '<div style="margin-top:6px;">';
+  results.forEach(function(r) {
+    var name = r.Name || '';
+    var abn = r.Abn || '';
+    var st = r.State || '';
+    html += '<button type="button" class="ap-abn-result" data-abn="' + escapeHtml(abn) + '">';
+    html += '<span class="ap-abn-result-name">' + escapeHtml(name) + '</span>';
+    html += '<span class="ap-abn-result-meta">ABN: ' + escapeHtml(abn) + ' &middot; ' + escapeHtml(st) + '</span>';
+    html += '</button>';
+  });
+  html += '</div>';
+
+  statusEl.innerHTML = '<span style="font-size:0.74rem;color:var(--text-secondary);">' + results.length + ' matching businesses found. Select one:</span>' + html;
+  autofillEl.style.display = 'none';
+}
+
+// ABR text is third-party data; escape it before it goes anywhere near innerHTML.
+function escapeHtml(value) {
+  return String(value).replace(/[&<>"']/g, function(c) {
+    return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+  });
+}
+
+function selectAbnResult(abn) {
+  abn = String(abn).replace(/\D/g, '');
+  document.getElementById('abnSearch').value = abn;
+  abnJsonp('https://abr.business.gov.au/json/AbnDetails.aspx?abn=' + abn + '&guid=' + ABR_GUID)
+    .then(function(data) { handleAbnDetails(data); });
+}
+
+// Event bindings. These were inline on*="" attributes; binding them here lets the site's
+// Content-Security-Policy forbid inline handlers (plan.md Phase 10 Part 1).
+(function() {
+  function on(id, evt, fn) { var el = document.getElementById(id); if (el) el.addEventListener(evt, fn); }
+  function selectOnFocus() { this.select(); }
+  on('purposeSelect', 'change', function() { selectPurposeDropdown(this); });
+  on('amt1', 'focus', selectOnFocus);
+  on('amt1', 'input', function() { syncAmountFromText(this); });
+  on('amt1', 'blur', function() { formatAmountText(this); });
+  on('amtSlider', 'input', function() { updateAmount(this); });
+  on('abnSearch', 'input', function() { abnLookup(this.value); });
+  on('revInput', 'focus', selectOnFocus);
+  on('revInput', 'input', function() { syncRevenueFromInput(this); });
+  on('revInput', 'blur', function() { formatRevenueInput(this); });
+  on('revSlider', 'input', function() { updateRevenue(this); });
+  ['tradingDuration', 'citizenship'].forEach(function(id) { on(id, 'change', recalc); });
+  ['taxDebtAmount', 'propertyValue', 'mortgageBalance', 'arBalance'].forEach(function(id) { on(id, 'input', recalc); });
+  on('submitApplicationBtn', 'click', submitApplication);
+
+  document.addEventListener('click', function(e) {
+    var t = e.target.closest('[data-go-step], .ap-pill, .ap-toggle[data-field], .ap-abn-result[data-abn]');
+    if (!t) return;
+    if (t.hasAttribute('data-go-step')) goStep(parseInt(t.getAttribute('data-go-step'), 10));
+    else if (t.classList.contains('ap-pill')) selectCredit(t);
+    else if (t.classList.contains('ap-toggle')) selectToggle(t, t.getAttribute('data-field'));
+    else selectAbnResult(t.getAttribute('data-abn'));
+  });
+  // The pills and Yes/No toggles are role="button" divs: give them the keyboard behaviour a
+  // real button has (WCAG 2.1.1).
+  document.addEventListener('keydown', function(e) {
+    if (e.key !== 'Enter' && e.key !== ' ') return;
+    var t = e.target.closest('.ap-pill, .ap-toggle[data-field]');
+    if (!t) return;
+    e.preventDefault();
+    t.click();
+  });
+})();
+
+// Init
+updateAmount(document.getElementById('amtSlider'));
+renderMatches();
+updateCashper();
+
+(function() {
+  var p = new URLSearchParams(window.location.search);
+  var purpose = p.get('purpose');
+  var amount = p.get('amount');
+  var trading = p.get('trading');
+
+  if (purpose) {
+    var sel = document.getElementById('purposeSelect');
+    if (sel) {
+      sel.value = purpose;
+      selectPurposeDropdown(sel);
+    }
+  }
+  if (amount) {
+    var sl = document.getElementById('amtSlider');
+    if (sl) {
+      var val = parseInt(amount) || 250000;
+      var min = parseInt(sl.min), max = parseInt(sl.max);
+      val = Math.max(min, Math.min(max, val));
+      sl.value = val;
+      updateAmount(sl);
+    }
+  }
+  if (trading) {
+    var td = document.getElementById('tradingDuration');
+    if (td) { td.value = trading; state.tradingDuration = trading; }
+  }
+  recalc();
+})();
+</script>
+
+<script src="../../assets/js/main.js"></script>
+</body>
+</html>

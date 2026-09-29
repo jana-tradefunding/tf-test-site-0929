@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/img/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="../assets/img/favicon-192.png">
+<link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png">
+<title>Fund Your Customers, Get Paid Faster - Trade Funding Connect</title>
+<meta name="description" content="Help your customers say yes, and get paid on the spot. A free, personalised QR code on your quotes and invoices shows customers qualified funding options.">
+<link rel="canonical" href="https://tradefunding.com.au/connect/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Trade Funding">
+<meta property="og:locale" content="en_AU">
+<meta property="og:title" content="Fund Your Customers, Get Paid Faster - Trade Funding Connect">
+<meta property="og:description" content="Help your customers say yes, and get paid on the spot. A free, personalised QR code on your quotes and invoices shows customers qualified funding options.">
+<meta property="og:url" content="https://tradefunding.com.au/connect/">
+<meta property="og:image" content="https://tradefunding.com.au/assets/img/og-default.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Trade Funding. Clarity, before every funding decision.">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Trade Funding",
+  "url": "https://tradefunding.com.au/",
+  "logo": "https://tradefunding.com.au/assets/img/logo-navy.png",
+  "telephone": "+61-1300-161-641",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Level 8, 387 George Street",
+    "addressLocality": "Sydney",
+    "addressRegion": "NSW",
+    "postalCode": "2000",
+    "addressCountry": "AU"
+  },
+  "sameAs": []
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/tokens.css">
+<link rel="stylesheet" href="../assets/css/base.css">
+<link rel="stylesheet" href="../assets/css/components.css">
+<style>
+.hero-grid{max-width:var(--max-width-wide);margin:0 auto;padding:0 32px;display:grid;grid-template-columns:1.05fr 1fr;gap:40px;align-items:center;align-content:center}
+.hero-eyebrow-dot{width:7px;height:7px;border-radius:50%;background:var(--gold)}
+.hero-title{font-weight:600;font-size:clamp(2.4rem,4.2vw,3.5rem);line-height:1.08;letter-spacing:var(--ls-heading);color:var(--navy);margin-bottom:20px}
+.hero-sub{font-size:1.05rem;color:var(--text-secondary);line-height:1.65;max-width:480px;margin-bottom:32px}
+/* Hero 3D scene - matches the floating glass-card language used on Commercial / Personal & Property.
+   aspect-ratio keeps the stage box the same shape as the card group's own
+   bounding box, so the fit-to-frame camera fills it with no dead margin. */
+.scene-stage{position:relative;width:100%;aspect-ratio:1.3/1;max-height:520px;overflow:visible}
+.scene-stage canvas{display:block;width:100%;height:100%;cursor:grab;touch-action:none}
+.scene-stage canvas:active{cursor:grabbing}
+
+.checkout-row{display:flex;justify-content:space-between;font-size:0.78rem;color:var(--ink-600);margin-bottom:6px}
+
+.proof-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--gap-card)}
+.proof-stat{font-family:var(--font-heading);font-weight:600;font-size:clamp(1.7rem,2.6vw,2.1rem);color:var(--navy);margin-bottom:8px}
+
+.compare-cols{display:grid;grid-template-columns:1fr 1fr;gap:var(--gap-card)}
+.compare-col{border-radius:var(--radius-lg);padding:32px}
+.compare-col.without{background:var(--bg-soft);border:1px solid var(--border)}
+.compare-col.with{background:#fff;border:1px solid var(--gold);box-shadow:0 20px 40px -12px var(--tint-gold-10)}
+.checkout-mini{border-radius:var(--radius-md);padding:18px;margin-bottom:22px}
+.checkout-mini.without{background:var(--light-bg);border:1px solid var(--border)}
+.checkout-mini.with{background:var(--gold-soft);border:1px solid var(--gold)}
+.status-chip{display:inline-flex;align-items:center;gap:6px;border-radius:var(--radius-chip);padding:7px 12px;font-family:var(--font-heading);font-weight:700;font-size:0.76rem;margin-bottom:10px}
+
+.steps-grid{position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.steps-line{position:absolute;top:23px;left:12.5%;right:12.5%;height:2px;background:var(--border-neutral);z-index:0}
+.step-circle{width:46px;height:46px;border-radius:50%;margin:0 auto 16px;display:flex;align-items:center;justify-content:center;font-family:var(--font-heading);font-weight:700;font-size:0.85rem;background:#fff;border:2px solid var(--border-neutral);color:var(--navy)}
+[data-accordion-item].is-open .step-circle{background:var(--gold);border-color:var(--gold)}
+.step-detail{background:#fff;border:1px solid var(--border);border-radius:var(--radius-lg);padding:26px 30px;margin-top:12px}
+
+.value-icon{width:52px;height:52px;border-radius:14px;background:var(--tint-gold-10);display:flex;align-items:center;justify-content:center;font-family:var(--font-heading);font-weight:700;font-size:1.2rem;color:var(--navy);margin-bottom:18px}
+
+.faq-item{border-bottom:1px solid var(--border)}
+.faq-btn{width:100%;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:20px 0;text-align:left}
+.faq-q{font-family:var(--font-heading);font-weight:600;font-size:0.98rem;color:var(--navy)}
+.faq-panel{font-size:0.92rem;color:var(--text-secondary);line-height:1.65;padding:0 0 22px;max-width:600px}
+
+@media (max-width:900px){
+  .hero-grid{grid-template-columns:1fr}
+  .scene-stage{max-height:380px}
+  .compare-cols{grid-template-columns:1fr}
+  .steps-grid{grid-template-columns:1fr 1fr}
+  .proof-grid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:520px){
+  .proof-grid{grid-template-columns:1fr}
+}
+</style>
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="channel-connect">
+<a class="tf-skip-link" href="#main">Skip to content</a>
+
+<!-- NAVBAR (identical structure to Commercial) -->
+<header class="tf-header">
+<nav class="tf-nav" aria-label="Primary">
+<div class="tf-nav-inner">
+<a href="../index.html" class="tf-nav-logo"><img width="1000" height="160" src="../assets/img/logo-navy.png" alt="Trade Funding"></a>
+<div class="tf-nav-links" style="justify-content:flex-start;width:auto">
+<div class="tf-nav-item">
+<a href="../home-shared/how-it-works/index.html" class="tf-nav-link" aria-haspopup="true" aria-expanded="false">Cashper Compare Engine<span class="tf-caret" aria-hidden="true"></span></a>
+<div class="tf-mega-panel tf-mega-panel-wide">
+<div class="tf-mega-wide-inner">
+<a href="../home-shared/how-it-works/index.html" class="tf-mega-wide-lead">How it works<span class="tf-mega-arrow" aria-hidden="true">&rarr;</span></a>
+<div class="tf-mega-wide-grid tf-mega-wide-grid-3">
+<div class="tf-mega-wide-step-cell">
+<span class="tf-mega-wide-step-num">01</span>
+<span class="tf-mega-wide-step-title">Tell Cashper what you need</span>
+<div class="tf-mega-wide-sub">New capital, a facility review, a customer's sale, or something personal.</div>
+</div>
+<div class="tf-mega-wide-step-cell">
+<span class="tf-mega-wide-step-num">02</span>
+<span class="tf-mega-wide-step-title">It qualifies you across our panel of 70+ lenders</span>
+<div class="tf-mega-wide-sub">Banks, non-banks and fintechs, and private credit providers, scored on S.T.A.R. facts.</div>
+</div>
+<div class="tf-mega-wide-step-cell">
+<span class="tf-mega-wide-step-num">03</span>
+<span class="tf-mega-wide-step-title">You get a Compare Report</span>
+<div class="tf-mega-wide-sub">Side by side, ranked best-fit options, with no credit check until you choose to proceed.</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="tf-nav-item">
+<button type="button" class="tf-nav-link" aria-haspopup="true" aria-expanded="false">Funding For<span class="tf-caret" aria-hidden="true"></span></button>
+<div class="tf-mega-panel tf-mega-panel-wide">
+<div class="tf-mega-wide-inner">
+<button type="button" class="tf-mega-wide-lead tf-router-open" style="background:none;cursor:pointer;font-family:inherit">Different Funding Support Options for Businesses<span class="tf-mega-arrow" aria-hidden="true">&rarr;</span></button>
+<div class="tf-mega-wide-grid tf-mega-wide-grid-3">
+<div style="border-top:3px solid var(--skyblue);padding-top:12px">
+<a href="../commercial/index.html" class="tf-mega-wide-link tf-mega-wide-split" style="font-weight:700;font-size:0.92rem"><span class="tf-mega-wide-split-lead">Your Business</span><span class="tf-mega-wide-arrow-slot"><span class="tf-mega-arrow" aria-hidden="true">&rarr;</span></span><span class="tf-mega-wide-split-sub">Commercial Funding</span></a>
+<div class="tf-mega-wide-sub">Compare qualified options to establish new funding, or replace what you have.</div>
+</div>
+<div style="border-top:3px solid var(--gold);padding-top:12px">
+<a href="../connect/index.html" class="tf-mega-wide-link tf-mega-wide-split" style="font-weight:700;font-size:0.92rem"><span class="tf-mega-wide-split-lead">Your Customers</span><span class="tf-mega-wide-arrow-slot"><span class="tf-mega-arrow" aria-hidden="true">&rarr;</span></span><span class="tf-mega-wide-split-sub">Trade Funding Connect</span></a>
+<div class="tf-mega-wide-sub">A free QR code that gives your customers qualified payment options at the point of sale.</div>
+</div>
+<div style="border-top:3px solid var(--peach);padding-top:12px">
+<a href="../personal-and-property/index.html" class="tf-mega-wide-link tf-mega-wide-split" style="font-weight:700;font-size:0.92rem"><span class="tf-mega-wide-split-lead">You Personally</span><span class="tf-mega-wide-arrow-slot"><span class="tf-mega-arrow" aria-hidden="true">&rarr;</span></span><span class="tf-mega-wide-split-sub">Personal &amp; Property Funding</span></a>
+<div class="tf-mega-wide-sub">Personal funding, tailored to business owners and how they actually earn.</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="tf-nav-item">
+<button type="button" class="tf-nav-link" aria-haspopup="true" aria-expanded="false">Products<span class="tf-caret" aria-hidden="true"></span></button>
+<div class="tf-mega-panel tf-mega-panel-wide">
+<div class="tf-mega-wide-inner">
+<a href="../connect/how-it-works/index.html" class="tf-mega-wide-lead">How Trade Funding Connect Works<span class="tf-mega-arrow" aria-hidden="true">&rarr;</span></a>
+<div class="tf-mega-wide-grid tf-mega-wide-grid-compact">
+<div class="tf-mega-wide-col">
+<span class="tf-mega-wide-group-label">Connect</span>
+<div class="tf-mega-wide-links">
+<a href="../connect/for-vendors/index.html" class="tf-mega-wide-link">For Vendors<span class="tf-mega-arrow" aria-hidden="true">&rarr;</span></a>
+<a href="../connect/for-customers/index.html" class="tf-mega-wide-link">For Customers<span class="tf-mega-arrow" aria-hidden="true">&rarr;</span></a>
+<a href="../connect/become-a-partner/index.html" class="tf-mega-wide-link">Become a Partner<span class="tf-mega-arrow" aria-hidden="true">&rarr;</span></a>
+<a href="../connect/faqs/index.html" class="tf-mega-wide-link">FAQs<span class="tf-mega-arrow" aria-hidden="true">&rarr;</span></a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="tf-nav-item">
+<button type="button" class="tf-nav-link" aria-haspopup="true" aria-expanded="false">Compare Tools<span class="tf-caret" aria-hidden="true"></span></button>
+<div class="tf-mega-panel tf-mega-panel-wide">
+<div class="tf-mega-wide-inner">
+<a href="../commercial/compare-report/index.html" class="tf-mega-wide-lead">Compare your options<span class="tf-mega-arrow" aria-hidden="true">&rarr;</span></a>
+<div class="tf-mega-wide-grid tf-mega-wide-grid-compact">
+<div class="tf-mega-wide-col">
+<span class="tf-mega-wide-group-label">Compare</span>
+<div class="tf-mega-wide-links">
+<a href="../commercial/compare-report/index.html" class="tf-mega-wide-link">Compare Report<span class="tf-mega-arrow" aria-hidden="true">&rarr;</span></a>
+<a href="../commercial/compare-report/index.html#business-overview" class="tf-mega-wide-link">Business Overview<span class="tf-mega-arrow" aria-hidden="true">&rarr;</span></a>
+<a href="../home-shared/lender-panel/index.html" class="tf-mega-wide-link">Lender Panel<span class="tf-mega-arrow" aria-hidden="true">&rarr;</span></a>
+</div>
+</div>
+<div class="tf-mega-wide-col">
+<span class="tf-mega-wide-group-label">Calculators</span>
+<div class="tf-mega-wide-links">
+<a href="../commercial/business-loan-calculator/index.html" class="tf-mega-wide-link">Business Loan Calculator<span class="tf-mega-arrow" aria-hidden="true">&rarr;</span></a>
+<a href="../commercial/equipment-calculator/index.html" class="tf-mega-wide-link">Equipment Finance Calculator<span class="tf-mega-arrow" aria-hidden="true">&rarr;</span></a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="tf-nav-item">
+<button type="button" class="tf-nav-link" aria-haspopup="true" aria-expanded="false">About<span class="tf-caret" aria-hidden="true"></span></button>
+<div class="tf-mega-panel tf-mega-panel-wide">
+<div class="tf-mega-wide-inner">
+<a href="../home-shared/about/index.html" class="tf-mega-wide-lead">About Trade Funding<span class="tf-mega-arrow" aria-hidden="true">&rarr;</span></a>
+<div class="tf-mega-wide-grid tf-mega-wide-grid-compact">
+<div class="tf-mega-wide-col">
+<span class="tf-mega-wide-group-label">Company</span>
+<div class="tf-mega-wide-links">
+<a href="../home-shared/about/index.html" class="tf-mega-wide-link">About Us<span class="tf-mega-arrow" aria-hidden="true">&rarr;</span></a>
+<a href="../home-shared/partner-with-us/index.html" class="tf-mega-wide-link">Partner With Us<span class="tf-mega-arrow" aria-hidden="true">&rarr;</span></a>
+<a href="../home-shared/careers/index.html" class="tf-mega-wide-link">A Trade Funding Career<span class="tf-mega-arrow" aria-hidden="true">&rarr;</span></a>
+<a href="../home-shared/resources/index.html" class="tf-mega-wide-link">Resources<span class="tf-mega-arrow" aria-hidden="true">&rarr;</span></a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="tf-nav-cta-group">
+<a href="../home-shared/contact/index.html" class="tf-nav-contact-link">Get In Contact</a>
+<a href="../commercial/compare-report/index.html" class="btn btn-primary tf-nav-cta">Get my Compare Report</a>
+</div>
+</div>
+</nav>
+</header>
+<div id="main" tabindex="-1"></div>
+
+<!-- HERO -->
+<section class="hero-grid" style="min-height:var(--hero-min-h);box-sizing:border-box;padding:var(--section-y) 0">
+<div>
+<div style="display:flex;align-items:center;gap:10px;margin-bottom:22px"><span class="hero-eyebrow-dot"></span><span class="eyebrow" style="margin:0;color:var(--gold-text)">Trade Funding Connect</span></div>
+<h1 class="hero-title">Fund your customers.<br>Get paid faster.</h1>
+<p class="hero-sub">Help your customers say yes, and get paid on the spot. A free, personalised QR code on your quotes, proposals and invoices shows customers qualified funding options at the moment they decide - matched by Cashper across 100+ products from our panel of 70+ lenders.</p>
+<div style="display:flex;gap:14px;flex-wrap:wrap">
+<a href="become-a-partner/index.html" class="btn btn-primary">Become a Partner</a>
+<a href="#how-it-works" class="btn btn-outline">See how it works</a>
+</div>
+</div>
+<div class="scene-stage" id="hero-3d-stage"></div>
+</section>
+
+<!-- PROOF STRIP -->
+<section style="background:var(--bg-soft);padding:var(--section-y-sm) 0">
+<div class="container-wide proof-grid">
+<div class="card" style="padding:26px"><div class="proof-stat">$0</div><div style="font-family:var(--font-heading);font-weight:500;font-size:0.88rem;color:var(--navy);margin-bottom:4px">Cost to your business</div><div style="font-size:0.78rem;color:var(--ink-600)">Free for your business, always</div></div>
+<div class="card" style="padding:26px"><div class="proof-stat">70+</div><div style="font-family:var(--font-heading);font-weight:500;font-size:0.88rem;color:var(--navy);margin-bottom:4px">Lenders on our panel</div><div style="font-size:0.78rem;color:var(--ink-600)">100+ products across our panel</div></div>
+<div class="card" style="padding:26px"><div class="proof-stat">24–48hr</div><div style="font-family:var(--font-heading);font-weight:500;font-size:0.88rem;color:var(--navy);margin-bottom:4px">Typical vendor payout</div><div style="font-size:0.78rem;color:var(--ink-600)">After a confirmed sale</div></div>
+<div class="card" style="padding:26px"><div style="font-family:var(--font-heading);font-weight:600;font-size:clamp(1.15rem,1.7vw,1.4rem);color:var(--navy);margin-bottom:12px">ACL 387856</div><div style="font-family:var(--font-heading);font-weight:500;font-size:0.88rem;color:var(--navy);margin-bottom:4px">Australian Credit Licence</div><div style="font-size:0.78rem;color:var(--ink-600)">Regulated &amp; AFCA member</div></div>
+</div>
+</section>
+
+<!-- THE PROBLEM -->
+<section style="background:#fff;padding:var(--section-y) 0">
+<div class="container-wide">
+<div style="text-align:center;margin-bottom:52px"><span class="eyebrow" style="text-align:center;color:var(--gold-text)">The Problem</span><h2 class="section-title" style="font-size:clamp(1.9rem,3.2vw,2.5rem)">Same customer. Two outcomes.</h2></div>
+<div class="compare-cols">
+<div class="compare-col without">
+<span style="display:block;font-family:var(--font-heading);font-weight:700;font-size:0.7rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink-400);margin-bottom:16px">Without Connect</span>
+<div class="checkout-mini without">
+<div style="font-family:var(--font-heading);font-weight:700;font-size:0.78rem;color:var(--ink-600);margin-bottom:14px">Invoice</div>
+<div class="checkout-row" style="margin-bottom:12px"><span>Total</span><span>$2,480.00</span></div>
+<span class="status-chip" style="background:var(--tint-peach-08);color:var(--peach-text)">Can't pay upfront</span>
+<div style="font-size:0.76rem;color:var(--ink-400)">Customer holds off</div>
+</div>
+<div style="font-family:var(--font-heading);font-weight:600;font-size:1.3rem;color:var(--ink-600)">Cash flow stalls the sale</div>
+<div style="font-size:0.85rem;color:var(--ink-400);margin-top:4px">Result: Lost sale</div>
+</div>
+<div class="compare-col with">
+<span style="display:block;font-family:var(--font-heading);font-weight:700;font-size:0.7rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--gold-text);margin-bottom:16px">With Connect</span>
+<div class="checkout-mini with">
+<div style="font-family:var(--font-heading);font-weight:700;font-size:0.78rem;color:var(--navy);margin-bottom:14px">Invoice</div>
+<div class="checkout-row" style="color:var(--navy);margin-bottom:12px"><span>Total</span><span>$2,480.00</span></div>
+<span class="status-chip" style="background:var(--gold);color:var(--navy)">Funded through Connect</span>
+<div style="font-size:0.76rem;color:var(--navy);opacity:0.7">4 payments of $620.00 &bull; paid to vendor in full</div>
+</div>
+<div style="font-family:var(--font-heading);font-weight:600;font-size:1.3rem;color:var(--navy)">Funded at the point of sale</div>
+<div style="font-size:0.85rem;color:var(--navy);opacity:0.7;margin-top:4px">Result: Sale secured</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section id="how-it-works" style="background:var(--light-bg);padding:var(--section-y) 0">
+<div class="container-wide">
+<div style="text-align:center;margin-bottom:56px"><span class="eyebrow" style="text-align:center;color:var(--gold-text)">How it works</span><h2 class="section-title" style="font-size:clamp(1.8rem,3vw,2.3rem)">From quote to paid, in one flow</h2></div>
+
+<div class="steps-grid">
+<div class="steps-line"></div>
+<div data-accordion-item style="position:relative;z-index:1;text-align:center;padding:0 8px">
+<button data-accordion-toggle="steps" aria-expanded="false" style="width:100%;text-align:center">
+<div class="step-circle">01</div>
+<div style="font-family:var(--font-heading);font-weight:600;font-size:0.98rem;color:var(--navy);margin-bottom:6px">Quote</div>
+<p style="font-size:0.82rem;color:var(--text-secondary);line-height:1.5">Your quote carries a QR code to fund it.</p>
+</button>
+</div>
+<div data-accordion-item style="position:relative;z-index:1;text-align:center;padding:0 8px">
+<button data-accordion-toggle="steps" aria-expanded="false" style="width:100%;text-align:center">
+<div class="step-circle">02</div>
+<div style="font-family:var(--font-heading);font-weight:600;font-size:0.98rem;color:var(--navy);margin-bottom:6px">Apply</div>
+<p style="font-size:0.82rem;color:var(--text-secondary);line-height:1.5">Typically under two minutes to apply.</p>
+</button>
+</div>
+<div data-accordion-item style="position:relative;z-index:1;text-align:center;padding:0 8px">
+<button data-accordion-toggle="steps" aria-expanded="false" style="width:100%;text-align:center">
+<div class="step-circle">03</div>
+<div style="font-family:var(--font-heading);font-weight:600;font-size:0.98rem;color:var(--navy);margin-bottom:6px">Decision</div>
+<p style="font-size:0.82rem;color:var(--text-secondary);line-height:1.5">Decision typically in 24 to 48 hours.</p>
+</button>
+</div>
+<div data-accordion-item style="position:relative;z-index:1;text-align:center;padding:0 8px">
+<button data-accordion-toggle="steps" aria-expanded="false" style="width:100%;text-align:center">
+<div class="step-circle">04</div>
+<div style="font-family:var(--font-heading);font-weight:600;font-size:0.98rem;color:var(--navy);margin-bottom:6px">Paid</div>
+<p style="font-size:0.82rem;color:var(--text-secondary);line-height:1.5">You get paid in full, upfront.</p>
+</button>
+</div>
+</div>
+
+<div data-accordion-panel hidden class="step-detail" data-step="01"><div style="font-family:var(--font-heading);font-weight:700;font-size:0.85rem;color:var(--gold-text);margin-bottom:8px">Step 01: Quote</div><p style="font-size:0.95rem;color:var(--text-secondary);line-height:1.65;max-width:640px">Your team adds a personalised Connect QR code to the quote, proposal or invoice. Your customer scans it and sees their qualified payment options, with no separate app and no login wall.</p></div>
+</div>
+</section>
+
+<script>
+// Wire the 4 step buttons to their own detail text (kept out of main.js since content is page-specific)
+(function () {
+  var details = {
+    '01': 'Your team adds a personalised Connect QR code to the quote, proposal or invoice. Your customer scans it and sees their qualified payment options, with no separate app and no login wall.',
+    '02': 'Name, ID and a soft credit check, with no credit score impact. No paperwork, no branch visit, on your customer\'s own phone.',
+    '03': 'Cashper matches your customer across 100+ products from our panel of 70+ lenders. A decision typically lands within 24 to 48 hours.',
+    '04': 'The lender pays your business the full sale amount. Your customer repays them directly, on their chosen schedule.'
+  };
+  var labels = ['Quote', 'Apply', 'Decision', 'Paid'];
+  var buttons = document.querySelectorAll('[data-accordion-toggle="steps"]');
+  var panel = document.querySelector('[data-accordion-panel][data-step]');
+  buttons.forEach(function (btn, i) {
+    btn.addEventListener('click', function () {
+      // This listener runs before main.js's accordion toggle, and the one
+      // shared panel only lives inside step 01's item, so main.js never
+      // opens it for steps 02-04. Wait for the toggle, then own the panel.
+      setTimeout(function () {
+        var open = btn.getAttribute('aria-expanded') === 'true';
+        var num = String(i + 1).padStart(2, '0');
+        panel.querySelector('div').textContent = 'Step ' + num + ': ' + labels[i];
+        panel.querySelector('p').textContent = details[num];
+        panel.hidden = !open;
+      }, 0);
+    });
+  });
+})();
+</script>
+
+<!-- VALUE PROPS -->
+<section style="background:#fff;padding:var(--section-y) 0">
+<div class="container-wide">
+<div style="text-align:center;margin-bottom:52px"><span class="eyebrow" style="text-align:center;color:var(--gold-text)">Why vendors choose Connect</span><h2 class="section-title" style="font-size:clamp(1.8rem,3vw,2.3rem)">Nothing to pay, build, or risk</h2></div>
+<div class="process-grid grid-3" style="position:static">
+<div style="padding:8px"><div class="value-icon">01</div><h3 style="font-weight:600;font-size:1.05rem;color:var(--navy);margin-bottom:8px">No fees</h3><p style="font-size:0.88rem;color:var(--text-secondary);line-height:1.6">Free for your business. Always.</p></div>
+<div style="padding:8px"><div class="value-icon">02</div><h3 style="font-weight:600;font-size:1.05rem;color:var(--navy);margin-bottom:8px">No integration lift</h3><p style="font-size:0.88rem;color:var(--text-secondary);line-height:1.6">Live on your quotes in days, not months.</p></div>
+<div style="padding:8px"><div class="value-icon">03</div><h3 style="font-weight:600;font-size:1.05rem;color:var(--navy);margin-bottom:8px">No exposure</h3><p style="font-size:0.88rem;color:var(--text-secondary);line-height:1.6">The lender carries the credit risk, not you.</p></div>
+</div>
+</div>
+</section>
+
+<!-- SOCIAL PROOF -->
+<section style="background:var(--light-bg);padding:var(--section-y) 0;text-align:center">
+<div class="container-wide">
+<span class="eyebrow" style="text-align:center;color:var(--gold-text)">Who uses Connect</span>
+<h2 class="section-title" style="font-size:clamp(1.5rem,2.4vw,1.9rem);margin-bottom:36px">Built for vendors across industries</h2>
+<div style="display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-bottom:64px">
+<span style="display:inline-flex;padding:9px 20px;border-radius:var(--radius-pill);border:1px solid var(--border-neutral);background:#fff;font-family:var(--font-heading);font-weight:600;font-size:0.82rem;color:var(--navy)">Retail</span>
+<span style="display:inline-flex;padding:9px 20px;border-radius:var(--radius-pill);border:1px solid var(--border-neutral);background:#fff;font-family:var(--font-heading);font-weight:600;font-size:0.82rem;color:var(--navy)">Automotive</span>
+<span style="display:inline-flex;padding:9px 20px;border-radius:var(--radius-pill);border:1px solid var(--border-neutral);background:#fff;font-family:var(--font-heading);font-weight:600;font-size:0.82rem;color:var(--navy)">Home &amp; Trade</span>
+<span style="display:inline-flex;padding:9px 20px;border-radius:var(--radius-pill);border:1px solid var(--border-neutral);background:#fff;font-family:var(--font-heading);font-weight:600;font-size:0.82rem;color:var(--navy)">Healthcare</span>
+<span style="display:inline-flex;padding:9px 20px;border-radius:var(--radius-pill);border:1px solid var(--border-neutral);background:#fff;font-family:var(--font-heading);font-weight:600;font-size:0.82rem;color:var(--navy)">Hospitality</span>
+<span style="display:inline-flex;padding:9px 20px;border-radius:var(--radius-pill);border:1px solid var(--border-neutral);background:#fff;font-family:var(--font-heading);font-weight:600;font-size:0.82rem;color:var(--navy)">Professional Services</span>
+</div>
+<div class="container-prose">
+<p style="font-family:var(--font-heading);font-weight:600;font-size:clamp(1.3rem,2vw,1.7rem);line-height:1.5;color:var(--navy)">"Customers who would have walked are saying yes at the counter, and we're paid before they leave the store."</p>
+<p style="margin-top:18px;font-size:0.78rem;color:var(--ink-400);font-style:italic">Sample vendor quote &bull; pending live testimonial</p>
+</div>
+</div>
+</section>
+
+<!-- FOR CUSTOMERS -->
+<section style="background:var(--navy-blue);padding:var(--section-y) 0">
+<div class="container-prose" style="text-align:center">
+<span class="eyebrow" style="text-align:center;color:rgba(255,255,255,0.6)">For customers</span>
+<h2 class="section-title" style="color:#fff;font-size:clamp(1.6rem,2.6vw,2rem);margin-bottom:14px">Offered Connect on a quote or invoice?</h2>
+<p style="font-size:0.98rem;color:rgba(255,255,255,0.75);line-height:1.6;margin-bottom:28px">Check your options before you commit. It's a soft credit check, with no credit score impact.</p>
+<a href="../home-shared/apply/index.html?purpose=connect_customer_finance" class="btn" style="background:transparent;color:#fff;border:2px solid rgba(255,255,255,0.5)">Check my eligibility <span aria-hidden="true">&rarr;</span></a>
+</div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" style="background:#fff;padding:var(--section-y) 0">
+<div class="container-prose">
+<div style="text-align:center;margin-bottom:44px"><span class="eyebrow" style="text-align:center;color:var(--gold-text)">FAQ</span><h2 class="section-title" style="font-size:clamp(1.8rem,3vw,2.3rem)">Common questions</h2></div>
+
+<div class="faq-item" data-accordion-item>
+<button class="faq-btn" data-accordion-toggle="faq" aria-expanded="false"><span class="faq-q">How does Trade Funding Connect work for my customers?</span></button>
+<p class="faq-panel" data-accordion-panel hidden>Your customer scans the QR code on your quote or invoice and sees qualified options from our lender panel. Decisions typically take 24 to 48 hours.</p>
+</div>
+<div class="faq-item" data-accordion-item>
+<button class="faq-btn" data-accordion-toggle="faq" aria-expanded="false"><span class="faq-q">What does it cost my business?</span></button>
+<p class="faq-panel" data-accordion-panel hidden>Nothing. Connect is free for vendors. The cost sits with the lender your customer chooses, not with you.</p>
+</div>
+<div class="faq-item" data-accordion-item>
+<button class="faq-btn" data-accordion-toggle="faq" aria-expanded="false"><span class="faq-q">How fast is the payout?</span></button>
+<p class="faq-panel" data-accordion-panel hidden>Once a customer is approved and the sale is confirmed, funds typically land in your account within 24 to 48 hours.</p>
+</div>
+<div class="faq-item" data-accordion-item>
+<button class="faq-btn" data-accordion-toggle="faq" aria-expanded="false"><span class="faq-q">What happens if a customer is declined?</span></button>
+<p class="faq-panel" data-accordion-panel hidden>They can choose another lender from the panel or pay by their usual method. The sale isn't blocked by one decision.</p>
+</div>
+<div class="faq-item" data-accordion-item>
+<button class="faq-btn" data-accordion-toggle="faq" aria-expanded="false"><span class="faq-q">How do I get set up?</span></button>
+<p class="faq-panel" data-accordion-panel hidden>No integration required to start. Our team sets up your account and trains your staff. Most vendors are live within a week.</p>
+</div>
+</div>
+</section>
+
+<!-- FINAL CTA + partner signup form (Prompt 6.15) -->
+<section id="connect-signup" style="background:linear-gradient(135deg,var(--navy) 0%,var(--navy-blue) 100%);padding:var(--section-y) 0;text-align:center">
+<div style="max-width:640px;margin:0 auto;padding:0 32px">
+<span style="display:inline-flex;padding:6px 14px;border-radius:var(--radius-pill);background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.15);font-family:var(--font-heading);font-weight:600;font-size:0.72rem;letter-spacing:var(--ls-eyebrow-tight);text-transform:uppercase;color:#fff;margin-bottom:20px">$0 cost to your business</span>
+<h2 class="section-title" style="color:#fff;margin-bottom:16px">Ready to help more customers say yes?</h2>
+<p style="color:rgba(255,255,255,0.75);font-size:1rem;line-height:1.6;margin-bottom:30px">Free to set up. Live in days, not months. Fewer sales stall on cash flow.</p>
+<form class="tf-cform" data-connect-form novalidate>
+<div class="tf-cform-row">
+<input class="tf-cform-field" aria-label="First name" name="First_Name" placeholder="First name" autocomplete="given-name" required>
+<input class="tf-cform-field" aria-label="Last name" name="Last_Name" placeholder="Last name" autocomplete="family-name" required>
+</div>
+<input class="tf-cform-field" aria-label="Business or trading name" name="Trading_Name" placeholder="Business or trading name" autocomplete="organization" required>
+<p class="tf-cform-hint" data-abn-status role="status"></p>
+<div class="tf-abn-results" data-abn-results hidden></div>
+<input type="hidden" name="ABN" value="">
+<div class="tf-cform-row">
+<input class="tf-cform-field" aria-label="Email" name="Email" type="email" placeholder="Email" autocomplete="email" required>
+<input class="tf-cform-field" aria-label="Phone" name="Phone" type="tel" placeholder="Phone" autocomplete="tel">
+</div>
+<textarea class="tf-cform-field" aria-label="Anything we should know? (optional)" name="Description" rows="3" placeholder="Anything we should know? (optional)"></textarea>
+<button type="submit" class="btn btn-primary" style="width:100%;justify-content:center" data-connect-submit>Become a Partner <span aria-hidden="true">&rarr;</span></button>
+<p class="tf-form-notice">We collect these details to respond to your enquiry. Our <a href="../home-shared/privacy/index.html">Privacy Policy</a> explains how we handle them.</p>
+<p class="tf-cform-status" data-connect-status role="status"></p>
+</form>
+</div>
+</section>
+
+<!-- FOOTER (identical structure to Commercial) -->
+<footer class="tf-footer">
+<div class="container-wide">
+<div class="tf-footer-top">
+<div>
+<img loading="lazy" decoding="async" width="844" height="140" src="../assets/img/logo-white.png" alt="Trade Funding" style="height:20px;width:auto;display:block;margin-bottom:16px;">
+<p class="tf-footer-blurb">Trade Funding Connect: point-of-sale finance that helps your customers say yes, and gets you paid on the spot.</p>
+<div class="tf-footer-contact">
+<a href="tel:1300161641">1300 161 641</a>
+<a href="mailto:support@tradefunding.com.au">support@tradefunding.com.au</a>
+<span>Level 8, 387 George Street, Sydney, NSW, 2000</span>
+</div>
+<div class="tf-footer-badges">
+<span class="tf-footer-badge">ACL 387856</span>
+<span class="tf-footer-badge">AFCA Member</span>
+<span class="tf-footer-badge">CAFBA</span>
+<span class="tf-footer-badge">FinTech Australia</span>
+</div>
+</div>
+<div class="tf-footer-cols">
+<div class="tf-footer-col">
+<div class="tf-footer-col-heading">Channels</div>
+<a href="../home-shared/how-it-works/index.html">How Cashper Works</a>
+<a href="../commercial/index.html">Business Capital</a>
+<a href="../connect/index.html" aria-current="page">Fund Your Customers</a>
+<a href="../personal-and-property/index.html">Personal &amp; Property</a>
+<a href="../home-shared/resources/index.html">Resources</a>
+</div>
+<div class="tf-footer-col">
+<div class="tf-footer-col-heading">Company</div>
+<a href="../home-shared/about/index.html">About Us</a>
+<a href="../home-shared/broker-portal/index.html">Broker Portal</a>
+<a href="become-a-partner/index.html">Become a Partner</a>
+<a href="../home-shared/contact/index.html">Contact</a>
+<a href="../home-shared/apply/index.html">Get Started</a>
+</div>
+<div class="tf-footer-col">
+<div class="tf-footer-col-heading">Legal</div>
+<a href="../home-shared/credit-guide/index.html">Credit Guide</a>
+<a href="../home-shared/privacy/index.html">Privacy Policy</a>
+<a href="../home-shared/terms/index.html">Terms &amp; Conditions</a>
+</div>
+</div>
+</div>
+<div class="tf-footer-legal">
+<p>Credit products are provided by third-party lenders and credit offers are subject to a full credit review. Read our <a href="../home-shared/credit-guide/index.html" style="color:rgba(255,255,255,0.85)">Credit Guide</a> | <a href="../home-shared/terms/index.html" style="color:rgba(255,255,255,0.85)">Terms &amp; Conditions</a> | ACL 387856</p>
+</div>
+<div class="tf-footer-bottom">
+<span>&copy; 2026 Trade Funding Pty Ltd. All rights reserved.</span>
+</div>
+</div>
+</footer>
+
+<script src="../assets/js/main.js"></script>
+<script src="../assets/js/tf-abn-lookup.js"></script>
+<script src="../assets/js/tf-connect-form.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" integrity="sha384-CI3ELBVUz9XQO+97x6nwMDPosPR5XvsxW2ua7N1Xeygeh1IxtgqtCkGfQY9WWdHu" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/lines/LineSegmentsGeometry.js" integrity="sha384-K16bQ6/nRHsU0eKd3hdm7CCI7l/Wc4UK45tdqGZ2AHDp1J9J+rdIColaZ4H6gue+" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/lines/LineMaterial.js" integrity="sha384-KUlsSdq9I0VYm+p1QmmjxRuyYzwsUg4mG/X1AjjChqhEgxf3QG1fZeGihaCJr8z9" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/lines/LineSegments2.js" integrity="sha384-SdmZCNq3efiCrMjlE29B4nkMMBrkOJgoNunzIT8FfiNaynKJ/ZNeIr88NLHyt/Me" crossorigin="anonymous"></script>
+<script src="../assets/js/tf-drawn.js"></script>
+<script src="../assets/js/tf-drawn-scenes.js"></script>
+<script>
+(function () {
+  var stage = document.getElementById('hero-3d-stage');
+  if (!stage || !window.TFDrawn || !window.TFDrawnScenes) return;
+  // Invoices getting stamped PAID, drawn in the page's own accent (--gold).
+  TFDrawn.mount(stage, { scenes: [TFDrawnScenes.invoices({ color: 0xFBB766 })] });
+})();
+</script>
+</body>
+</html>

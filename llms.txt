@@ -1,0 +1,34 @@
+# Trade Funding
+
+> Trade Funding is an Australian finance broker (Australian Credit Licence 387856, AFCA member) based in Sydney. Its Cashper compare engine qualifies a business across a panel of 70+ lenders (banks, non-banks, fintechs and private credit providers) and returns a ranked Compare Report, with no credit check until the customer chooses to proceed.
+
+Trade Funding has three channels: Commercial Funding for businesses, Trade Funding Connect for suppliers who want to offer their customers payment options, and Personal & Property Funding for business owners personally.
+
+## Commercial Funding
+
+- [Commercial Funding](https://tradefunding.com.au/commercial/): compare qualified business funding options, for new funding or to review an existing facility
+- [Business products](https://tradefunding.com.au/commercial/products/): term loans, lines of credit, overdrafts, charge cards, asset, trade, invoice and cash-flow finance
+- [Compare Report](https://tradefunding.com.au/commercial/compare-report/): what the report contains and how options are ranked
+- [Guides](https://tradefunding.com.au/commercial/guides/): plain-English guides to business finance products
+- [Business Loan Calculator](https://tradefunding.com.au/commercial/business-loan-calculator/)
+- [Equipment Finance Calculator](https://tradefunding.com.au/commercial/equipment-calculator/)
+
+## Trade Funding Connect
+
+- [Trade Funding Connect](https://tradefunding.com.au/connect/): a free QR code that gives a supplier's customers qualified payment options on quotes and invoices
+- [How Connect works](https://tradefunding.com.au/connect/how-it-works/)
+- [Connect FAQs](https://tradefunding.com.au/connect/faqs/)
+
+## Personal & Property Funding
+
+- [Personal & Property Funding](https://tradefunding.com.au/personal-and-property/): home, investment property, vehicle and personal finance for business owners
+- [Personal & Property products](https://tradefunding.com.au/personal-and-property/products/)
+
+## Company
+
+- [About Trade Funding](https://tradefunding.com.au/home-shared/about/)
+- [How Cashper works](https://tradefunding.com.au/home-shared/how-it-works/): the compare engine behind the Compare Report
+- [Lender panel](https://tradefunding.com.au/home-shared/lender-panel/)
+- [Contact](https://tradefunding.com.au/home-shared/contact/)
+- [Credit Guide](https://tradefunding.com.au/home-shared/credit-guide/)
+- [Privacy Policy](https://tradefunding.com.au/home-shared/privacy/)

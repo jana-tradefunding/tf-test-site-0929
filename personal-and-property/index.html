@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/img/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="../assets/img/favicon-192.png">
+<link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png">
+<title>Trade Funding - Personal &amp; Property</title>
+<meta name="description" content="Personal and property funding, for the business owner behind the business. Home, investment property and personal loans across our panel of 70+ lenders.">
+<link rel="canonical" href="https://tradefunding.com.au/personal-and-property/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Trade Funding">
+<meta property="og:locale" content="en_AU">
+<meta property="og:title" content="Trade Funding - Personal &amp; Property">
+<meta property="og:description" content="Personal and property funding, for the business owner behind the business. Home, investment property and personal loans across our panel of 70+ lenders.">
+<meta property="og:url" content="https://tradefunding.com.au/personal-and-property/">
+<meta property="og:image" content="https://tradefunding.com.au/assets/img/og-default.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Trade Funding. Clarity, before every funding decision.">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Trade Funding",
+  "url": "https://tradefunding.com.au/",
+  "logo": "https://tradefunding.com.au/assets/img/logo-navy.png",
+  "telephone": "+61-1300-161-641",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Level 8, 387 George Street",
+    "addressLocality": "Sydney",
+    "addressRegion": "NSW",
+    "postalCode": "2000",
+    "addressCountry": "AU"
+  },
+  "sameAs": []
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/tokens.css">
+<link rel="stylesheet" href="../assets/css/base.css">
+<link rel="stylesheet" href="../assets/css/components.css">
+<style>
+.hero-grid{max-width:var(--max-width-wide);margin:0 auto;padding:0 32px;display:grid;grid-template-columns:1fr 540px;gap:32px;align-items:center;align-content:center}
+.hero-title{margin:22px 0 0;font-weight:600;font-size:clamp(2.1rem,3.6vw,3rem);line-height:1.08;letter-spacing:var(--ls-heading);color:var(--navy);max-width:560px}
+.hero-sub{margin:22px 0 0;font-size:1.05rem;color:var(--text-secondary);line-height:1.7;max-width:480px}
+.hero-anim{position:relative;width:100%;aspect-ratio:1/1;max-height:540px;overflow:visible}
+.hero-anim canvas{display:block;width:100%;height:100%;cursor:grab;touch-action:none}
+.hero-anim canvas:active{cursor:grabbing}
+@media (max-width:900px){
+  .hero-anim{max-height:420px;margin:0 auto}
+}
+
+.service-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--gap-card)}
+.service-card{display:block;background:#fff;border:1px solid var(--border);border-top:3px solid var(--peach);border-radius:var(--radius-lg);padding:26px;box-shadow:var(--shadow-soft);transition:transform 300ms var(--ease),box-shadow 300ms var(--ease)}
+.service-card:hover{transform:translateY(var(--lift-card));box-shadow:var(--shadow-lg-soft)}
+
+.stats-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
+.stat-value{font-family:var(--font-heading);font-weight:700;font-size:clamp(2.1rem,3.4vw,2.7rem);letter-spacing:var(--ls-heading);color:var(--peach-text);margin-bottom:10px}
+
+.pill-group{display:flex;justify-content:center;gap:8px;margin-bottom:24px;flex-wrap:wrap}
+.pill-btn{min-height:44px;padding:9px 18px;border-radius:var(--radius-pill);background:transparent;color:var(--text-secondary);border:1px solid var(--border-neutral);font-family:var(--font-heading);font-weight:600;font-size:0.8rem}
+.pill-btn:hover{background:var(--light-bg)}
+.pill-btn.is-active{background:#D63838;color:#fff;border-color:#D63838}
+
+.pathway-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius-lg);padding:36px;box-shadow:var(--shadow-soft)}
+.field{width:100%;padding:10px 14px;border:1px solid #e2e8f0;border-radius:8px;font-size:0.85rem;color:var(--navy);background:#fff;font-family:var(--font-body);margin-bottom:12px}
+.field:focus{border-color:var(--peach);box-shadow:0 0 0 3px rgba(255,93,92,0.08)}
+
+.day-pill{flex:1;text-align:center;padding:9px 0;border-radius:8px;background:#fff;border:1px solid var(--border);color:var(--navy);font-family:var(--font-heading);font-weight:600;font-size:0.78rem}
+.day-pill.is-active{background:#D63838;color:#fff;border-color:#D63838}
+.time-slot{display:flex;align-items:center;justify-content:center;min-height:44px;text-align:center;padding:9px 0;border-radius:8px;background:#fff;border:1px solid var(--border);color:var(--navy);font-family:var(--font-heading);font-weight:500;font-size:0.76rem}
+
+.pp-sample-row{display:grid;grid-template-columns:1.4fr 1fr auto;gap:12px;padding:13px 0;border-bottom:1px solid #eef0f4;align-items:center}
+.pp-sample-lender{font-family:var(--font-heading);font-weight:600;font-size:0.82rem;color:var(--navy)}
+.pp-sample-product{font-size:0.74rem;color:var(--text-secondary)}
+.pp-sample-rate{font-family:var(--font-heading);font-weight:700;font-size:0.85rem;color:var(--navy);text-align:right}
+
+@media (max-width:900px){
+  .hero-grid{grid-template-columns:1fr}
+  .service-grid,.stats-grid{grid-template-columns:1fr 1fr}
+  .stats-grid > *:first-child{border-right:none !important}
+}
+@media (max-width:400px){
+  .pathway-card{padding:24px}
+  .day-pill{padding:9px 4px}
+}
+@media (max-width:520px){
+  .container[style*="justify-content:space-between"]{justify-content:center}
+  .container[style*="justify-content:space-between"] input[style*="width:220px"]{width:100%;flex:1}
+  .container[style*="justify-content:space-between"] > div[style*="display:flex"]{width:100%}
+}
+</style>
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="channel-personalproperty">
+<a class="tf-skip-link" href="#main">Skip to content</a>
+
+<!-- NAV -->
+<header class="tf-header">
+<nav class="tf-nav" aria-label="Primary">
+<div class="tf-nav-inner">
+<a href="../index.html" class="tf-nav-logo"><img width="1000" height="160" src="../assets/img/logo-navy.png" alt="Trade Funding"></a>
+<div class="tf-nav-links" style="justify-content:flex-start;width:auto">
+<div class="tf-nav-item">
+<a href="../home-shared/how-it-works/index.html" class="tf-nav-link" aria-haspopup="true" aria-expanded="false">Cashper Compare Engine<span class="tf-caret" aria-hidden="true"></span></a>
+<div class="tf-mega-panel tf-mega-panel-wide">
+<div class="tf-mega-wide-inner">
+<a href="../home-shared/how-it-works/index.html" class="tf-mega-wide-lead">How it works<span class="tf-mega-arrow" aria-hidden="true">&rarr;</span></a>
+<div class="tf-mega-wide-grid tf-mega-wide-grid-3">
+<div class="tf-mega-wide-step-cell">
+<span class="tf-mega-wide-step-num">01</span>
+<span class="tf-mega-wide-step-title">Tell Cashper what you need</span>
+<div class="tf-mega-wide-sub">New capital, a facility review, a customer's sale, or something personal.</div>
+</div>
+<div class="tf-mega-wide-step-cell">
+<span class="tf-mega-wide-step-num">02</span>
+<span class="tf-mega-wide-step-title">It qualifies you across our panel of 70+ lenders</span>
+<div class="tf-mega-wide-sub">Banks, non-banks and fintechs, and private credit providers, scored on S.T.A.R. facts.</div>
+</div>
+<div class="tf-mega-wide-step-cell">
+<span class="tf-mega-wide-step-num">03</span>
+<span class="tf-mega-wide-step-title">You get a Compare Report</span>
+<div class="tf-mega-wide-sub">Side by side, ranked best-fit options, with no credit check until you choose to proceed.</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="tf-nav-item">
+<button type="button" class="tf-nav-link" aria-haspopup="true" aria-expanded="false">Funding For<span class="tf-caret" aria-hidden="true"></span></button>
+<div class="tf-mega-panel tf-mega-panel-wide">
+<div class="tf-mega-wide-inner">
+<button type="button" class="tf-mega-wide-lead tf-router-open" style="background:none;cursor:pointer;font-family:inherit">Different Funding Support Options for Businesses<span class="tf-mega-arrow" aria-hidden="true">&rarr;</span></button>
+<div class="tf-mega-wide-grid tf-mega-wide-grid-3">
+<div style="border-top:3px solid var(--skyblue);padding-top:12px">
+<a href="../commercial/index.html" class="tf-mega-wide-link tf-mega-wide-split" style="font-weight:700;font-size:0.92rem"><span class="tf-mega-wide-split-lead">Your Business</span><span class="tf-mega-wide-arrow-slot"><span class="tf-mega-arrow" aria-hidden="true">&rarr;</span></span><span class="tf-mega-wide-split-sub">Commercial Funding</span></a>
+<div class="tf-mega-wide-sub">Compare qualified options to establish new funding, or replace what you have.</div>
+</div>
+<div style="border-top:3px solid var(--gold);padding-top:12px">
+<a href="../connect/index.html" class="tf-mega-wide-link tf-mega-wide-split" style="font-weight:700;font-size:0.92rem"><span class="tf-mega-wide-split-lead">Your Customers</span><span class="tf-mega-wide-arrow-slot"><span class="tf-mega-arrow" aria-hidden="true">&rarr;</span></span><span class="tf-mega-wide-split-sub">Trade Funding Connect</span></a>
+<div class="tf-mega-wide-sub">A free QR code that gives your customers qualified payment options at the point of sale.</div>
+</div>
+<div style="border-top:3px solid var(--peach);padding-top:12px">
+<a href="../personal-and-property/index.html" class="tf-mega-wide-link tf-mega-wide-split" style="font-weight:700;font-size:0.92rem"><span class="tf-mega-wide-split-lead">You Personally</span><span class="tf-mega-wide-arrow-slot"><span class="tf-mega-arrow" aria-hidden="true">&rarr;</span></span><span class="tf-mega-wide-split-sub">Personal &amp; Property Funding</span></a>
+<div class="tf-mega-wide-sub">Personal funding, tailored to business owners and how they actually earn.</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="tf-nav-item">
+<button type="button" class="tf-nav-link" aria-haspopup="true" aria-expanded="false">Products<span class="tf-caret" aria-hidden="true"></span></button>
+<div class="tf-mega-panel tf-mega-panel-wide">
+<div class="tf-mega-wide-inner">
+<a href="../personal-and-property/products/index.html" class="tf-mega-wide-lead">Every Personal &amp; Property Product<span class="tf-mega-arrow" aria-hidden="true">&rarr;</span></a>
+<div class="tf-mega-wide-grid tf-mega-wide-grid-compact">
+<div class="tf-mega-wide-col">
+<span class="tf-mega-wide-group-label">Property</span>
+<div class="tf-mega-wide-links">
+<a href="../personal-and-property/home-loans/index.html" class="tf-mega-wide-link">Home Loans<span class="tf-mega-arrow" aria-hidden="true">&rarr;</span></a>
+<a href="../personal-and-property/investment-property/index.html" class="tf-mega-wide-link">Investment Property<span class="tf-mega-arrow" aria-hidden="true">&rarr;</span></a>
+<a href="../personal-and-property/commercial-property/index.html" class="tf-mega-wide-link">Commercial Property<span class="tf-mega-arrow" aria-hidden="true">&rarr;</span></a>
+<a href="../personal-and-property/construction/index.html" class="tf-mega-wide-link">Construction<span class="tf-mega-arrow" aria-hidden="true">&rarr;</span></a>
+<a href="../personal-and-property/smsf-property/index.html" class="tf-mega-wide-link">SMSF Property<span class="tf-mega-arrow" aria-hidden="true">&rarr;</span></a>
+</div>
+</div>
+<div class="tf-mega-wide-col">
+<span class="tf-mega-wide-group-label">Personal &amp; Refinance</span>
+<div class="tf-mega-wide-links">
+<a href="../personal-and-property/personal-loans/index.html" class="tf-mega-wide-link">Personal Loans<span class="tf-mega-arrow" aria-hidden="true">&rarr;</span></a>
+<a href="../personal-and-property/refinancing/index.html" class="tf-mega-wide-link">Refinancing<span class="tf-mega-arrow" aria-hidden="true">&rarr;</span></a>
+<a href="../personal-and-property/second-mortgage/index.html" class="tf-mega-wide-link">Second Mortgage<span class="tf-mega-arrow" aria-hidden="true">&rarr;</span></a>
+<a href="../personal-and-property/debt-consolidation/index.html" class="tf-mega-wide-link">Debt Consolidation<span class="tf-mega-arrow" aria-hidden="true">&rarr;</span></a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="tf-nav-item">
+<button type="button" class="tf-nav-link" aria-haspopup="true" aria-expanded="false">Compare Tools<span class="tf-caret" aria-hidden="true"></span></button>
+<div class="tf-mega-panel tf-mega-panel-wide">
+<div class="tf-mega-wide-inner">
+<a href="../commercial/compare-report/index.html" class="tf-mega-wide-lead">Compare your options<span class="tf-mega-arrow" aria-hidden="true">&rarr;</span></a>
+<div class="tf-mega-wide-grid tf-mega-wide-grid-compact">
+<div class="tf-mega-wide-col">
+<span class="tf-mega-wide-group-label">Compare</span>
+<div class="tf-mega-wide-links">
+<a href="../commercial/compare-report/index.html" class="tf-mega-wide-link">Compare Report<span class="tf-mega-arrow" aria-hidden="true">&rarr;</span></a>
+<a href="../commercial/compare-report/index.html#business-overview" class="tf-mega-wide-link">Business Overview<span class="tf-mega-arrow" aria-hidden="true">&rarr;</span></a>
+<a href="../home-shared/lender-panel/index.html" class="tf-mega-wide-link">Lender Panel<span class="tf-mega-arrow" aria-hidden="true">&rarr;</span></a>
+</div>
+</div>
+<div class="tf-mega-wide-col">
+<span class="tf-mega-wide-group-label">Calculators</span>
+<div class="tf-mega-wide-links">
+<a href="../commercial/business-loan-calculator/index.html" class="tf-mega-wide-link">Business Loan Calculator<span class="tf-mega-arrow" aria-hidden="true">&rarr;</span></a>
+<a href="../commercial/equipment-calculator/index.html" class="tf-mega-wide-link">Equipment Finance Calculator<span class="tf-mega-arrow" aria-hidden="true">&rarr;</span></a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="tf-nav-item">
+<button type="button" class="tf-nav-link" aria-haspopup="true" aria-expanded="false">About<span class="tf-caret" aria-hidden="true"></span></button>
+<div class="tf-mega-panel tf-mega-panel-wide">
+<div class="tf-mega-wide-inner">
+<a href="../home-shared/about/index.html" class="tf-mega-wide-lead">About Trade Funding<span class="tf-mega-arrow" aria-hidden="true">&rarr;</span></a>
+<div class="tf-mega-wide-grid tf-mega-wide-grid-compact">
+<div class="tf-mega-wide-col">
+<span class="tf-mega-wide-group-label">Company</span>
+<div class="tf-mega-wide-links">
+<a href="../home-shared/about/index.html" class="tf-mega-wide-link">About Us<span class="tf-mega-arrow" aria-hidden="true">&rarr;</span></a>
+<a href="../home-shared/partner-with-us/index.html" class="tf-mega-wide-link">Partner With Us<span class="tf-mega-arrow" aria-hidden="true">&rarr;</span></a>
+<a href="../home-shared/careers/index.html" class="tf-mega-wide-link">A Trade Funding Career<span class="tf-mega-arrow" aria-hidden="true">&rarr;</span></a>
+<a href="../home-shared/resources/index.html" class="tf-mega-wide-link">Resources<span class="tf-mega-arrow" aria-hidden="true">&rarr;</span></a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="tf-nav-cta-group">
+<a href="../home-shared/contact/index.html" class="tf-nav-contact-link">Get In Contact</a>
+<a href="../commercial/compare-report/index.html" class="btn btn-primary tf-nav-cta">Get my Compare Report</a>
+</div>
+</div>
+</nav>
+</header>
+<div id="main" tabindex="-1"></div>
+
+<!-- HERO -->
+<section class="hero-grid" style="min-height:var(--hero-min-h);box-sizing:border-box;padding:var(--section-y) 0">
+<div>
+<span style="display:inline-flex;align-items:center;gap:10px" class="eyebrow"><span style="width:7px;height:7px;border-radius:50%;background:var(--peach)"></span>Personal &amp; Property Finance</span>
+<h1 class="hero-title">Personal and property funding, for the business owner behind the business.</h1>
+<p class="hero-sub">Your real options across our panel of 70+ lenders, laid out before you commit to one.</p>
+<div style="display:flex;align-items:center;gap:16px;margin-top:34px;flex-wrap:wrap">
+<a href="#pathways" class="btn btn-primary">Get your options <span aria-hidden="true">&rarr;</span></a>
+<a href="../home-shared/contact/index.html#book-a-chat" class="btn btn-outline">Book a 15-minute chat</a>
+</div>
+</div>
+<div class="hero-anim" id="pp-hero-stage" aria-hidden="true"></div>
+</section>
+
+<!-- SERVICE GRID -->
+<section style="background:#fff;padding:var(--section-y) 0">
+<div class="container-wide">
+<div style="text-align:center;margin:0 auto 44px;max-width:640px">
+<p class="eyebrow" style="text-align:center">Funding Solutions</p>
+<h2 class="section-title" style="margin-bottom:16px">Nine areas of personal and property funding.</h2>
+<div class="rule"></div>
+<p style="margin-top:16px"><a href="products/index.html" style="font-family:var(--font-heading);font-weight:600;font-size:0.86rem;color:var(--navy)">Browse by family &rarr;</a></p>
+</div>
+<div class="service-grid">
+<a href="home-loans/index.html" class="service-card"><h3 style="font-weight:600;font-size:1.02rem;color:var(--navy);margin-bottom:8px">Home Loans</h3><p style="font-size:0.86rem;color:var(--text-secondary);line-height:1.55;margin-bottom:12px">First home, next home, or refinance.</p><span style="font-family:var(--font-heading);font-weight:600;font-size:0.82rem;color:var(--navy)">Learn more &rarr;</span></a>
+<a href="investment-property/index.html" class="service-card"><h3 style="font-weight:600;font-size:1.02rem;color:var(--navy);margin-bottom:8px">Investment Property</h3><p style="font-size:0.86rem;color:var(--text-secondary);line-height:1.55;margin-bottom:12px">Buy, refinance, or restructure your portfolio.</p><span style="font-family:var(--font-heading);font-weight:600;font-size:0.82rem;color:var(--navy)">Learn more &rarr;</span></a>
+<a href="commercial-property/index.html" class="service-card"><h3 style="font-weight:600;font-size:1.02rem;color:var(--navy);margin-bottom:8px">Commercial Property</h3><p style="font-size:0.86rem;color:var(--text-secondary);line-height:1.55;margin-bottom:12px">Fund the premises your business runs from.</p><span style="font-family:var(--font-heading);font-weight:600;font-size:0.82rem;color:var(--navy)">Learn more &rarr;</span></a>
+<a href="construction/index.html" class="service-card"><h3 style="font-weight:600;font-size:1.02rem;color:var(--navy);margin-bottom:8px">Construction</h3><p style="font-size:0.86rem;color:var(--text-secondary);line-height:1.55;margin-bottom:12px">New builds, staged progress payments, handled.</p><span style="font-family:var(--font-heading);font-weight:600;font-size:0.82rem;color:var(--navy)">Learn more &rarr;</span></a>
+<a href="smsf-property/index.html" class="service-card"><h3 style="font-weight:600;font-size:1.02rem;color:var(--navy);margin-bottom:8px">SMSF Property</h3><p style="font-size:0.86rem;color:var(--text-secondary);line-height:1.55;margin-bottom:12px">Property finance inside your SMSF, done right.</p><span style="font-family:var(--font-heading);font-weight:600;font-size:0.82rem;color:var(--navy)">Learn more &rarr;</span></a>
+<a href="personal-loans/index.html" class="service-card"><h3 style="font-weight:600;font-size:1.02rem;color:var(--navy);margin-bottom:8px">Personal Loans</h3><p style="font-size:0.86rem;color:var(--text-secondary);line-height:1.55;margin-bottom:12px">Secured or unsecured, bank or specialist.</p><span style="font-family:var(--font-heading);font-weight:600;font-size:0.82rem;color:var(--navy)">Learn more &rarr;</span></a>
+<a href="debt-consolidation/index.html" class="service-card"><h3 style="font-weight:600;font-size:1.02rem;color:var(--navy);margin-bottom:8px">Debt Consolidation</h3><p style="font-size:0.86rem;color:var(--text-secondary);line-height:1.55;margin-bottom:12px">One clear structure, instead of several.</p><span style="font-family:var(--font-heading);font-weight:600;font-size:0.82rem;color:var(--navy)">Learn more &rarr;</span></a>
+<a href="refinancing/index.html" class="service-card"><h3 style="font-weight:600;font-size:1.02rem;color:var(--navy);margin-bottom:8px">Refinancing</h3><p style="font-size:0.86rem;color:var(--text-secondary);line-height:1.55;margin-bottom:12px">See what a better deal actually looks like.</p><span style="font-family:var(--font-heading);font-weight:600;font-size:0.82rem;color:var(--navy)">Learn more &rarr;</span></a>
+<a href="second-mortgage/index.html" class="service-card"><h3 style="font-weight:600;font-size:1.02rem;color:var(--navy);margin-bottom:8px">Second Mortgage</h3><p style="font-size:0.86rem;color:var(--text-secondary);line-height:1.55;margin-bottom:12px">Access equity without refinancing your first mortgage.</p><span style="font-family:var(--font-heading);font-weight:600;font-size:0.82rem;color:var(--navy)">Learn more &rarr;</span></a>
+</div>
+</div>
+</section>
+
+<!-- STATS -->
+<section style="background:var(--bg-soft);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:var(--section-y-sm) 0">
+<div class="container stats-grid">
+<div style="padding-right:32px;border-right:1px solid var(--border)"><div class="stat-value">70+</div><div style="font-family:var(--font-heading);font-weight:700;font-size:0.92rem;color:var(--navy);margin-bottom:6px">lenders on panel</div><div style="font-size:0.82rem;color:var(--ink-600);line-height:1.5">The same panel behind our business finance, working for you personally.</div></div>
+<div style="padding-right:32px;border-right:1px solid var(--border)"><div class="stat-value">1</div><div style="font-family:var(--font-heading);font-weight:700;font-size:0.92rem;color:var(--navy);margin-bottom:6px">clear comparison</div><div style="font-size:0.82rem;color:var(--ink-600);line-height:1.5">Side-by-side terms before you commit to anything.</div></div>
+<div><div class="stat-value">0</div><div style="font-family:var(--font-heading);font-weight:700;font-size:0.92rem;color:var(--navy);margin-bottom:6px">cost to compare</div><div style="font-size:0.82rem;color:var(--ink-600);line-height:1.5">No credit check until you choose to proceed. No obligation.</div></div>
+</div>
+</section>
+
+<!-- PROOF MOMENT -->
+<section id="loan-type" style="background:#fff;padding:var(--section-y) 0">
+<div class="container-prose" style="text-align:center;margin-bottom:36px">
+<h2 class="section-title" style="font-weight:700;font-size:clamp(1.6rem,2.8vw,2.1rem)">See your options before you speak to anyone.</h2>
+</div>
+
+<div class="pill-group">
+<button class="pill-btn is-active" data-pill-group="loan-type" data-value="home">Home</button>
+<button class="pill-btn" data-pill-group="loan-type" data-value="investment">Investment</button>
+<button class="pill-btn" data-pill-group="loan-type" data-value="commercial">Commercial</button>
+<button class="pill-btn" data-pill-group="loan-type" data-value="construction">Construction</button>
+</div>
+
+<div style="max-width:520px;margin:0 auto;padding:0 32px">
+<div class="card" style="box-shadow:var(--shadow-float);overflow:hidden">
+<div style="padding:12px 22px;background:var(--bg-soft);border-bottom:1px solid #eaedf2;display:flex;align-items:center;gap:8px">
+<span style="width:7px;height:7px;border-radius:50%;background:var(--success)"></span>
+<span style="font-family:var(--font-heading);font-size:0.72rem;font-weight:600;color:var(--text-secondary)">Matching lenders for a <span id="pp-loan-type-label">home loan</span></span>
+</div>
+<div style="padding:16px 22px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #eaedf2">
+<div><div style="font-family:var(--font-heading);font-weight:700;font-size:0.85rem;color:var(--navy)">Owner-Occupied Home Loan &middot; $650,000</div><div style="font-size:0.7rem;color:var(--text-secondary);margin-top:2px">Rate and LVR (loan-to-value ratio), side by side</div></div>
+<span style="display:inline-flex;align-items:center;padding:5px 12px;border-radius:var(--radius-pill);font-family:var(--font-heading);font-weight:600;font-size:0.66rem;letter-spacing:var(--ls-eyebrow-tight);text-transform:uppercase;background:var(--tint-peach-10);color:var(--peach-text)">Sample</span>
+</div>
+<div style="padding:4px 22px 12px">
+<div style="display:grid;grid-template-columns:1.4fr 1fr auto;gap:12px;font-family:var(--font-heading);font-size:0.6rem;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;color:var(--text-secondary);padding:10px 0;border-bottom:2px solid #e0e4ea">
+<span>Lender</span><span>Product</span><span style="text-align:right">Rate p.a.</span>
+</div>
+<div id="pp-sample-rows">
+<div class="pp-sample-row"><span class="pp-sample-lender">Lender A</span><span class="pp-sample-product">Full-doc • 80% LVR</span><span class="pp-sample-rate">6.49%</span></div>
+<div class="pp-sample-row"><span class="pp-sample-lender">Lender B</span><span class="pp-sample-product">Alt-doc • 75% LVR</span><span class="pp-sample-rate">6.79%</span></div>
+<div class="pp-sample-row"><span class="pp-sample-lender">Lender C</span><span class="pp-sample-product">Low-doc • 80% LVR</span><span class="pp-sample-rate">7.05%</span></div>
+</div>
+</div>
+<div style="padding:14px 22px;background:linear-gradient(180deg,#fff,var(--tint-peach-08));border-top:1px solid #eaedf2;display:flex;justify-content:space-between;font-size:0.68rem;color:var(--text-secondary)">
+<span style="font-style:italic">Sample data &bull; your report is personalised</span><span>Illustrative rates</span>
+</div>
+</div>
+</div>
+</section>
+
+<!-- TWO PATHWAYS -->
+<section id="pathways" style="background:var(--light-bg);padding:var(--section-y) 0">
+<!-- Sept 18 sprint: diary booking belongs in the contact section, not on
+     standalone channel pages, so the booking card that sat beside this
+     form is gone and the grid collapses to the single remaining card. -->
+<div class="container tf-pathways-grid" style="display:grid;grid-template-columns:1fr;gap:26px;max-width:640px">
+
+<div class="pathway-card">
+<p style="font-family:var(--font-heading);font-weight:700;font-size:0.72rem;text-transform:uppercase;letter-spacing:var(--ls-label);color:var(--peach-text);margin-bottom:12px">Enquire Online</p>
+<h3 style="font-family:var(--font-heading);font-weight:700;font-size:1.3rem;color:var(--navy);margin-bottom:10px">Tell us what you need. Get real options back.</h3>
+<p style="font-size:0.88rem;color:var(--text-secondary);line-height:1.6;margin-bottom:22px">A few details, sent straight to our Personal &amp; Property team.</p>
+
+<form data-enquiry-form aria-label="Personal and Property enquiry form">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+<input class="field" aria-label="Name" placeholder="Name" name="name">
+<input class="field" aria-label="Mobile" placeholder="Mobile" name="mobile">
+</div>
+<input class="field" aria-label="Email" placeholder="Email" name="email" type="email" required autocomplete="email">
+<select class="field" name="topic" aria-label="What can we help you with?">
+<option value="">What can we help you with?</option>
+<option>Home Loans</option><option>Investment Property</option><option>Commercial Property</option><option>Construction</option><option>SMSF Property</option><option>Personal Loans</option><option>Debt Consolidation</option><option>Refinancing</option><option>Self-Employed Home Loans</option><option>Second Mortgage</option>
+</select>
+<textarea class="field" aria-label="Details or comments (optional)" rows="3" placeholder="Details or comments (optional)" name="details"></textarea>
+<input class="field" aria-label="Preferred contact method / time" placeholder="Preferred contact method / time" name="preferred_contact" style="margin-bottom:20px">
+<button type="submit" class="btn btn-primary" style="width:100%" id="pp-enquiry-submit">Send enquiry <span aria-hidden="true">&rarr;</span></button>
+<p class="tf-form-notice">We collect these details to respond to your enquiry. Our <a href="../home-shared/privacy/index.html">Privacy Policy</a> explains how we handle them.</p>
+<p class="pp-enquiry-status" role="status" style="font-size:0.8rem;color:var(--text-secondary);margin:10px 0 0"></p>
+</form>
+</div>
+
+
+</div>
+</section>
+
+<!-- PROFILE -->
+<section style="background:#fff;padding:var(--section-y) 0">
+<div class="container">
+<div class="card" style="display:flex;align-items:center;gap:28px;padding:26px 30px">
+<div style="width:84px;height:84px;flex-shrink:0;border-radius:12px;background:var(--tint-peach-10);display:flex;align-items:center;justify-content:center;font-family:var(--font-heading);font-weight:700;font-size:1.6rem;color:var(--peach-text)">JL</div>
+<div>
+<p style="font-family:var(--font-heading);font-weight:700;font-size:1rem;color:var(--navy);margin-bottom:6px">James Lowe <span style="font-weight:500;color:var(--text-secondary)"> - Head of Personal &amp; Property</span></p>
+<p style="font-size:0.86rem;color:var(--text-secondary);line-height:1.6;margin-bottom:12px;max-width:600px">Close to three decades across banking and lending. His focus: what you're actually trying to achieve, then the structure that fits - especially when the situation isn't straightforward.</p>
+<span style="font-family:var(--font-heading);font-weight:600;font-size:0.82rem;color:var(--navy)">0480 855 739</span>
+</div>
+</div>
+</div>
+</section>
+
+<!-- NEWS & INSIGHTS -->
+<section style="background:var(--bg-soft);padding:var(--section-y-sm) 0;border-top:1px solid var(--border)">
+<div class="container" style="display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap">
+<p style="font-size:0.92rem;color:var(--text-secondary);font-family:var(--font-heading);font-weight:500">Insights on personal &amp; property finance - coming soon.</p>
+<div style="display:flex;gap:10px">
+<input class="field" aria-label="Email address" placeholder="Email address" style="width:220px;margin-bottom:0">
+<span class="btn btn-outline btn-disabled" aria-disabled="true" style="padding:10px 18px;border-width:1px;border-color:var(--border)">Get notified</span>
+</div>
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer class="tf-footer">
+<div class="container-wide">
+<div class="tf-footer-top">
+<div>
+<img loading="lazy" decoding="async" width="844" height="140" src="../assets/img/logo-white.png" alt="Trade Funding" style="height:20px;width:auto;display:block;margin-bottom:16px;">
+<p class="tf-footer-blurb">Personal and property funding, for the business owner behind the business.</p>
+<div class="tf-footer-contact">
+<a href="tel:1300161641">1300 161 641</a>
+<a href="mailto:support@tradefunding.com.au">support@tradefunding.com.au</a>
+<span>Level 8, 387 George Street, Sydney, NSW, 2000</span>
+</div>
+<div class="tf-footer-badges">
+<span class="tf-footer-badge">ACL 387856</span>
+<span class="tf-footer-badge">AFCA Member</span>
+<span class="tf-footer-badge">CAFBA</span>
+<span class="tf-footer-badge">FinTech Australia</span>
+</div>
+</div>
+<div class="tf-footer-cols">
+<div class="tf-footer-col">
+<div class="tf-footer-col-heading">Channels</div>
+<a href="../home-shared/how-it-works/index.html">How Cashper Works</a>
+<a href="../commercial/index.html">Business Capital</a>
+<a href="../connect/index.html">Fund Your Customers</a>
+<a href="../personal-and-property/index.html" aria-current="page">Personal &amp; Property</a>
+<a href="../home-shared/resources/index.html">Resources</a>
+</div>
+<div class="tf-footer-col">
+<div class="tf-footer-col-heading">Company</div>
+<a href="../home-shared/about/index.html">About Us</a>
+<a href="../home-shared/broker-portal/index.html">Broker Portal</a>
+<a href="../connect/become-a-partner/index.html">Become a Partner</a>
+<a href="../home-shared/contact/index.html">Contact</a>
+<a href="../home-shared/apply/index.html">Get Started</a>
+</div>
+<div class="tf-footer-col">
+<div class="tf-footer-col-heading">Legal</div>
+<a href="../home-shared/credit-guide/index.html">Credit Guide</a>
+<a href="../home-shared/privacy/index.html">Privacy Policy</a>
+<a href="../home-shared/terms/index.html">Terms &amp; Conditions</a>
+</div>
+</div>
+</div>
+<div class="tf-footer-legal">
+<p>Credit products are provided by third-party lenders and credit offers are subject to a full credit review. Read our <a href="../home-shared/credit-guide/index.html" style="color:rgba(255,255,255,0.85)">Credit Guide</a> | <a href="../home-shared/terms/index.html" style="color:rgba(255,255,255,0.85)">Terms &amp; Conditions</a> | ACL 387856</p>
+</div>
+<div class="tf-footer-bottom">
+<span>&copy; 2026 Trade Funding Pty Ltd. All rights reserved.</span>
+</div>
+</div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" integrity="sha384-CI3ELBVUz9XQO+97x6nwMDPosPR5XvsxW2ua7N1Xeygeh1IxtgqtCkGfQY9WWdHu" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/lines/LineSegmentsGeometry.js" integrity="sha384-K16bQ6/nRHsU0eKd3hdm7CCI7l/Wc4UK45tdqGZ2AHDp1J9J+rdIColaZ4H6gue+" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/lines/LineMaterial.js" integrity="sha384-KUlsSdq9I0VYm+p1QmmjxRuyYzwsUg4mG/X1AjjChqhEgxf3QG1fZeGihaCJr8z9" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/lines/LineSegments2.js" integrity="sha384-SdmZCNq3efiCrMjlE29B4nkMMBrkOJgoNunzIT8FfiNaynKJ/ZNeIr88NLHyt/Me" crossorigin="anonymous"></script>
+<script src="../assets/js/tf-drawn.js"></script>
+<script src="../assets/js/tf-drawn-scenes.js"></script>
+<script>
+(function () {
+  var stage = document.getElementById('pp-hero-stage');
+  if (!stage || !window.TFDrawn || !window.TFDrawnScenes) return;
+  // Drawn in the page's own accent (--peach) so the stencil ties the hero to the rest of the page.
+  TFDrawn.mount(stage, { scenes: [TFDrawnScenes.houseAndCar({ color: 0xFF5D5C })] });
+})();
+</script>
+<script src="../assets/js/main.js"></script>
+<script>
+// Hub enquiry form -> Zoho, same pp-enquire source as the nine product-page forms. The hub
+// asks for preferred contact as free text rather than the product pages' picklist, so it
+// travels in Call_Notes instead of Preferred_Contact_Method (a picklist Zoho would reject).
+(function () {
+  'use strict';
+  var form = document.querySelector('[data-enquiry-form]');
+  var statusEl = form.querySelector('.pp-enquiry-status');
+  var submitBtn = form.querySelector('#pp-enquiry-submit');
+  function val(name) { var el = form.querySelector('[name="' + name + '"]'); return el ? el.value.trim() : ''; }
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var fullName = val('name');
+    var spaceIdx = fullName.indexOf(' ');
+    var notes = val('details');
+    if (val('preferred_contact')) notes += (notes ? '\n\n' : '') + 'Preferred contact: ' + val('preferred_contact');
+    var data = {
+      First_Name: spaceIdx === -1 ? '' : fullName.slice(0, spaceIdx),
+      Last_Name: spaceIdx === -1 ? fullName : fullName.slice(spaceIdx + 1),
+      Mobile: val('mobile'),
+      Email: val('email'),
+      Facility_Type: val('topic'),
+      Call_Notes: notes,
+    };
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Sending…';
+    statusEl.textContent = '';
+    statusEl.style.color = 'var(--text-secondary)';
+
+    fetch(window.TF_ZOHO.leadUrl(), {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ source: 'pp-enquire', data: data }),
+    })
+      .then(function (res) { return res.json().then(function (body) { return { ok: res.ok, body: body }; }); })
+      .then(function (result) {
+        if (!(result.ok && result.body && result.body.ok)) throw new Error((result.body && result.body.error) || 'submission_failed');
+        form.reset();
+        statusEl.textContent = "Thanks - your enquiry is with our Personal & Property team. We'll be in touch shortly.";
+        statusEl.style.color = 'var(--navy)';
+        submitBtn.textContent = 'Sent';
+      })
+      .catch(function () {
+        statusEl.textContent = 'Something went wrong sending your enquiry - please call James Lowe directly on 0480 855 739.';
+        statusEl.style.color = 'var(--peach)';
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Send enquiry';
+      });
+  });
+})();
+</script>
+</body>
+</html>

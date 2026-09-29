@@ -1,0 +1,126 @@
+/* ============================================================
+   TRADE FUNDING - SHARED DESIGN TOKENS
+   One canonical token set for Commercial / Connect / Personal & Property.
+   Merged from the three previously-separate design systems (they were
+   already identical in substance). Body font updated to DM Sans per
+   Matt's verbally-approved substitution (replacing Roboto).
+   ============================================================ */
+:root {
+  /* --- Brand colours --- */
+  --navy: #001C44;
+  --navy-blue: #1C1998;
+  --navy-deep: #000C22;
+  --skyblue: #54B4F6;
+  --skyblue-soft: #EAF4FE;
+  --peach: #FF5D5C;
+  --peach-soft: #FFF0F0;
+  --peach-hover: #E84847;
+  --gold: #FBB766;
+  --gold-soft: #FFF7EC;
+  --white: #FFFFFF;
+  --success: #10B981;
+
+  /* --- Text-safe accents (plan.md Phase 10 Part 5, WCAG 2.2 AA) ---
+     Same hues as the brand accents, darkened to >= 4.5:1 on white and on --light-bg.
+     The brand colours above stay for fills, borders, rules and large display use; any
+     accent used as TEXT colour uses these. On dark (navy) backgrounds keep the bright
+     brand colour instead, which is what passes there. */
+  --skyblue-text: #0A71B8;
+  --gold-text: #A85D04;
+  --peach-text: #D70100;
+  --success-text: #0B7C57;
+
+  /* --- Ink scale --- */
+  --ink-900: #0B1220;
+  --ink-600: #3C4B63;
+  --ink-400: #61718C; /* was #7A8AA3 (3.5:1 on white); darkened for AA text contrast */
+  --ink-200: #B7C2D3;
+
+  /* --- Surfaces --- */
+  --light-bg: #F5F7FA;
+  --bg-soft: #F5F8FC;
+  --report-bg: #F0F4F8;
+  --surface-card: var(--white);
+  --footer-bg: #00122E;
+
+  /* --- Text --- */
+  --text-primary: #001C44;
+  --text-secondary: #4A5568;
+  --border: rgba(0,28,68,0.08);
+  --border-neutral: rgba(0,28,68,0.12);
+  --border-dashed: rgba(0,28,68,0.12);
+
+  /* --- Tints --- */
+  --tint-sky-10: rgba(84,180,246,0.10);
+  --tint-sky-08: rgba(84,180,246,0.08);
+  --tint-peach-10: rgba(255,93,92,0.10);
+  --tint-peach-08: rgba(255,93,92,0.08);
+  --tint-gold-10: rgba(251,183,102,0.10);
+  --tint-navy-blue-10: rgba(28,25,152,0.10);
+  --tint-success-12: rgba(16,185,129,0.12);
+
+  /* --- S.T.A.R. score dots --- */
+  --star-s: #1C1998;
+  --star-t: #54B4F6;
+  --star-a: #FBB766;
+  --star-r: #FF5D5C;
+
+  /* --- Typography --- */
+  --font-heading: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body: 'DM Sans', -apple-system, sans-serif;
+  --ls-eyebrow: 0.18em;
+  --ls-eyebrow-tight: 0.12em;
+  --ls-label: 1.5px;
+  --ls-heading: -0.02em;
+  --eyebrow-size: 0.8rem;
+
+  /* --- Radii --- */
+  --radius-sm: 8px;
+  --radius-md: 8px;
+  --radius-lg: 10px;
+  --radius-xl: 12px;
+  --radius-chip: 10px;
+  --radius-pill: 999px;
+  --radius-pill-btn: 999px;
+
+  /* --- Shadows (always navy-tinted) --- */
+  --shadow-sm: 0 1px 3px rgba(0,28,68,0.08);
+  --shadow-md: 0 4px 16px rgba(0,28,68,0.1);
+  --shadow-lg: 0 8px 32px rgba(0,28,68,0.12);
+  --shadow-xl: 0 16px 48px rgba(0,28,68,0.16);
+  --shadow-soft: 0 10px 40px rgba(0,28,68,0.08);
+  --shadow-lg-soft: 0 20px 60px rgba(0,28,68,0.12);
+  --shadow-peach: 0 4px 16px rgba(255,93,92,0.35);
+  --shadow-peach-hover: 0 8px 24px rgba(255,93,92,0.45);
+  --shadow-gold: 0 4px 14px rgba(251,183,102,0.35);
+  --shadow-gold-hover: 0 8px 22px rgba(251,183,102,0.5);
+  --shadow-navy: 0 4px 14px rgba(0,28,68,0.3);
+  --shadow-navy-hover: 0 8px 22px rgba(0,28,68,0.4);
+  --shadow-float: 0 24px 80px rgba(0,0,0,0.35);
+
+  /* --- Layout --- */
+  --max-width: 1200px;
+  --max-width-wide: 1400px;
+  --max-width-nav: 1600px;
+  --max-width-prose: 760px;
+  --navbar-height: 80px;
+  --section-y: clamp(96px, 8vw, 128px);
+  --section-y-sm: clamp(64px, 6vw, 96px);
+  --hero-min-h: 85vh;
+  --gap-card: 22px;
+
+  /* --- Motion --- */
+  --transition-base: 220ms ease;
+  --transition-fast: 0.2s ease;
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --lift-card: -4px;
+
+  /* --- Per-channel accent (overridden per page) --- */
+  --channel-accent: var(--navy);
+  --channel-accent-text: var(--navy);
+}
+
+/* Channel accent tokens - set once at the page <body> level */
+.channel-commercial { --channel-accent: var(--skyblue); --channel-accent-text: var(--skyblue-text); }
+.channel-connect { --channel-accent: var(--gold); --channel-accent-text: var(--gold-text); }
+.channel-personalproperty { --channel-accent: var(--peach); --channel-accent-text: var(--peach-text); }

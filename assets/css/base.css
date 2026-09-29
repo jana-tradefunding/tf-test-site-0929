@@ -1,0 +1,206 @@
+/* ============================================================
+   BASE RESET - shared across all pages
+   ============================================================ */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text-primary);
+  background: var(--white);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading); margin: 0; letter-spacing: var(--ls-heading); line-height: 1.15; }
+p { margin: 0; }
+img { max-width: 100%; height: auto; display: block; }
+ul { list-style: none; margin: 0; padding: 0; }
+button { cursor: pointer; border: none; background: none; font-family: inherit; transition: transform var(--transition-fast), background var(--transition-fast), color var(--transition-fast), box-shadow var(--transition-fast); }
+a { color: var(--navy); text-decoration: none; transition: color var(--transition-fast), background var(--transition-fast), opacity var(--transition-fast); }
+a[href^="mailto:"], a[href^="tel:"] { overflow-wrap: anywhere; }
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible, [role="button"]:focus-visible, summary:focus-visible {
+  outline: 2px solid var(--channel-accent, var(--skyblue));
+  outline-offset: 2px;
+}
+
+.container { max-width: var(--max-width); margin: 0 auto; padding: 0 24px; }
+.container-wide { max-width: var(--max-width-wide); margin: 0 auto; padding: 0 32px; }
+.container-prose { max-width: var(--max-width-prose); margin: 0 auto; padding: 0 32px; }
+
+.eyebrow {
+  display: block;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 0.75rem;
+  letter-spacing: var(--ls-eyebrow);
+  text-transform: uppercase;
+  color: var(--channel-accent-text);
+  margin-bottom: 14px;
+}
+
+.section-title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.8rem, 3.2vw, 2.4rem);
+  font-weight: 600;
+  color: var(--navy);
+  margin: 0;
+}
+
+.rule {
+  height: 3px;
+  width: 72px;
+  border-radius: 2px;
+  background: var(--channel-accent);
+  margin: 16px auto 0;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 15px 28px;
+  border-radius: var(--radius-pill-btn);
+  transition: transform var(--transition-base), box-shadow var(--transition-base), background var(--transition-base), color var(--transition-base);
+  white-space: nowrap;
+}
+.btn-primary {
+  background: var(--channel-accent);
+  color: var(--white);
+  box-shadow: 0 4px 16px color-mix(in srgb, var(--channel-accent) 40%, transparent);
+}
+.btn-primary:hover { transform: translateY(-2px); }
+.channel-connect .btn-primary { color: var(--navy); }
+/* Any accent-filled primary button (e.g. the homepage channel cards, which set --channel-accent
+   inline) takes navy text: white on the accents fails AA, navy passes on all three. */
+[style*="--channel-accent:var(--"] .btn-primary { color: var(--navy); }
+.channel-commercial .btn-primary { color: var(--navy); }
+.channel-personalproperty .btn-primary { color: var(--navy); }
+.btn-outline {
+  background: transparent;
+  color: var(--navy);
+  border: 2px solid var(--navy);
+  padding: 13px 26px;
+}
+.btn-outline:hover { background: var(--navy); color: var(--white); }
+.btn-disabled { opacity: 0.5; cursor: default; pointer-events: none; }
+.btn-disabled:hover { transform: none; }
+
+.card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow var(--transition-base), transform var(--transition-base), border-color var(--transition-base);
+}
+
+.reveal { opacity: 0; transform: translateY(16px); transition: opacity 600ms var(--ease), transform 600ms var(--ease); }
+.reveal.is-visible { opacity: 1; transform: none; }
+
+/* Phase 9 Part 1: the supporting line a channel box reveals on hover.
+   The negative margin cancels the card's own 12px flex gap while the
+   line is collapsed, so a hidden line takes up no space at all. */
+[data-hover-detail] {
+  font-size: 0.86rem;
+  line-height: 1.5;
+  color: inherit;
+  opacity: 0;
+  max-height: 0;
+  margin-top: -12px;
+  overflow: hidden;
+  transition: opacity 0.25s ease, max-height 0.25s ease, margin-top 0.25s ease;
+}
+[data-hover-detail].is-visible { opacity: 1; max-height: 80px; margin-top: 0; }
+
+/* Touch devices have no hover, so the line is simply always shown rather
+   than hidden behind an interaction that cannot happen. A tap-to-reveal
+   would fight the two CTAs inside each card. */
+@media (hover: none) {
+  [data-hover-detail] { opacity: 1; max-height: none; margin-top: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition: none !important; }
+}
+
+@media (max-width: 900px) {
+  .grid-3 { grid-template-columns: 1fr !important; }
+  .grid-4 { grid-template-columns: repeat(2,1fr) !important; }
+  .hide-mobile { display: none !important; }
+}
+
+/* ============================================================
+   PHASE 9 PART 1 - mobile responsiveness and layout
+   Shared fixes, deliberately placed here rather than in the 62
+   per-page <style> blocks, so they propagate without hand
+   -propagation. Several rules carry !important and an extra
+   `body` on the selector: the per-page blocks load after this
+   file and already use !important, so beating them needs both
+   higher specificity and the same weight.
+   ============================================================ */
+
+/* 1. A form control's intrinsic width is its widest option/placeholder,
+   which can force a grid track wider than the viewport - this was the
+   cause of the Contact page's horizontal scroll at 360px (a <select>
+   whose longest option measured 267px + 72px of card padding). */
+input, select, textarea { max-width: 100%; min-width: 0; }
+
+/* 2. Grid and flex children default to min-width:auto, so a long child
+   can push its own track past the viewport. */
+.container > *, .container-wide > *, .container-prose > * { min-width: 0; }
+
+/* 3. Buttons: .btn sets white-space:nowrap for desktop balance, which
+   makes a long label overflow rather than wrap on a narrow screen
+   (About's "Explore careers at Trade Funding" ran 314px wide in a
+   312px column). Below 560px the label wraps instead. */
+@media (max-width: 560px) {
+  .btn { white-space: normal; max-width: 100%; }
+}
+
+/* 4. Two-column grids that still sit at 2-up below 900px have no room
+   left at 360-400px. Collapsing them is what removes the remaining
+   horizontal scroll on the product and Personal & Property pages. */
+@media (max-width: 430px) {
+  body .cp-grid-4,
+  body .cp-grid-3,
+  body .cp-grid-2,
+  body .service-grid,
+  body .stats-grid,
+  body .grid-4 { grid-template-columns: 1fr !important; }
+  body .stats-grid > * { border-right: none !important; }
+}
+
+/* 5. CTA button sizing (Matt's note): less padding and a thinner outline
+   border for visual balance. Font size is deliberately untouched - this
+   is padding and border only. Both variants stay above the 44x44px
+   touch-target floor at every width; measured, not assumed. */
+.btn { padding: 13px 24px; }
+.btn-outline { border-width: 1.5px; padding: 12px 22.5px; }
+@media (max-width: 560px) {
+  .btn { padding: 12px 20px; }
+  .btn-outline { padding: 11px 18.5px; }
+}
+/* Compact size for buttons inside cards: content-width, smaller type,
+   still held at the 44px touch-target floor by min-height. */
+.btn.btn-sm { font-size: 0.85rem; padding: 10px 20px; min-height: 44px; }
+.btn-outline.btn-sm { padding: 9px 18.5px; }
+
+/* --- Accessibility (plan.md Phase 10 Part 5) --- */
+
+/* Skip link: first focusable element on every page, hidden until keyboard focus (WCAG 2.4.1). */
+.tf-skip-link {
+  position: absolute; left: 16px; top: -100px; z-index: 10000;
+  padding: 10px 16px; border-radius: var(--radius-sm);
+  background: var(--navy); color: var(--white); font-weight: 600; font-size: 0.9rem;
+}
+.tf-skip-link:focus { top: 12px; color: var(--white); }
+#main:focus { outline: none; }
+
+/* Links inside running text must be distinguishable without relying on colour (WCAG 1.4.1).
+   Scoped to unclassed links in paragraphs, so buttons, cards and nav are untouched. */
+p a:not([class]) { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 2px; }
