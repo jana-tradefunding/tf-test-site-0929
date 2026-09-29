@@ -103,18 +103,23 @@
    the whole hero behind the copy. The ::before wash keeps the copy legible: a
    flat 80% white across the copy column (--hero-copy-end is where .hero-copy
    stops), fading to clear over the next 20% of the width. It has to stay flat
-   over the column: the final frame's Trade Funding card sits under the copy,
-   and a gradient across it fades "tra" more than the rest, so the logo reads
-   "defunding". At 80% the hero's grey body text keeps 4.5:1 even over the
-   video's darkest pixels. Below 900px, where the copy spans the full width and
-   a portrait crop would keep only the middle third of the frame, it becomes a
-   band above the copy. The poster is the final frame, so the static view
-   (reduced motion, no JS, still loading) shows the Compare Report end state.
+   over the column: the front invoice's Trade Funding logo sits under the
+   copy, and a gradient across it fades "tra" more than the rest, so the logo
+   reads "defunding". At 80% the hero's grey body text keeps 4.5:1 even over
+   the video's darkest pixels. The crop sits 20% from the top so the fanned
+   invoices' coloured edges stay in view while the stack rises in from the
+   hero's bottom edge. Below 900px, where the copy spans the full width and a
+   portrait crop would keep only the middle third of the frame, it becomes a
+   band above the copy.
+   The file loops seamlessly: it was re-encoded so the settled fan dissolves
+   back into the empty opening scene, and the poster IS that opening frame, so
+   neither the start nor the loop point shows a cut. Reduced-motion visitors
+   get data-still (the settled fan) as the poster instead, via main.js.
    .hero-grid spans the full width over the video, so it passes clicks through
    to the pause toggle and only .hero-copy takes them. */
 .hero-media{position:absolute;inset:0}
 .hero-media::before{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,rgba(255,255,255,0.8) 0,rgba(255,255,255,0.8) var(--hero-copy-end),rgba(255,255,255,0) calc(var(--hero-copy-end) + 20%))}
-.hero-video{display:block;width:100%;height:100%;object-fit:cover;background:#fff}
+.hero-video{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 20%;background:#fff}
 .hero-video-toggle{position:absolute;right:24px;bottom:24px;min-height:44px;padding:0 18px;border:1px solid var(--border-neutral);border-radius:var(--radius-pill);background:rgba(255,255,255,0.92);color:var(--navy);font-family:var(--font-heading);font-weight:600;font-size:0.8rem;box-shadow:var(--shadow-sm)}
 .hero-video-toggle:hover{background:#fff}
 .hero-video-toggle[hidden]{display:none}
@@ -381,7 +386,7 @@ table.cr-tbl{border-collapse:collapse;width:100%;background:#fff;table-layout:fi
      attribute - main.js starts it unless the visitor prefers reduced motion,
      and the toggle is its pause control (WCAG 2.2.2). -->
 <div class="hero-media">
-<video class="hero-video" data-hero-video muted loop playsinline preload="none" disablepictureinpicture disableremoteplayback poster="assets/img/hero-poster.jpg" aria-hidden="true">
+<video class="hero-video" data-hero-video muted loop playsinline preload="none" disablepictureinpicture disableremoteplayback poster="assets/img/hero-poster.jpg" data-still="assets/img/hero-still.jpg" aria-hidden="true">
 <source src="assets/video/hero-animation.mp4" type="video/mp4">
 </video>
 <button type="button" class="hero-video-toggle" data-hero-video-toggle hidden>Pause video</button>

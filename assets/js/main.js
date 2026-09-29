@@ -230,9 +230,11 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   // --- Home page: hero background video ---
-  // The <video> has no autoplay attribute, so it only starts here: visitors
-  // who prefer reduced motion (and no-JS) keep the poster, the video's final
-  // frame, and can opt in with the toggle. The toggle is the WCAG 2.2.2 pause
+  // The <video> has no autoplay attribute, so it only starts here. Its poster
+  // is the video's own opening frame, so playback starts without a visible
+  // swap. Visitors who prefer reduced motion get data-still (the settled end
+  // state) as the poster instead, and can opt in with the toggle; so does any
+  // browser that can't decode the file. The toggle is the WCAG 2.2.2 pause
   // control, shown only when the browser can decode the file so it never
   // offers a control that does nothing. Off-screen the video pauses to save
   // battery, and resumes on return unless the visitor paused it. Chrome
@@ -241,8 +243,11 @@ document.addEventListener('DOMContentLoaded', function () {
   (function () {
     var video = document.querySelector('[data-hero-video]');
     var toggle = document.querySelector('[data-hero-video-toggle]');
-    if (!video || !toggle || !video.canPlayType('video/mp4; codecs="avc1.640028"')) return;
+    if (!video || !toggle) return;
     var userPaused = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var canPlay = !!video.canPlayType('video/mp4; codecs="avc1.640028"');
+    if ((userPaused || !canPlay) && video.dataset.still) video.poster = video.dataset.still;
+    if (!canPlay) return;
     var inView = true;
     var setLabel = function () {
       toggle.textContent = video.paused ? 'Play video' : 'Pause video';
